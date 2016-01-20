@@ -1,0 +1,5 @@
+<ifmodule mod_expires.c>
+ExpiresActive On
+ExpiresDefault "access"
+</ifmodule>
+AddType text/cache-manifest .appcache

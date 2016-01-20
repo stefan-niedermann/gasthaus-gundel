@@ -1,0 +1,371 @@
+@font-face {
+	font-family: 'TexturaLiberaTenuisExpandedDemi';
+	src: url('../fonts/TexturaLiberaTenuisExpandedDemi.otf')
+		format('opentype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+body {
+	background: #232323;
+}
+
+p {
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+	text-align: justify;
+}
+
+img {
+	max-width: 100%;
+}
+
+h2 {
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: contain;
+	padding-left: 1.5em;
+}
+
+header {
+	border-bottom: 1px solid #666;
+	position: fixed;
+	background: #232323;
+	width: 100%;
+	z-index: 1;
+}
+
+header h1 {
+	color: #ddd;
+	margin: 0;
+	text-align: center;
+	font-size: x-large;
+	font-family: "TexturaLiberaTenuisExpandedDemi", cursive;
+	line-height: 2.1em;
+}
+
+header nav ul {
+	top: 3.5em;
+	display: none;
+}
+
+header nav.active ul {
+	display: block;
+	position: fixed;
+	background-color: #fff;
+	width: 100%;
+	left: 0;
+	box-shadow: 2px 2px 2px #999;
+	overflow-x: auto;
+}
+
+header nav ul li a {
+	padding: .8em 1em;
+	width: 100%;
+	display: inline;
+	display: inline-block;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #eee;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: left 1em center;
+	padding-left: 3.5em;
+}
+
+header nav ul li a:hover {
+	background-color: #fff;
+}
+
+header nav ul li:first-child a {
+	border-top: 0;
+}
+
+header nav ul li:last-child a {
+	border-bottom: 0;
+}
+
+/* Background-Images */
+header nav ul li a[href="#willkommen"] {
+	background-image: url("../resources/hand-pointing-right.svg");
+}
+
+header nav ul li a[href="#oeffnungszeiten"], article#oeffnungszeiten h2
+	{
+	background-image: url("../resources/clock.svg");
+}
+
+header nav ul li a[href="#anfahrt"], article#anfahrt h2 {
+	background-image: url("../resources/map-marker.svg");
+}
+
+header nav ul li a[href="#speisekarte"], article#speisekarte h2 {
+	background-image: url("../resources/silverware.svg");
+}
+
+header nav ul li a[href="#biergarten"], article#biergarten h2 {
+	background-image: url("../resources/flower.svg");
+}
+
+header nav ul li a[href="#fotos"], article#fotos h2 {
+	background-image: url("../resources/file-image-box.svg");
+}
+
+header nav button {
+	background: rgba(35, 35, 35, .6);
+	border: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 3.6em;
+	height: 3.6em;
+	border-radius: 2px;
+	width: 3.6em;
+	right: 0;
+}
+
+header nav button img {
+	width: 100%;
+	height: 100%;
+}
+
+header nav.active button {
+	background: #343434;
+}
+
+main, article {
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, .9);
+	padding: 1em;
+	width: auto;
+	margin: 1em;
+	border-radius: 2px;
+}
+
+main {
+	margin: 3.5em 1em 0 1em;
+}
+
+figure {
+	position: relative;
+}
+
+figure figcaption.license {
+	padding: 2px 5px;
+	font-size: smaller;
+	text-align: right;
+}
+
+footer p {
+	color: #aaa;
+	padding: 1em;
+	text-align: right;
+}
+
+.wrapper {
+	/* source: http://www.publicdomainpictures.net/view-image.php?image=25450&picture=autumn-landscape */
+	background-image: url("../resources/winter-landscape-640.jpg");
+	background-size: 100%;
+	background-size: cover;
+	background-position: right center;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-top: 1em;
+	background-size: cover;
+	padding-top: 1em;
+}
+
+.phone a {
+	width: 100%;
+	background-image: url(../resources/phone-white.svg);
+	background-position: left 1em center;
+	background-repeat: no-repeat;
+}
+
+.phone a .phone-number {
+	display: none;
+}
+.phone a .phone-label {
+	text-transform: uppercase;
+}
+
+iframe.map {
+	width: 100%;
+	height: 200px;
+}
+
+#speisekarte h3 {
+	margin-top: 3em;
+}
+
+#speisekarte h3:first-of-type {
+	margin-top: 2em;
+}
+
+#speisekarte img {
+	border-radius: 2px;
+}
+
+#speisekarte a {
+	float: right;
+	opacity: .5;
+}
+
+#speisekarte a:hover {
+	opacity: .9;
+}
+
+#speisekarte a img {
+	width: 1.5em
+}
+
+#speisekarte p {
+	margin: 1em auto auto auto;
+}
+
+#speisekarte p .desc {
+	display: none;
+}
+
+#speisekarte p .price {
+	float: right;
+}
+
+@media ( min-height : 400px) {
+	iframe.map {
+		height: 300px;
+	}
+}
+
+@media ( min-height : 500px) {
+	iframe.map {
+		height: 350px;
+	}
+}
+
+@media ( min-height : 600px) {
+	iframe.map {
+		height: 400px;
+	}
+}
+
+@media ( min-width : 480px) {
+	main, article, footer {
+		width: 80%;
+		max-width: 980px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	header nav.active ul {
+		width: 80%;
+		max-height: 80%;
+	}
+	#speisekarte img {
+		display: block;
+		width: 80%;
+		margin: auto;
+	}
+	#speisekarte p {
+		width: 80%;
+	}
+}
+
+@media ( min-width : 640px) {
+	.wrapper {
+		background-image: url("../resources/winter-landscape-1920.jpg");
+		background-attachment: fixed;
+	}
+	#speisekarte img {
+		width: 50%;
+		border-radius: 50%;
+	}
+	#speisekarte p {
+		width: 100%;
+	}
+	#speisekarte p .desc {
+		display: inline;
+	}
+	main, article {
+		background-color: rgba(255, 255, 255, .95);
+	}
+}
+
+@media ( min-width : 810px) {
+	main {
+		margin-top: 0;
+	}
+	header {
+		margin-top: 2.5em;
+		position: static;
+	}
+	header h1 {
+		font-size: 300%;
+	}
+	header nav {
+		position: fixed;
+		z-index: 1;
+		width: 100%;
+		top: 0;
+		margin: auto;
+		background: rgba(255, 255, 255, .9);
+		border-bottom: 1px solid #999;
+	}
+	header nav ul {
+		display: block;
+		width: 80%;
+		max-width: 980px;
+		min-width: 640px;
+		margin: auto;
+		text-align: center;
+	}
+	header nav.active ul {
+		position: static;
+		background: none;
+		box-shadow: none;
+	}
+	header nav ul li {
+		display: inline-block;
+	}
+	header nav button {
+		display: none;
+	}
+	figure figcaption.license {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		color: #fff;
+		background: rgba(0, 0, 0, .4);
+	}
+	figure figcaption.license a, figure figcaption.license a:hover {
+		color: #eee;
+	}
+	.phone {
+		text-align: center;
+		font-size: 300%;
+	}
+	.phone a, .phone a:hover, .phone a:focus {
+		color: #000;
+		text-decoration: none;
+		background: url(../resources/phone-black.svg) no-repeat left center;
+		border: 0;
+		width: auto;
+		padding-left: 1.5em;
+		font-size: 100%;
+		background-size: 1em;
+		cursor: text;
+	}
+	.phone a .phone-number {
+		display: inline;
+	}
+	.phone a .phone-label {
+		display: none;
+	}
+}
+
+@media ( min-width : 960px) {
+	#speisekarte strong {
+		display: inline-block;
+		width: 30%;
+	}
+}

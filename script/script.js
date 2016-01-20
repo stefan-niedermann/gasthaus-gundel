@@ -18,12 +18,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }, false);
 
     // Correct offset on navigation
-    window.addEventListener("hashchange", function() {
+    window.addEventListener("hashchange", function(event) {
+    	event.preventDefault();
 		if(typeof Piwik !== "undefined") {
 			Piwik.getAsyncTracker().trackPageView();
 		}
 		headerNav.classList.remove("active");
-		correctOffset(document.getElementById(window.location.hash.substr(1)));
+		correctOffset(window.location.hash.substr(1), screen.width > 810 ? document.getElementById("menu-nav").parentNode : document.querySelector("header h1"));
     });
 
     // Dispatch hashchangeevent manually if target === current
@@ -36,18 +37,25 @@ document.addEventListener("DOMContentLoaded", function() {
 		}, false);
     }
 
+    // Correct offset caused by fixed header
+    function correctOffset(targetElementId, headerElement) {
+   		if(targetElementId === "willkommen") {
+   			window.scrollTo(0, 0);
+   		} else {
+	    	var targetElement = document.getElementById(targetElementId);
+			var headerHeight = parseInt(window.getComputedStyle(headerElement).height);
+			var targetElement = document.getElementById(window.location.hash.substr(1));
+			var targetElementPosition = targetElement.offsetTop;
+			var targetElementMarginTop = parseInt(window.getComputedStyle(targetElement).getPropertyValue("margin-top"));
+			console.log("scroll to " + (targetElementPosition - headerHeight - targetElementMarginTop));
+			window.scrollTo(0, targetElementPosition - headerHeight - targetElementMarginTop);
+		}
+    }
+}, false);
+
+window.addEventListener("load", function() {
     // Correct offset on direct page call
     if (window.location.hash.length > 1) {
-	window.dispatchEvent(new HashChangeEvent("hashchange"));
-    }
-
-    // Correct offset caused by fixed header
-    function correctOffset(element) {
-	var top = 0;
-	do {
-	    top += element.offsetTop || 0;
-	    element = element.offsetParent;
-	} while (element);
-	window.scrollTo(0, top - header.offsetHeight - 10);
+		window.dispatchEvent(new HashChangeEvent("hashchange"));
     }
 }, false);

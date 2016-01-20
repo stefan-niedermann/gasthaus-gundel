@@ -87,28 +87,28 @@ header nav ul li:last-child a {
 
 /* Background-Images */
 header nav ul li a[href="#willkommen"] {
-	background-image: url("../resources/hand-pointing-right.svg");
+	background-image: url("../resources/icons/hand-pointing-right.svg");
 }
 
 header nav ul li a[href="#oeffnungszeiten"], article#oeffnungszeiten h2
 	{
-	background-image: url("../resources/clock.svg");
+	background-image: url("../resources/icons/clock.svg");
 }
 
 header nav ul li a[href="#anfahrt"], article#anfahrt h2 {
-	background-image: url("../resources/map-marker.svg");
+	background-image: url("../resources/icons/map-marker.svg");
 }
 
 header nav ul li a[href="#speisekarte"], article#speisekarte h2 {
-	background-image: url("../resources/silverware.svg");
+	background-image: url("../resources/icons/silverware.svg");
 }
 
 header nav ul li a[href="#biergarten"], article#biergarten h2 {
-	background-image: url("../resources/flower.svg");
+	background-image: url("../resources/icons/flower.svg");
 }
 
 header nav ul li a[href="#fotos"], article#fotos h2 {
-	background-image: url("../resources/file-image-box.svg");
+	background-image: url("../resources/icons/file-image-box.svg");
 }
 
 header nav button {
@@ -165,7 +165,7 @@ footer p {
 
 .wrapper {
 	/* source: http://www.publicdomainpictures.net/view-image.php?image=25450&picture=autumn-landscape */
-	background-image: url("../resources/winter-landscape-640.jpg");
+	background-image: url("../resources/backgrounds/winter-landscape-640.jpg");
 	background-size: 100%;
 	background-size: cover;
 	background-position: right center;
@@ -178,7 +178,7 @@ footer p {
 
 .phone a {
 	width: 100%;
-	background-image: url(../resources/phone-white.svg);
+	background-image: url(../resources/icons/phone-white.svg);
 	background-position: left 1em center;
 	background-repeat: no-repeat;
 }
@@ -273,7 +273,7 @@ iframe.map {
 
 @media ( min-width : 640px) {
 	.wrapper {
-		background-image: url("../resources/winter-landscape-1920.jpg");
+		background-image: url("../resources/backgrounds/winter-landscape-1920.jpg");
 		background-attachment: fixed;
 	}
 	#speisekarte img {
@@ -347,7 +347,7 @@ iframe.map {
 	.phone a, .phone a:hover, .phone a:focus {
 		color: #000;
 		text-decoration: none;
-		background: url(../resources/phone-black.svg) no-repeat left center;
+		background: url(../resources/icons/phone-black.svg) no-repeat left center;
 		border: 0;
 		width: auto;
 		padding-left: 1.5em;

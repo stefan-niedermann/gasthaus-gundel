@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Create Menu-Button
     menuButtonImg.setAttribute("alt", "Menü");
-    menuButtonImg.setAttribute("src", "resources/menu.svg");
+    menuButtonImg.setAttribute("src", "resources/icons/menu.svg");
     menuButton.appendChild(menuButtonImg);
     headerNav.insertBefore(menuButton, headerNav.childNodes[0]);
 

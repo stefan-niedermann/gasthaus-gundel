@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	var searchbox = document.createElement("form");
 	var input = document.createElement("input");
 	input.setAttribute("type", "search");
+	input.setAttribute("placeholder", "Suchen...");
 	input.addEventListener("keyup", function(event) {
 		var val = input.value.toLowerCase();
 		for(var i = 0; i < speisekarteDivisions.length; i++) {

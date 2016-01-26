@@ -51,6 +51,33 @@ document.addEventListener("DOMContentLoaded", function() {
 			window.scrollTo(0, targetElementPosition - headerHeight - targetElementMarginTop);
 		}
     }
+
+	var notInSearch = "notinsearch";
+	var speisekarte = document.getElementById("speisekarte");
+	var speisekarteDivisions = speisekarte.querySelectorAll("div.speisekarte-division");
+	var searchbox = document.createElement("form");
+	var input = document.createElement("input");
+	input.setAttribute("type", "search");
+	input.addEventListener("keyup", function(event) {
+		var val = input.value.toLowerCase();
+		for(var i = 0; i < speisekarteDivisions.length; i++) {
+			var speisekarteEntries = speisekarteDivisions[i].getElementsByTagName("p");
+			for(var j = 0; j < speisekarteEntries.length; j++) {
+				if(val.length > 0 && speisekarteEntries[j].innerHTML.toLowerCase().indexOf(val) > 0) {
+					speisekarteEntries[j].classList.remove(notInSearch);
+				} else {
+					speisekarteEntries[j].classList.add(notInSearch);
+				}
+			}
+			if(val.length === 0 && speisekarteDivisions[i].querySelector("p:not(." + notInSearch + ")") === null) {
+				speisekarteDivisions[i].classList.add(notInSearch);
+			} else {
+				speisekarteDivisions[i].classList.remove(notInSearch);
+			}
+		}
+	});
+	searchbox.appendChild(input);
+	speisekarte.insertBefore(searchbox, speisekarte.firstElementChild.nextElementSibling);
 }, false);
 
 window.addEventListener("load", function() {

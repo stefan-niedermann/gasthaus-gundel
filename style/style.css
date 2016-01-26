@@ -126,8 +126,7 @@ header nav button {
 }
 
 header nav button img {
-	width: 100%;
-	height: 100%;
+	width: 80%;
 }
 
 header nav.active button {
@@ -193,6 +192,10 @@ footer p {
 iframe.map {
 	width: 100%;
 	height: 200px;
+}
+
+#speisekarte .notinsearch {
+    display: none;
 }
 
 #speisekarte h3 {

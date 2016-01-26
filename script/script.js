@@ -64,13 +64,13 @@ document.addEventListener("DOMContentLoaded", function() {
 		for(var i = 0; i < speisekarteDivisions.length; i++) {
 			var speisekarteEntries = speisekarteDivisions[i].getElementsByTagName("p");
 			for(var j = 0; j < speisekarteEntries.length; j++) {
-				if(val.length > 0 && speisekarteEntries[j].innerHTML.toLowerCase().indexOf(val) > 0) {
+				if(val.length === 0 || speisekarteEntries[j].innerHTML.toLowerCase().indexOf(val) > 0) {
 					speisekarteEntries[j].classList.remove(notInSearch);
 				} else {
 					speisekarteEntries[j].classList.add(notInSearch);
 				}
 			}
-			if(val.length === 0 && speisekarteDivisions[i].querySelector("p:not(." + notInSearch + ")") === null) {
+			if(speisekarteDivisions[i].querySelector("p:not(." + notInSearch + ")") === null) {
 				speisekarteDivisions[i].classList.add(notInSearch);
 			} else {
 				speisekarteDivisions[i].classList.remove(notInSearch);

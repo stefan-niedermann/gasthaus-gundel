@@ -6,6 +6,21 @@
 	font-style: normal;
 }
 
+body {
+	/* source: http://www.publicdomainpictures.net/view-image.php?image=25450&picture=autumn-landscape */
+	background-image: url("../resources/backgrounds/winter-landscape-640.jpg");
+	background-size: 100%;
+	background-size: cover;
+	background-position: right center;
+}
+
+h2 {
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: contain;
+	padding-left: 1.5em;
+}
+
 p {
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
@@ -15,13 +30,6 @@ p {
 
 img {
 	max-width: 100%;
-}
-
-h2 {
-	background-repeat: no-repeat;
-	background-position: left center;
-	background-size: contain;
-	padding-left: 1.5em;
 }
 
 header {
@@ -132,15 +140,15 @@ header nav.active button {
 main, article {
 	background-color: #fff;
 	background-color: rgba(255, 255, 255, .9);
-	padding: 1em;
+	padding: 1.5rem;
 	width: auto;
-	margin: 1em;
+	margin: 1.5rem;
 	border-radius: 2px;
 	box-shadow: 1px 2px 2px #999;
 }
 
 main {
-	margin: 3.5em 1em 0 1em;
+	margin: 5rem 1.5rem 0 1.5rem;
 }
 
 figure {
@@ -155,21 +163,13 @@ figure figcaption.license {
 
 footer p {
 	color: #aaa;
-	padding: 1em;
+	padding: 1.5rem;
 	text-align: right;
 }
 
 .wrapper {
-	/* source: http://www.publicdomainpictures.net/view-image.php?image=25450&picture=autumn-landscape */
-	background-image: url("../resources/backgrounds/winter-landscape-640.jpg");
-	background-size: 100%;
-	background-size: cover;
-	background-position: right center;
-	padding-top: 1em;
-	padding-bottom: 1em;
-	padding-top: 1em;
-	background-size: cover;
-	padding-top: 1em;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
 }
 
 .phone a {
@@ -285,7 +285,7 @@ iframe.map {
 }
 
 @media ( min-width : 640px) {
-	.wrapper {
+	body {
 		background-image: url("../resources/backgrounds/winter-landscape-1920.jpg");
 		background-attachment: fixed;
 	}

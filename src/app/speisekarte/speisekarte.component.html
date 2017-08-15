@@ -1,4 +1,9 @@
-<md-card *ngFor="let kategorie of kategorien">
+<md-input-container>
+  <span mdPrefix class="mdi mdi-magnify"></span>
+  <input (keyup)="filter($event)" mdInput placeholder="Suchen..." />
+</md-input-container>
+
+<md-card *ngFor="let kategorie of filteredKategorien">
   <md-card-header>
     <md-card-title>
       <h2>{{kategorie.titel}}</h2>

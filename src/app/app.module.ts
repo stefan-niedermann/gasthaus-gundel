@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { MaterialModule } from '@angular/material';
 import { RouterModule, Route } from '@angular/router';
 
@@ -9,6 +9,7 @@ import { OeffnungszeitenComponent } from './oeffnungszeiten/oeffnungszeiten.comp
 import { AnfahrtComponent } from './anfahrt/anfahrt.component';
 import { SpeisekarteComponent } from './speisekarte/speisekarte.component';
 import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 
 const routes: Route[] = [
   {
@@ -45,9 +46,15 @@ const routes: Route[] = [
     BrowserModule,
     MaterialModule,
     CommonModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'de-DE'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

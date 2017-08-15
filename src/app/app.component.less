@@ -1,0 +1,37 @@
+main {
+    height: ~"calc(100% - 56px)";
+    overflow: auto;
+}
+
+#outlet-wrapper {
+    width: 100%;
+    max-width: 980px;
+    @media(min-width: 768px) {
+        width: 80%;
+    }
+    box-sizing: border-box;
+    margin: auto;
+    padding: 1em;
+}
+
+md-icon::before {
+    font-size: x-large;
+}
+
+h1 {
+    margin-left: 1em;
+}
+
+md-sidenav {
+    width: 250px;
+}
+
+.mat-nav-list {
+    .active {
+        background-image: linear-gradient(to right, #333 .3em, transparent .3em, transparent 100%);
+        &.mast-list-item.mat-list-item-focus,
+        &.mast-list-item:hover {
+            background-image: linear-gradient(to right, #333 .3em, transparent .3em, transparent 100%);
+        }
+    }
+}

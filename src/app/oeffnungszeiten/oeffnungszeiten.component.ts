@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Wochentag, oeffnungszeiten } from "app/oeffnungszeiten/oeffnungszeiten";
 
 @Component({
   selector: 'app-oeffnungszeiten',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./oeffnungszeiten.component.less']
 })
 export class OeffnungszeitenComponent implements OnInit {
+
+  oeffnungszeiten: Wochentag[] = oeffnungszeiten;
 
   constructor() { }
 

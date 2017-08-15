@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { OeffnungszeitenComponent } from './oeffnungszeiten/oeffnungszeiten.component';
 import { AnfahrtComponent } from './anfahrt/anfahrt.component';
 import { SpeisekarteComponent } from './speisekarte/speisekarte.component';
+import { CommonModule } from "@angular/common";
 
 const routes: Route[] = [
   {
@@ -43,6 +44,7 @@ const routes: Route[] = [
   imports: [
     BrowserModule,
     MaterialModule,
+    CommonModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

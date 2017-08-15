@@ -1,3 +1,14 @@
-<p>
-  speisekarte works!
-</p>
+<md-card *ngFor="let kategorie of kategorien">
+  <md-card-header>
+    <md-card-title>
+      <h2>{{kategorie.titel}}</h2>
+    </md-card-title>
+  </md-card-header>
+  <md-card-content>
+    <ul>
+      <li *ngFor="let gericht of kategorie.gerichte">
+        {{gericht.nummer}} {{gericht.titel}}: {{gericht.preis | currency:'EUR':true:'1.2-2'}}<br /> {{gericht.beschreibung}}
+      </li>
+    </ul>
+  </md-card-content>
+</md-card>

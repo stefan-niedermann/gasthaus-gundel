@@ -1,17 +1,17 @@
-interface Zeit {
+export interface Zeit {
     h: number,
     m: number
 }
-interface Oeffnungszeit {
+export interface Oeffnungszeit {
     von: Zeit,
     /** Bis zum Ende des Tages, falls nicht angegeben */
     bis?: Zeit
 }
-interface Wochentag {
+export interface Wochentag {
     titel: string,
     oeffnungszeiten: Oeffnungszeit[]
 }
-const standardOeffnungszeiten: Oeffnungszeit[] = [
+export const standardOeffnungszeiten: Oeffnungszeit[] = [
     {
         von: { h: 11, m: 0 },
         bis: { h: 14, m: 30 }

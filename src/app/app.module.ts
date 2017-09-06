@@ -10,6 +10,7 @@ import { AnfahrtComponent } from './anfahrt/anfahrt.component';
 import { SpeisekarteComponent } from './speisekarte/speisekarte.component';
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
+import { OeffnungszeitenPipe } from './oeffnungszeiten/oeffnungszeiten.pipe';
 
 const routes: Route[] = [
   {
@@ -40,7 +41,8 @@ const routes: Route[] = [
     HomeComponent,
     OeffnungszeitenComponent,
     AnfahrtComponent,
-    SpeisekarteComponent
+    SpeisekarteComponent,
+    OeffnungszeitenPipe
   ],
   imports: [
     BrowserModule,

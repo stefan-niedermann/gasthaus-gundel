@@ -12,7 +12,10 @@
   <md-card-content>
     <ul>
       <li *ngFor="let gericht of kategorie.gerichte">
-        {{gericht.nummer}} {{gericht.titel}}: {{gericht.preis | currency:'EUR':true:'1.2-2'}}<br /> {{gericht.beschreibung}}
+        <span class="nummer">{{gericht.nummer}}</span>
+        <span class="titel">{{gericht.titel}}:</span>
+        <p>{{gericht.beschreibung}}</p>
+        <span class="preis">{{gericht.preis | currency:'EUR':true:'1.2-2'}}</span>
       </li>
     </ul>
   </md-card-content>

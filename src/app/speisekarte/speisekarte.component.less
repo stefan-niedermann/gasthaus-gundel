@@ -12,16 +12,27 @@ ul {
 }
 
 li {
-    display: flex;
-    flex: 1 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 1em;
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
-li p {
-    display: inline;
+.nummer {
+	margin-right: .5em;
 }
-
-.nummer, .titel {font-weight: bold;}
+.titel {
+	flex: 1 0 auto;
+	font-weight: bold;
+}
 .preis {
-    text-align: right;
-    flex-grow: 0;
+	flex: 1 1 auto;
+	text-align: right;
+}
+li p {
+	margin: .2em 0 0 0;
+	text-align: left;
+	flex-basis: 100%;
 }

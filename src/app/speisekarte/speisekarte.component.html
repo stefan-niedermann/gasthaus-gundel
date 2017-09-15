@@ -1,22 +1,23 @@
 <md-input-container>
-  <span mdPrefix class="mdi mdi-magnify"></span>
-  <input (keyup)="filter($event)" mdInput placeholder="Suchen..." />
+	<span mdPrefix class="mdi mdi-magnify"></span>
+	<input (keyup)="filter($event)" mdInput placeholder="Suchen..." />
 </md-input-container>
 
 <md-card *ngFor="let kategorie of filteredKategorien">
-  <md-card-header>
-    <md-card-title>
-      <h2>{{kategorie.titel}}</h2>
-    </md-card-title>
-  </md-card-header>
-  <md-card-content>
-    <ul>
-      <li *ngFor="let gericht of kategorie.gerichte">
-        <span class="nummer">{{gericht.nummer}}</span>
-        <span class="titel">{{gericht.titel}}:</span>
-        <p>{{gericht.beschreibung}}</p>
-        <span class="preis">{{gericht.preis | currency:'EUR':true:'1.2-2'}}</span>
-      </li>
-    </ul>
-  </md-card-content>
+	<md-card-header>
+		<md-card-title>
+			<h2>{{kategorie.titel}}</h2>
+		</md-card-title>
+	</md-card-header>
+	<img md-card-image *ngIf="kategorie.graphik" src="{{'assets/img/speisekarte/' + kategorie.graphik + '.jpg'}}" />
+	<md-card-content>
+		<ul>
+			<li *ngFor="let gericht of kategorie.gerichte;let i=index">
+				<span class="nummer">{{gericht.nummer | number:'2.0-0'}}</span>
+				<span class="titel">{{gericht.titel}}</span>
+				<span class="preis">{{gericht.preis | currency:'EUR':true:'1.2-2'}}</span>
+				<p>{{gericht.beschreibung}}</p>
+			</li>
+		</ul>
+	</md-card-content>
 </md-card>

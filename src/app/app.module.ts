@@ -12,6 +12,7 @@ import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { OeffnungszeitenPipe } from './oeffnungszeiten/oeffnungszeiten.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ImpressumComponent } from './impressum/impressum.component';
 
 const routes: Route[] = [
 	{
@@ -31,6 +32,10 @@ const routes: Route[] = [
 		component: SpeisekarteComponent
 	},
 	{
+		path: 'impressum',
+		component: ImpressumComponent
+	},
+	{
 		path: '**',
 		redirectTo: '/'
 	}
@@ -43,7 +48,8 @@ const routes: Route[] = [
 		OeffnungszeitenComponent,
 		AnfahrtComponent,
 		SpeisekarteComponent,
-		OeffnungszeitenPipe
+		OeffnungszeitenPipe,
+		ImpressumComponent
 	],
 	imports: [
 		BrowserModule,

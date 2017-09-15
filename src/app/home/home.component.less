@@ -1,3 +1,22 @@
 a[md-raised-button] {
     width: 100%;
 }
+
+h3 {
+	display: none;
+}
+
+@media(min-width: 768px) {
+	a[md-raised-button] {
+    	display: none;
+	}
+	h3 {
+		display: block;
+		font-size: xx-large;
+		margin: 1em 0;
+		text-align: center;
+		md-icon {
+			margin-right: .5em;
+		}
+	}
+}

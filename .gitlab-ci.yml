@@ -5,7 +5,7 @@ cache:
     - node_modules/
     
 before_script:
-  - npm install -g @angular-cli@latest
+  - npm install -g @angular/cli@latest
 
 stages:
   - build

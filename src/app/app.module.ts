@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { MaterialModule } from '@angular/material';
 import { RouterModule, Route } from '@angular/router';
+import { Angulartics2Module, Angulartics2Piwik } from 'angulartics2';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -58,6 +59,7 @@ const routes: Route[] = [
 		MaterialModule,
 		CommonModule,
 		FormsModule,
+		Angulartics2Module.forRoot([Angulartics2Piwik]),
 		RouterModule.forRoot(routes)
 	],
 	providers: [

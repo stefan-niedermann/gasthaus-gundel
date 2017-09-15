@@ -1,7 +1,11 @@
-<md-input-container>
-	<span mdPrefix class="mdi mdi-magnify"></span>
-	<input (keyup)="filter($event)" mdInput placeholder="Suchen..." />
-</md-input-container>
+<md-card>
+	<md-card-content>
+		<md-input-container>
+			<span mdPrefix class="mdi mdi-magnify"></span>
+			<input (keyup)="filter($event)" mdInput placeholder="Suchen..." />
+		</md-input-container>
+	</md-card-content>
+</md-card>
 
 <md-card *ngFor="let kategorie of filteredKategorien">
 	<md-card-header>

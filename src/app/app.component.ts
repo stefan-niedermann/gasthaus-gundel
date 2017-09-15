@@ -3,6 +3,7 @@ import { Component, ViewChild, HostListener, AfterViewInit, OnDestroy, OnInit, E
 import { MdSidenav } from "@angular/material";
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
+import { Angulartics2Piwik } from 'angulartics2';
 
 @Component({
 	selector: 'app-root',
@@ -18,6 +19,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	constructor(
 		private router: Router,
+		private angulartics2Piwik: Angulartics2Piwik,
 		public appService: AppService
 	) { }
 
@@ -37,16 +39,17 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.routerSubscription.unsubscribe();
 	}
 
-
 	@HostListener('window:resize', ['$event'])
 	onResize(event) {
-		if (event.target.screen.width > 768) {
-			this.sidenav.mode = 'side';
-			this.sidenav.open();
-		} else {
-			this.sidenav.mode = 'over';
-			this.sidenav.close();
-		}
+		setTimeout(() => {
+			if (event.target.screen.width > 768) {
+				this.sidenav.mode = 'side';
+				this.sidenav.open();
+			} else {
+				this.sidenav.mode = 'over';
+				this.sidenav.close();
+			}
+		});
 	}
 
 	closeSidenavOnNavigate(): void {

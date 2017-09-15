@@ -7,6 +7,7 @@ cache:
 stages:
   - build
   - test
+  - deploy
 
 build_job:
   stage: build
@@ -19,3 +20,14 @@ test_job:
   script:
     - npm install
     - ./node_modules/@angular/cli/bin/ng test --single-run=true --browsers PhantomJS --watch=false
+
+deploy_job:
+  stage: deploy
+  script:
+    - apt-get update
+    - apt-get install lftp
+    - echo "Deploying to production server"
+    - lftp --version
+  only:
+    - master
+  when: manual

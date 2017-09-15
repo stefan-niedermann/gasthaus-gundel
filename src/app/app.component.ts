@@ -45,6 +45,14 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.routerSubscription.unsubscribe();
 	}
 
+	swipeRight(): void {
+		this.sidenav.open();
+	}
+
+	swipeLeft(): void {
+		this.sidenav.close();
+	}
+
 	@HostListener('window:resize', ['$event'])
 	onResize(event): void {
 		setTimeout(() => {

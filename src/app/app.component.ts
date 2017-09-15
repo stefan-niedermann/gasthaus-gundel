@@ -40,7 +40,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	@HostListener('window:resize', ['$event'])
-	onResize(event) {
+	onResize(event): void {
 		setTimeout(() => {
 			if (event.target.screen.width > 768) {
 				this.sidenav.mode = 'side';

@@ -1,25 +1,27 @@
+import { MaterialModule } from '@angular/material';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AnfahrtComponent } from './anfahrt.component';
 
 describe('AnfahrtComponent', () => {
-  let component: AnfahrtComponent;
-  let fixture: ComponentFixture<AnfahrtComponent>;
+	let component: AnfahrtComponent;
+	let fixture: ComponentFixture<AnfahrtComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AnfahrtComponent ]
-    })
-    .compileComponents();
-  }));
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [AnfahrtComponent],
+			imports: [MaterialModule]
+		})
+			.compileComponents();
+	}));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AnfahrtComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(AnfahrtComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should be created', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should be created', () => {
+		expect(component).toBeTruthy();
+	});
 });

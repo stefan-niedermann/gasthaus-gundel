@@ -1,3 +1,4 @@
+import { AppService } from './app.service';
 import { Component, ViewChild, HostListener, AfterViewInit, OnDestroy, OnInit, ElementRef } from '@angular/core';
 import { MdSidenav } from "@angular/material";
 import { Router, NavigationEnd } from '@angular/router';
@@ -10,13 +11,15 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
-
 	routerSubscription: Subscription;
 
 	@ViewChild(MdSidenav) sidenav: MdSidenav;
 	@ViewChild('main') main: ElementRef;
 
-	constructor(private router: Router) { }
+	constructor(
+		private router: Router,
+		public appService: AppService
+	) { }
 
 	ngOnInit(): void {
 		this.routerSubscription = this.router.events.subscribe((event: NavigationEnd) => {
@@ -25,7 +28,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 			}
 		});
 	}
-
 
 	ngAfterViewInit(): void {
 		this.onResize({ target: window });

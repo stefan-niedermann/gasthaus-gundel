@@ -1,3 +1,4 @@
+import { AppService } from './app.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { MaterialModule } from '@angular/material';
@@ -60,6 +61,7 @@ const routes: Route[] = [
 		RouterModule.forRoot(routes)
 	],
 	providers: [
+		AppService,
 		{
 			provide: LOCALE_ID,
 			useValue: 'de-DE'

@@ -1,7 +1,19 @@
 main {
-    height: ~"calc(100% - 56px)";
+    height: ~"calc(100% - 64px)";
 	overflow: auto;
-	background: url(assets/img/spring-landscape.jpg);
+	background-size: cover;
+	&.spring {
+		background-image: url("../assets/img/spring.jpg");
+	}
+	&.summer {
+		background-image: url("../assets/img/summer.jpg");
+	}
+	&.autumn {
+		background-image: url("../assets/img/autumn.jpg");
+	}
+	&.winter {
+		background-image: url("../assets/img/winter.jpg");
+	}
 }
 
 #outlet-wrapper {

@@ -14,7 +14,7 @@
         </button>
 		<h1>Gasthaus Gundel</h1>
 	</md-toolbar>
-	<main #main>
+	<main #main [class]="appService.getSeason()">
 		<div id="outlet-wrapper">
 			<router-outlet></router-outlet>
 		</div>

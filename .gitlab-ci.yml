@@ -12,9 +12,9 @@ run_build:
   stage: build
   script:
     - npm install
-    - ./node_modules/@angular/cli/bin/ng build --target=production --environment=test
+    - ng build -prod
 
 run_test:
   script:
     - npm install
-    - ./node_modules/@angular/cli/bin/ng test --single-run=true --browsers PhantomJS --watch=false
+    - ng test --single-run=true --browsers PhantomJS --watch=false

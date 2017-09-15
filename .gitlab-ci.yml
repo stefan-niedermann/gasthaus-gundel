@@ -3,9 +3,6 @@ image: node:latest
 cache:
   paths:
     - node_modules/
-    
-before_script:
-  - npm install -g @angular/cli@latest
 
 stages:
   - build
@@ -15,9 +12,9 @@ run_build:
   stage: build
   script:
     - npm install
-    - ng build -prod
+    - ./node_modules/@angular/cli/bin/ng build -prod
 
 run_test:
   script:
     - npm install
-    - ng test --single-run=true --browsers PhantomJS --watch=false
+    - ./node_modules/@angular/cli/bin/ng test --single-run=true --browsers PhantomJS --watch=false

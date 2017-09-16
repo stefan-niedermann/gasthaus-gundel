@@ -24,10 +24,12 @@ test_job:
 deploy_job:
   stage: deploy
   script:
+    - echo "Update Apt-Cache"
     - apt-get update
+    - echo "Install lftp"
     - apt-get install lftp
-    - echo "Deploying to production server"
-    - lftp --version
+    - echo "Deploy to production server"
+    - ls
     - lftp -u $FTP_PRODUCTION_USER,$FTP_PRODUCTION_PASSWORD -e "mirror -R ./dist/ $FTP_PRODUCTION_PATH;quit;" $FTP_PRODUCTION_URL
   only:
     - master

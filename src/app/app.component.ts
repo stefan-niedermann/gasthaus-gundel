@@ -4,6 +4,7 @@ import { MdSidenav } from "@angular/material";
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { Angulartics2Piwik } from 'angulartics2';
+import { MetaService } from 'ng2-meta/src';
 
 @Component({
 	selector: 'app-root',
@@ -20,6 +21,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 	constructor(
 		private router: Router,
 		private angulartics2Piwik: Angulartics2Piwik,
+		private metaService: MetaService,
 		public appService: AppService
 	) { }
 

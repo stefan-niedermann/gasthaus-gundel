@@ -40,6 +40,66 @@
 			bietet sich ideal für Veranstaltungen, Betriebs- und Familienfeiern und vielen mehr an.</p>
 		<p>Unser ruhiger <strong>Biergarten</strong> lädt in den Sommermonaten zum Verweilen ein.</p>
 		<p>Wir wünschen Ihnen einen angenehmen Aufenthalt und einen Guten Appetit!</p>
+
+		<div class="spinner-container">
+			<div class="spinner"></div>
+		</div>
+		<style type="text/css">
+			.spinner-container {
+				position: fixed;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				transition: opacity 1s;
+				background-color: #3F51B5;
+				z-index: 2;
+			}
+
+			.spinner {
+				top: calc(50% - 3rem);
+				left: calc(50% - 3rem);
+				font-size: .5rem;
+				position: fixed;
+				border-top: 1em solid rgba(255, 255, 255, 0.2);
+				border-right: 1em solid rgba(255, 255, 255, 0.2);
+				border-bottom: 1em solid rgba(255, 255, 255, 0.2);
+				border-left: 1em solid #ffffff;
+				-webkit-transform: translateZ(0);
+				-ms-transform: translateZ(0);
+				transform: translateZ(0);
+				-webkit-animation: load8 1.8s infinite linear;
+				animation: load8 1.8s infinite linear;
+			}
+
+			.spinner,
+			.spinner:after {
+				border-radius: 50%;
+				width: 10em;
+				height: 10em;
+			}
+
+			@-webkit-keyframes load8 {
+				0% {
+					-webkit-transform: rotate(0deg);
+					transform: rotate(0deg);
+				}
+				100% {
+					-webkit-transform: rotate(360deg);
+					transform: rotate(360deg);
+				}
+			}
+
+			@keyframes load8 {
+				0% {
+					-webkit-transform: rotate(0deg);
+					transform: rotate(0deg);
+				}
+				100% {
+					-webkit-transform: rotate(360deg);
+					transform: rotate(360deg);
+				}
+			}
+		</style>
 	</app-root>
 </body>
 

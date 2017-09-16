@@ -30,8 +30,7 @@ deploy_job:
     - echo "Install lftp"
     - apt-get install lftp
     - echo "Deploy to production server"
-    - export
-    - lftp -u $FTP_PRODUCTION_USER,$FTP_PRODUCTION_PASSWORD -e "mirror -R -v ./dist/ $FTP_PRODUCTION_PATH;quit;" $FTP_PRODUCTION_URL
+    - lftp -u $FTP_PRODUCTION_USER,$FTP_PRODUCTION_PASSWORD -e "mirror -R ./dist/ $FTP_PRODUCTION_PATH;quit;" $FTP_PRODUCTION_URL
   only:
     - master
   when: manual

@@ -4,7 +4,7 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { MaterialModule } from '@angular/material';
 import { RouterModule, Route } from '@angular/router';
 import { Angulartics2Module, Angulartics2Piwik } from 'angulartics2';
-import { MetaModule } from 'ng2-meta/src';
+import { MetaModule, MetaGuard } from '@ngx-meta/core';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -20,57 +20,63 @@ import { ImpressumComponent } from './impressum/impressum.component';
 const routes: Route[] = [
 	{
 		path: '',
-		component: HomeComponent,
-		data: {
-			meta: {
-				title: 'Gasthaus Gundel - Barthelmesaurach',
-				description: '09178/5159 - Lassen Sie sich verwöhnen mit fränkischen, griechischen und saisonalen Spezialitäten in gemütlichen Räumen'
+		canActivateChild: [MetaGuard],
+		children: [
+			{
+				path: 'home',
+				component: HomeComponent,
+				data: {
+					meta: {
+						title: 'Gasthaus Gundel - Barthelmesaurach',
+						description: '09178/5159 - Lassen Sie sich verwöhnen mit fränkischen, griechischen und saisonalen Spezialitäten in gemütlichen Räumen'
+					}
+				}
+			},
+			{
+				path: 'oeffnungszeiten',
+				component: OeffnungszeitenComponent,
+				data: {
+					meta: {
+						title: 'Gasthaus Gundel - Öffnungszeiten',
+						description: '11:00 Uhr - 14:30 Uhr, 17:00 Uhr - 00:00 Uhr, Montag Ruhetag, Warme Küche bis 22:00 Uhr'
+					}
+				}
+			},
+			{
+				path: 'anfahrt',
+				component: AnfahrtComponent,
+				data: {
+					meta: {
+						title: 'Gasthaus Gundel - Anfahrt',
+						description: 'Nördlinger Straße 14, 91126 Barthelmesaurach, via B466'
+					}
+				}
+			},
+			{
+				path: 'speisekarte',
+				component: SpeisekarteComponent,
+				data: {
+					meta: {
+						title: 'Gasthaus Gundel - Speisekarte',
+						description: 'Fränkischen, griechischen und saisonalen Spezialitäten, wie Souvlaki, Karpfen, Salate, diverse Grillplatten, Kalamaria und viele mehr.'
+					}
+				}
+			},
+			{
+				path: 'impressum',
+				component: ImpressumComponent,
+				data: {
+					meta: {
+						title: 'Gasthaus Gundel - Impressum',
+						description: 'Inhaltliche und technische Verantwortliche und rechtliche Informationen.'
+					}
+				}
+			},
+			{
+				path: '**',
+				redirectTo: '/home'
 			}
-		}
-	},
-	{
-		path: 'oeffnungszeiten',
-		component: OeffnungszeitenComponent,
-		data: {
-			meta: {
-				title: 'Gasthaus Gundel - Öffnungszeiten',
-				description: '11:00 Uhr - 14:30 Uhr, 17:00 Uhr - 00:00 Uhr, Montag Ruhetag, Warme Küche bis 22:00 Uhr'
-			}
-		}
-	},
-	{
-		path: 'anfahrt',
-		component: AnfahrtComponent,
-		data: {
-			meta: {
-				title: 'Gasthaus Gundel - Anfahrt',
-				description: 'Nördlinger Straße 14, 91126 Barthelmesaurach, via B466'
-			}
-		}
-	},
-	{
-		path: 'speisekarte',
-		component: SpeisekarteComponent,
-		data: {
-			meta: {
-				title: 'Gasthaus Gundel - Speisekarte',
-				description: 'Fränkischen, griechischen und saisonalen Spezialitäten, wie Souvlaki, Karpfen, Salate, diverse Grillplatten, Kalamaria und viele mehr.'
-			}
-		}
-	},
-	{
-		path: 'impressum',
-		component: ImpressumComponent,
-		data: {
-			meta: {
-				title: 'Gasthaus Gundel - Impressum',
-				description: 'Inhaltliche und technische Verantwortliche und rechtliche Informationen.'
-			}
-		}
-	},
-	{
-		path: '**',
-		redirectTo: '/'
+		]
 	}
 ]
 

@@ -4,7 +4,7 @@ import { MdSidenav } from "@angular/material";
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { Angulartics2Piwik } from 'angulartics2';
-import { MetaService } from 'ng2-meta/src';
+import { MetaService } from '@ngx-meta/core';
 
 @Component({
 	selector: 'app-root',

@@ -1,3 +1,4 @@
+import { MetaModule, MetaService, MetaLoader } from '@ngx-meta/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppService } from './app.service';
 import { Angulartics2Module, Angulartics2Piwik } from 'angulartics2';
@@ -18,12 +19,15 @@ describe('AppComponent', () => {
 				MaterialModule,
 				RouterModule.forRoot([]),
 				Angulartics2Module,
-				BrowserAnimationsModule
+				BrowserAnimationsModule,
+				MetaModule
 			],
 			providers: [
 				{ provide: APP_BASE_HREF, useValue: '/' },
 				{ provide: Angulartics2Piwik, useValue: {} },
-				{ provide: AppService, useClass: AppService }
+				{ provide: AppService, useClass: AppService },
+				{ provide: MetaService, useClass: MetaService },
+				{ provide: MetaLoader, useClass: MetaLoader }
 			]
 		}).compileComponents();
 	}));

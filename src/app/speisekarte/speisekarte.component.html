@@ -19,7 +19,7 @@
 			<li *ngFor="let gericht of kategorie.gerichte;let i=index">
 				<span class="nummer">{{gericht.nummer | number:'2.0-0'}}</span>
 				<span class="titel">{{gericht.titel}}</span>
-				<span class="preis">{{gericht.preis | currency:'EUR':true:'1.2-2'}}</span>
+				<span class="preis">{{gericht.preis | currency:'EUR':true:'1.2-2'}}</span><span *ngIf="gericht.altPreis">/{{gericht.altPreis | currency:'EUR':true:'1.2-2'}}</span>
 				<p>{{gericht.beschreibung}}</p>
 			</li>
 		</ul>

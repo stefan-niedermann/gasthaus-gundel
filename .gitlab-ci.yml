@@ -1,5 +1,3 @@
-image: node:latest
-
 cache:
   paths:
     - node_modules/
@@ -11,12 +9,14 @@ stages:
   - deploy
 
 build_job:
+  image: node:latest
   stage: build
   script:
     - npm install
     - ./node_modules/@angular/cli/bin/ng build -prod
 
 test_job:
+  image: node:latest
   stage: test
   script:
     - npm install
@@ -25,11 +25,8 @@ test_job:
 deploy_job:
   stage: deploy
   script:
-    - echo "Update Apt-Cache"
     - apt-get update
-    - echo "Install lftp"
     - apt-get install lftp
-    - echo "Deploy to production server"
     - lftp -u $FTP_PRODUCTION_USER,$FTP_PRODUCTION_PASSWORD -e "mirror -R ./dist/ $FTP_PRODUCTION_PATH/www-$CI_COMMIT_SHA;rm -r $FTP_PRODUCTION_PATH/www-alt;mv $FTP_PRODUCTION_PATH/www $FTP_PRODUCTION_PATH/www-alt;mv $FTP_PRODUCTION_PATH/www-$CI_COMMIT_SHA $FTP_PRODUCTION_PATH/www;quit;" $FTP_PRODUCTION_URL
   only:
     - master

@@ -27,7 +27,7 @@ deploy_job:
   stage: deploy
   script:
     - apt-get update
-    - apt-get -y install lftp
+    - apt-get --yes --force-yes install lftp
     - lftp -u $FTP_PRODUCTION_USER,$FTP_PRODUCTION_PASSWORD -e "mirror -R ./dist/ $FTP_PRODUCTION_PATH/www-$CI_COMMIT_SHA;rm -r $FTP_PRODUCTION_PATH/www-alt;mv $FTP_PRODUCTION_PATH/www $FTP_PRODUCTION_PATH/www-alt;mv $FTP_PRODUCTION_PATH/www-$CI_COMMIT_SHA $FTP_PRODUCTION_PATH/www;quit;" $FTP_PRODUCTION_URL
   only:
     - master

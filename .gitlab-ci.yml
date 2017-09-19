@@ -1,3 +1,5 @@
+image: node:slim
+
 cache:
   paths:
     - node_modules/
@@ -9,20 +11,19 @@ stages:
   - deploy
 
 build_job:
-  image: node:latest
   stage: build
   script:
     - npm install
     - ./node_modules/@angular/cli/bin/ng build -prod
 
 test_job:
-  image: node:latest
   stage: test
   script:
     - npm install
     - ./node_modules/@angular/cli/bin/ng test --single-run=true --browsers PhantomJS --watch=false
 
 deploy_job:
+  image: node:stable-slim
   stage: deploy
   script:
     - apt-get update

@@ -23,7 +23,7 @@ test_job:
     - ./node_modules/@angular/cli/bin/ng test --single-run=true --browsers PhantomJS --watch=false
 
 deploy_job:
-  image: node:stable-slim
+  image: debian:stable-slim
   stage: deploy
   script:
     - apt-get update

@@ -28,7 +28,7 @@ deploy_job:
   script:
     - apt-get update
     - apt-get --yes --force-yes install lftp
-    - lftp -v -u $FTP_PRODUCTION_USER,$FTP_PRODUCTION_PASSWORD -c "set ftp:ssl-allow no; mirror -R ./dist/ $FTP_PRODUCTION_PATH-$CI_COMMIT_SHA; rm -r $FTP_PRODUCTION_PATH-alt; mv $FTP_PRODUCTION_PATH $FTP_PRODUCTION_PATH/www-alt; mv $FTP_PRODUCTION_PATH-$CI_COMMIT_SHA $FTP_PRODUCTION_PATH;" $FTP_PRODUCTION_URL
+    - lftp -u $FTP_PRODUCTION_USER,$FTP_PRODUCTION_PASSWORD -c "set ftp:ssl-allow no; mirror -R ./dist/ $FTP_PRODUCTION_PATH-$CI_COMMIT_SHA; rm -r $FTP_PRODUCTION_PATH-alt; mv $FTP_PRODUCTION_PATH $FTP_PRODUCTION_PATH/www-alt; mv $FTP_PRODUCTION_PATH-$CI_COMMIT_SHA $FTP_PRODUCTION_PATH;" $FTP_PRODUCTION_URL
   only:
     - master
   when: manual

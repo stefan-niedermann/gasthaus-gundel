@@ -28,7 +28,7 @@ const routes: Route[] = [
 				data: {
 					meta: {
 						title: 'Gasthaus Gundel - Barthelmesaurach',
-						description: '09178/5159 - Lassen Sie sich verwöhnen mit fränkischen, griechischen und saisonalen Spezialitäten in gemütlichen Räumen'
+						description: '☎ Tel.: 09178 / 1503 - Lassen Sie sich verwöhnen mit fränkischen, griechischen und saisonalen Spezialitäten in gemütlichen Räumen'
 					}
 				}
 			},

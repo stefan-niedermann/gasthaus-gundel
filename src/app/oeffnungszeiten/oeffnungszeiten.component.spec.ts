@@ -3,6 +3,7 @@ import { MaterialModule } from '@angular/material';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OeffnungszeitenComponent } from './oeffnungszeiten.component';
+import { AppService } from 'app/app.service';
 
 describe('OeffnungszeitenComponent', () => {
 	let component: OeffnungszeitenComponent;
@@ -16,6 +17,12 @@ describe('OeffnungszeitenComponent', () => {
 			],
 			imports: [
 				MaterialModule
+			],
+			providers: [
+				{
+					provide: AppService,
+					useClass: AppService
+				}
 			]
 		})
 			.compileComponents();

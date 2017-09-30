@@ -2,6 +2,7 @@ import { MaterialModule } from '@angular/material';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AnfahrtComponent } from './anfahrt.component';
+import { AppService } from 'app/app.service';
 
 describe('AnfahrtComponent', () => {
 	let component: AnfahrtComponent;
@@ -10,7 +11,13 @@ describe('AnfahrtComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [AnfahrtComponent],
-			imports: [MaterialModule]
+			imports: [MaterialModule],
+			providers: [
+				{
+					provide: AppService,
+					useClass: AppService
+				}
+			]
 		})
 			.compileComponents();
 	}));

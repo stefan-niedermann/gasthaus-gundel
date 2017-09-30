@@ -3,6 +3,7 @@ import { MaterialModule } from '@angular/material';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SpeisekarteComponent } from './speisekarte.component';
+import { AppService } from 'app/app.service';
 
 describe('SpeisekarteComponent', () => {
 	let component: SpeisekarteComponent;
@@ -14,6 +15,12 @@ describe('SpeisekarteComponent', () => {
 			imports: [
 				MaterialModule,
 				BrowserAnimationsModule
+			],
+			providers: [
+				{
+					provide: AppService,
+					useClass: AppService
+				}
 			]
 		})
 			.compileComponents();

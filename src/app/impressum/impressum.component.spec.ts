@@ -2,6 +2,7 @@ import { MaterialModule } from '@angular/material';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ImpressumComponent } from './impressum.component';
+import { AppService } from 'app/app.service';
 
 describe('ImpressumComponent', () => {
 	let component: ImpressumComponent;
@@ -10,7 +11,13 @@ describe('ImpressumComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [ImpressumComponent],
-			imports: [MaterialModule]
+			imports: [MaterialModule],
+			providers: [
+				{
+					provide: AppService,
+					useClass: AppService
+				}
+			]
 		})
 			.compileComponents();
 	}));

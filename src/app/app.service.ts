@@ -1,9 +1,19 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Router, NavigationStart, NavigationEnd, ActivatedRoute, RoutesRecognized } from '@angular/router';
 
 @Injectable()
 export class AppService {
 
-	constructor() { }
+	title: BehaviorSubject<string> = new BehaviorSubject<string>('Gasthaus Gundel');
+
+	getTitle(): string {
+		return this.title.getValue();
+	}
+
+	setTitle(title: string) {
+		return this.title.next(title);
+	}
 
 	getSeason() {
 		const month = new Date().getMonth();

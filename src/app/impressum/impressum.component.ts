@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'app/app.service';
 
 @Component({
   selector: 'app-impressum',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImpressumComponent implements OnInit {
 
-  constructor() { }
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
+    this.appService.setTitle('Impressum');
   }
 
 }

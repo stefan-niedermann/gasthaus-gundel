@@ -1,16 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Kategorie, kategorien, Gericht } from "app/speisekarte/speisekarte";
+import { AppService } from 'app/app.service';
 
 @Component({
 	selector: 'app-speisekarte',
 	templateUrl: './speisekarte.component.html',
 	styleUrls: ['./speisekarte.component.less']
 })
-export class SpeisekarteComponent {
+export class SpeisekarteComponent implements OnInit {
 
 	filteredKategorien: Kategorie[] = Array.apply([], kategorien);
 
-	constructor() { }
+	constructor(private appService: AppService) { }
+
+	ngOnInit(): void {
+		this.appService.setTitle('Speisekarte');
+	}
 
 	filter(event): void {
 		const term: string = event.target.value.trim().toLowerCase();

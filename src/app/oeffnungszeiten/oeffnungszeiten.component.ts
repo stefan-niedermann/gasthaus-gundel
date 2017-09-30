@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Wochentag, oeffnungszeiten, Oeffnungszeit } from "app/oeffnungszeiten/oeffnungszeiten";
+import { AppService } from 'app/app.service';
 
 @Component({
   selector: 'app-oeffnungszeiten',
@@ -10,9 +11,10 @@ export class OeffnungszeitenComponent implements OnInit {
 
   oeffnungszeiten: Wochentag[] = oeffnungszeiten;
 
-  constructor() { }
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
+    this.appService.setTitle('Öffnungszeiten');
   }
 
   isOpen(): boolean {

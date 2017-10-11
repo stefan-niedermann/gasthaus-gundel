@@ -1,4 +1,4 @@
-import { MatButtonModule, MatCardModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatMenuModule, MatInputModule } from '@angular/material';
+import { MaterialModule } from 'app/material/material.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AnfahrtComponent } from './anfahrt.component';
@@ -12,14 +12,7 @@ describe('AnfahrtComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [AnfahrtComponent],
 			imports: [
-				MatButtonModule,
-				MatCardModule,
-				MatToolbarModule,
-				MatSidenavModule,
-				MatIconModule,
-				MatListModule,
-				MatMenuModule,
-				MatInputModule,
+				MaterialModule
 			],
 			providers: [
 				{

@@ -25,9 +25,9 @@ describe('AppComponent', () => {
 			providers: [
 				{ provide: APP_BASE_HREF, useValue: '/' },
 				{ provide: Angulartics2Piwik, useValue: {} },
-				{ provide: AppService, useClass: AppService },
-				{ provide: MetaService, useClass: MetaService },
-				{ provide: MetaLoader, useClass: MetaLoader }
+				AppService,
+				MetaService,
+				MetaLoader
 			]
 		}).compileComponents();
 	}));

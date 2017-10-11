@@ -4,6 +4,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SpeisekarteComponent } from './speisekarte.component';
 import { AppService } from 'app/app.service';
+import { SpeisekarteService } from 'app/speisekarte/speisekarte.service';
 
 describe('SpeisekarteComponent', () => {
 	let component: SpeisekarteComponent;
@@ -17,6 +18,7 @@ describe('SpeisekarteComponent', () => {
 				BrowserAnimationsModule
 			],
 			providers: [
+				SpeisekarteService,
 				{
 					provide: AppService,
 					useClass: AppService

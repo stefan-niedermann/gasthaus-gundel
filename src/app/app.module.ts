@@ -16,6 +16,7 @@ import { FormsModule } from "@angular/forms";
 import { OeffnungszeitenPipe } from './oeffnungszeiten/oeffnungszeiten.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ImpressumComponent } from './impressum/impressum.component';
+import { SpeisekarteService } from 'app/speisekarte/speisekarte.service';
 
 const routes: Route[] = [
 	{
@@ -102,6 +103,7 @@ const routes: Route[] = [
 	],
 	providers: [
 		AppService,
+		SpeisekarteService,
 		{
 			provide: LOCALE_ID,
 			useValue: 'de-DE'

@@ -1,6 +1,6 @@
 import { AppService } from './app.service';
 import { Component, ViewChild, HostListener, AfterViewInit, OnDestroy, OnInit, ElementRef } from '@angular/core';
-import { MdSidenav } from "@angular/material";
+import { MatSidenav } from "@angular/material";
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { Angulartics2Piwik } from 'angulartics2';
@@ -15,7 +15,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	routerSubscription: Subscription;
 
-	@ViewChild(MdSidenav) sidenav: MdSidenav;
+	@ViewChild(MatSidenav) sidenav: MatSidenav;
 	@ViewChild('main') main: ElementRef;
 
 	constructor(

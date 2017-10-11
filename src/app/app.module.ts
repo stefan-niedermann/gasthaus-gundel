@@ -1,7 +1,7 @@
 import { AppService } from './app.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
-import { MaterialModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatMenuModule, MatListModule, MatInputModule } from '@angular/material';
 import { RouterModule, Route } from '@angular/router';
 import { Angulartics2Module, Angulartics2Piwik } from 'angulartics2';
 import { MetaModule, MetaGuard } from '@ngx-meta/core';
@@ -94,7 +94,14 @@ const routes: Route[] = [
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
-		MaterialModule,
+		MatButtonModule,
+		MatCardModule,
+		MatToolbarModule,
+		MatSidenavModule,
+		MatIconModule,
+		MatListModule,
+		MatMenuModule,
+		MatInputModule,
 		CommonModule,
 		FormsModule,
 		Angulartics2Module.forRoot([Angulartics2Piwik]),

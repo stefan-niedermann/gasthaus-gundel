@@ -1,5 +1,5 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatMenuModule, MatInputModule } from '@angular/material';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SpeisekarteComponent } from './speisekarte.component';
@@ -14,7 +14,14 @@ describe('SpeisekarteComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [SpeisekarteComponent],
 			imports: [
-				MaterialModule,
+				MatButtonModule,
+				MatCardModule,
+				MatToolbarModule,
+				MatSidenavModule,
+				MatIconModule,
+				MatListModule,
+				MatMenuModule,
+				MatInputModule,
 				BrowserAnimationsModule
 			],
 			providers: [

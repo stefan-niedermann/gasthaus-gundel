@@ -1,5 +1,5 @@
 import { OeffnungszeitenPipe } from './oeffnungszeiten.pipe';
-import { MaterialModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatMenuModule, MatInputModule } from '@angular/material';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OeffnungszeitenComponent } from './oeffnungszeiten.component';
@@ -16,7 +16,14 @@ describe('OeffnungszeitenComponent', () => {
 				OeffnungszeitenPipe
 			],
 			imports: [
-				MaterialModule
+				MatButtonModule,
+				MatCardModule,
+				MatToolbarModule,
+				MatSidenavModule,
+				MatIconModule,
+				MatListModule,
+				MatMenuModule,
+				MatInputModule,
 			],
 			providers: [
 				{

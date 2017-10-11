@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppService } from './app.service';
 import { Angulartics2Module, Angulartics2Piwik } from 'angulartics2';
 import { RouterModule } from '@angular/router';
-import { MaterialModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatMenuModule, MatInputModule } from '@angular/material';
 import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
@@ -16,7 +16,14 @@ describe('AppComponent', () => {
 				AppComponent
 			],
 			imports: [
-				MaterialModule,
+				MatButtonModule,
+				MatCardModule,
+				MatToolbarModule,
+				MatSidenavModule,
+				MatIconModule,
+				MatListModule,
+				MatMenuModule,
+				MatInputModule,
 				RouterModule.forRoot([]),
 				Angulartics2Module,
 				BrowserAnimationsModule,

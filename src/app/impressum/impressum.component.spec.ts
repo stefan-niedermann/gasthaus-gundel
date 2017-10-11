@@ -1,4 +1,4 @@
-import { MaterialModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatMenuModule, MatInputModule } from '@angular/material';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ImpressumComponent } from './impressum.component';
@@ -11,7 +11,16 @@ describe('ImpressumComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [ImpressumComponent],
-			imports: [MaterialModule],
+			imports: [
+				MatButtonModule,
+				MatCardModule,
+				MatToolbarModule,
+				MatSidenavModule,
+				MatIconModule,
+				MatListModule,
+				MatMenuModule,
+				MatInputModule,
+			],
 			providers: [
 				{
 					provide: AppService,

@@ -9,7 +9,7 @@ stages:
   - deploy
 
 build_job:
-  image: node:slim
+  image: node:latest
   stage: build
   script:
     - npm install

@@ -44,7 +44,9 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	ngOnDestroy(): void {
-		this.routerSubscription.unsubscribe();
+		if (this.routerSubscription) {
+			this.routerSubscription.unsubscribe();
+		}
 	}
 
 	swipeRight(): void {

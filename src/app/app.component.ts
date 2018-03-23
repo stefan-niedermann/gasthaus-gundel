@@ -3,7 +3,7 @@ import { Component, ViewChild, HostListener, AfterViewInit, OnDestroy, OnInit, E
 import { MatSidenav } from "@angular/material";
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
-import { Angulartics2Piwik } from 'angulartics2';
+import { Angulartics2Piwik } from 'angulartics2/piwik';
 import { MetaService } from '@ngx-meta/core';
 
 @Component({

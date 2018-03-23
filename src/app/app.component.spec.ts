@@ -1,7 +1,8 @@
 import { MetaModule, MetaService, MetaLoader } from '@ngx-meta/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppService } from './app.service';
-import { Angulartics2Module, Angulartics2Piwik } from 'angulartics2';
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2Piwik } from 'angulartics2/piwik';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from 'app/material/material.module';
 import { TestBed, async } from '@angular/core/testing';
@@ -19,7 +20,7 @@ describe('AppComponent', () => {
 				MaterialModule,
 				RouterModule.forRoot([]),
 				Angulartics2Module,
-				BrowserAnimationsModule,
+				NoopAnimationsModule,
 				MetaModule
 			],
 			providers: [

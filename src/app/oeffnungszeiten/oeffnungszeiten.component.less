@@ -1,15 +1,8 @@
-#warme-kueche {
-    padding: 1em;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-}
-
 ul {
     padding: 0;
     list-style: none;
 }
-    li {
+li {
     display: flex;
     flex-wrap: wrap;
     flex: 1 1 auto;
@@ -19,12 +12,15 @@ ul {
 .titel {
     font-weight: bold;
     padding-right: 1rem;
-    
+    &::after {
+        content: ":";
+    }
 }
 
 .zeiten {
     width: 100%;
 }
+
 @media (min-width: 980px) {
     li {
         flex-wrap: nowrap;

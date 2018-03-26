@@ -17,10 +17,12 @@
 	<mat-card-content>
 		<ul>
 			<li *ngFor="let gericht of kategorie.gerichte;let i=index">
-				<span class="nummer">{{gericht.nummer | number:'2.0-0'}}</span>
-				<span class="titel">{{gericht.titel}}</span>
-				<span class="preis">{{gericht.preis | currency:'EUR':'symbol':'1.2-2'}}</span>
-				<span *ngIf="gericht.altPreis">/{{gericht.altPreis | currency:'EUR':'symbol':'1.2-2'}}</span>
+				<span>{{gericht.nummer | number:'2.0-0'}}</span>
+				<strong>{{gericht.titel}}</strong>
+				<mat-chip-list>
+					<mat-chip color="primary" selected="true">{{gericht.preis | currency:'EUR':'symbol':'1.2-2'}}</mat-chip>
+					<mat-chip  *ngIf="gericht.altPreis" color="primary" selected="true">{{gericht.altPreis | currency:'EUR':'symbol':'1.2-2'}}</mat-chip>
+				</mat-chip-list>
 				<p>{{gericht.beschreibung}}</p>
 			</li>
 		</ul>

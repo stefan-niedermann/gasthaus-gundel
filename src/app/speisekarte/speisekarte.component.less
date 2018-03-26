@@ -1,6 +1,6 @@
 mat-form-field {
     width: 100%;
-	font-size: x-large;
+	font-size: larger;
 	.mdi-magnify {
 		margin-right: .5em;
 	}
@@ -23,25 +23,24 @@ ul {
 li {
 	display: flex;
 	flex-wrap: wrap;
+	align-items: baseline;
 	margin-bottom: 1em;
 	&:last-child {
 		margin-bottom: 0;
 	}
-}
-
-.nummer {
-	margin-right: .5em;
-}
-.titel {
-	flex: 1 0 auto;
-	font-weight: bold;
-}
-.preis {
-	flex: 1 1 auto;
-	text-align: right;
-}
-li p {
-	margin: .2em 0 0 0;
-	text-align: left;
-	flex-basis: 100%;
+	// Nummer
+	:first-child {
+		margin-right: .5em;
+	}
+	// Titel
+	strong {
+		flex: 1 0 auto;
+		font-weight: bold;
+	}
+	// Beschreibung
+	p {
+		margin: .2em 0 0 0;
+		text-align: left;
+		flex-basis: 100%;
+	}
 }

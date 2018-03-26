@@ -11,7 +11,7 @@ export class OeffnungszeitenPipe implements PipeTransform {
 
   transform(value: Oeffnungszeit[], args?: any): any {
     if (value.length < 1) {
-      return 'Geschlossen';
+      return 'Ruhetag';
     }
     let oeffnungszeitenStr: string = '';
     value.map((oeffnungszeit: Oeffnungszeit) => {

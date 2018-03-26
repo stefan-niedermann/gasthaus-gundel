@@ -5,9 +5,9 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <p id="warme-kueche" class="mdi mdi-information-outline">
-      Warme Küche bis 22:00 Uhr.
-    </p>
+    <mat-chip-list>
+      <mat-chip color="primary" selected="true">Warme Küche bis 22:00 Uhr</mat-chip>
+    </mat-chip-list>
     <!--p>
       Öffnet in: {{opensIn()}}
     </p>
@@ -16,7 +16,7 @@
     </p-->
     <ul>
       <li *ngFor="let oeffnungszeit of oeffnungszeiten">
-        <span class="titel">{{oeffnungszeit.titel}}:</span>
+        <span class="titel">{{oeffnungszeit.titel}}</span>
         <span class="zeiten">{{oeffnungszeit.oeffnungszeiten | oeffnungszeiten}}</span>
       </li>
     </ul>

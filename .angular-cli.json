@@ -10,6 +10,7 @@
       "assets": [
         "assets",
         "favicon.png",
+        "manifest.json",
         ".htaccess",
         "google4421ae489915d0f9.html"
       ],

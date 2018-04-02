@@ -10,37 +10,37 @@ import { AppService } from 'app/app.service';
 
 describe('OeffnungszeitenComponent', () => {
 
-	registerLocaleData(localeDe, localeDeExtra);
+  registerLocaleData(localeDe, localeDeExtra);
 
-	let component: OeffnungszeitenComponent;
-	let fixture: ComponentFixture<OeffnungszeitenComponent>;
+  let component: OeffnungszeitenComponent;
+  let fixture: ComponentFixture<OeffnungszeitenComponent>;
 
-	beforeEach(async(() => {
-		TestBed.configureTestingModule({
-			declarations: [
-				OeffnungszeitenComponent,
-				OeffnungszeitenPipe
-			],
-			imports: [
-				MaterialModule
-			],
-			providers: [
-				{
-					provide: AppService,
-					useClass: AppService
-				}
-			]
-		})
-			.compileComponents();
-	}));
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        OeffnungszeitenComponent,
+        OeffnungszeitenPipe
+      ],
+      imports: [
+        MaterialModule
+      ],
+      providers: [
+        {
+          provide: AppService,
+          useClass: AppService
+        }
+      ]
+    })
+      .compileComponents();
+  }));
 
-	beforeEach(() => {
-		fixture = TestBed.createComponent(OeffnungszeitenComponent);
-		component = fixture.componentInstance;
-		fixture.detectChanges();
-	});
+  beforeEach(() => {
+    fixture = TestBed.createComponent(OeffnungszeitenComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-	it('should be created', () => {
-		expect(component).toBeTruthy();
-	});
+  it('should be created', () => {
+    expect(component).toBeTruthy();
+  });
 });

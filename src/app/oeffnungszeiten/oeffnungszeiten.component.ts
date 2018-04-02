@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Wochentag, oeffnungszeiten, Oeffnungszeit } from "app/oeffnungszeiten/oeffnungszeiten";
+import { Wochentag, oeffnungszeiten, Oeffnungszeit } from 'app/oeffnungszeiten/oeffnungszeiten';
 import { AppService } from 'app/app.service';
 
 @Component({
@@ -23,29 +23,29 @@ export class OeffnungszeitenComponent implements OnInit {
 
   opensIn() {
     const currentDate: Date = new Date();
-    const oeffnungszeiten: Oeffnungszeit[] = this.oeffnungszeiten[currentDate.getDay()].oeffnungszeiten;
-    for (let i = 0; i < oeffnungszeiten.length; i++) {
-      if (currentDate.getHours() < oeffnungszeiten[i].von.h) {
-        return oeffnungszeiten[i].von.h - currentDate.getHours();
+    const oeffnungszeitenHeute: Oeffnungszeit[] = this.oeffnungszeiten[currentDate.getDay()].oeffnungszeiten;
+    for (let i = 0; i < oeffnungszeitenHeute.length; i++) {
+      if (currentDate.getHours() < oeffnungszeitenHeute[i].von.h) {
+        return oeffnungszeitenHeute[i].von.h - currentDate.getHours();
       }
     }
   }
 
   closesIn() {
     const currentDate: Date = new Date();
-    const oeffnungszeiten: Oeffnungszeit[] = this.oeffnungszeiten[currentDate.getDay()].oeffnungszeiten;
-    for (let i = 0; i < oeffnungszeiten.length; i++) {
-      let bisH = oeffnungszeiten[i].bis ? oeffnungszeiten[i].bis.h : 24;
-      let bisM = oeffnungszeiten[i].bis ? oeffnungszeiten[i].bis.m : 60;
-      let bisDate: Date = new Date(0);
+    const oeffnungszeitenHeute: Oeffnungszeit[] = this.oeffnungszeiten[currentDate.getDay()].oeffnungszeiten;
+    for (let i = 0; i < oeffnungszeitenHeute.length; i++) {
+      const bisH = oeffnungszeitenHeute[i].bis ? oeffnungszeitenHeute[i].bis.h : 24;
+      const bisM = oeffnungszeitenHeute[i].bis ? oeffnungszeitenHeute[i].bis.m : 60;
+      const bisDate: Date = new Date(0);
       bisDate.setHours(bisH);
       bisDate.setMinutes(bisM);
       if (
-        currentDate.getHours() >= oeffnungszeiten[i].von.h &&
-        currentDate.getMinutes() >= oeffnungszeiten[i].von.m &&
+        currentDate.getHours() >= oeffnungszeitenHeute[i].von.h &&
+        currentDate.getMinutes() >= oeffnungszeitenHeute[i].von.m &&
         currentDate < bisDate
       ) {
-        let d: Date = new Date(0);
+        const d: Date = new Date(0);
         d.setHours(bisH - currentDate.getHours());
         d.setMinutes(bisM - currentDate.getMinutes())
         return d;

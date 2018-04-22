@@ -9,14 +9,18 @@
 				<mat-icon class="mdi mdi-map-marker"></mat-icon>Anfahrt</a>
 			<a mat-list-item routerLinkActive="active" (click)="closeSidenavOnNavigate()" routerLink="/speisekarte">
 				<mat-icon class="mdi mdi-silverware"></mat-icon>Speisekarte</a>
-			<a mat-list-item routerLinkActive="active" (click)="closeSidenavOnNavigate()" routerLink="/impressum">
-				<mat-icon class="mdi mdi-information-outline"></mat-icon>Impressum</a>
+			<div class="bottom">
+				<a mat-list-item routerLinkActive="active" (click)="closeSidenavOnNavigate()" routerLink="/impressum">
+					<mat-icon class="mdi mdi-information-outline"></mat-icon>Impressum</a>
+				<a mat-list-item routerLinkActive="active" (click)="closeSidenavOnNavigate()" routerLink="/datenschutzerklaerung">
+					<mat-icon class="mdi mdi-verified"></mat-icon>Datenschutzerklärung</a>
+			</div>
 		</mat-nav-list>
 	</mat-sidenav>
 	<mat-toolbar color="primary">
 		<button mat-icon-button (click)="sidenav.toggle()">
-            <mat-icon class="mdi mdi-menu"></mat-icon>
-        </button>
+			<mat-icon class="mdi mdi-menu"></mat-icon>
+		</button>
 		<h1>{{appService.getTitle()}}</h1>
 	</mat-toolbar>
 	<main #main [class]="appService.getSeason()">

@@ -23,6 +23,7 @@ import { ImpressumComponent } from './impressum/impressum.component';
 import { SpeisekarteService } from 'app/speisekarte/speisekarte.service';
 import { RoutingModule } from 'app/routing/routing.module';
 import { MaterialModule } from 'app/material/material.module';
+import { DatenschutzerklaerungComponent } from './datenschutzerklaerung/datenschutzerklaerung.component';
 
 registerLocaleData(localeDe, localeDeExtra);
 
@@ -34,7 +35,8 @@ registerLocaleData(localeDe, localeDeExtra);
     AnfahrtComponent,
     SpeisekarteComponent,
     OeffnungszeitenPipe,
-    ImpressumComponent
+    ImpressumComponent,
+    DatenschutzerklaerungComponent
   ],
   imports: [
     BrowserModule,

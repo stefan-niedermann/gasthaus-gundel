@@ -1,15 +1,17 @@
+import { AppService } from 'app/app.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-datenschutzerklaerung',
-  templateUrl: './datenschutzerklaerung.component.html',
-  styleUrls: ['./datenschutzerklaerung.component.less']
+	selector: 'app-datenschutzerklaerung',
+	templateUrl: './datenschutzerklaerung.component.html',
+	styleUrls: ['./datenschutzerklaerung.component.less']
 })
 export class DatenschutzerklaerungComponent implements OnInit {
 
-  constructor() { }
+	constructor(private appService: AppService) { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+		this.appService.setTitle('Datenschutzerklärung');
+	}
 
 }

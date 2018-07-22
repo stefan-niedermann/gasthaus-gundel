@@ -2,7 +2,7 @@ import { AppService } from './app.service';
 import { Component, ViewChild, HostListener, AfterViewInit, OnDestroy, OnInit, ElementRef } from '@angular/core';
 import { MatSidenav } from '@angular/material';
 import { Router, NavigationEnd } from '@angular/router';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 import { Angulartics2Piwik } from 'angulartics2/piwik';
 import { MetaService } from '@ngx-meta/core';
 

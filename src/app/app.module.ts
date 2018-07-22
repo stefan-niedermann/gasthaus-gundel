@@ -1,10 +1,8 @@
 import { AppService } from './app.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
-import { RouterModule, Route } from '@angular/router';
 import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2Piwik } from 'angulartics2/piwik';
-import { MetaModule, MetaGuard } from '@ngx-meta/core';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
@@ -45,7 +43,6 @@ registerLocaleData(localeDe, localeDeExtra);
     CommonModule,
     FormsModule,
     Angulartics2Module.forRoot([Angulartics2Piwik]),
-    MetaModule.forRoot(),
     RoutingModule,
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production})
   ],

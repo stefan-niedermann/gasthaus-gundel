@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Wochentag, oeffnungszeiten, Oeffnungszeit } from 'app/oeffnungszeiten/oeffnungszeiten';
 import { AppService } from 'app/app.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-oeffnungszeiten',
@@ -11,10 +12,16 @@ export class OeffnungszeitenComponent implements OnInit {
 
   oeffnungszeiten: Wochentag[] = oeffnungszeiten;
 
-  constructor(private appService: AppService) { }
+  constructor(
+    private appService: AppService,
+    private title: Title,
+    private meta: Meta
+  ) { }
 
   ngOnInit() {
     this.appService.setTitle('Öffnungszeiten');
+    this.title.setTitle('Gasthaus Gundel - Öffnungszeiten');
+    this.meta.updateTag({name: 'description', content: '11:00 Uhr - 14:30 Uhr, 17:00 Uhr - 00:00 Uhr, Montag Ruhetag, Warme Küche bis 22:00 Uhr'});
   }
 
   isOpen(): boolean {

@@ -1,4 +1,3 @@
-import { MetaModule, MetaService, MetaLoader } from '@ngx-meta/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppService } from './app.service';
 import { Angulartics2Module } from 'angulartics2';
@@ -20,15 +19,12 @@ describe('AppComponent', () => {
         MaterialModule,
         RouterModule.forRoot([]),
         Angulartics2Module,
-        NoopAnimationsModule,
-        MetaModule
+        NoopAnimationsModule
       ],
       providers: [
         { provide: APP_BASE_HREF, useValue: '/' },
         { provide: Angulartics2Piwik, useValue: {} },
-        AppService,
-        MetaService,
-        MetaLoader
+        AppService
       ]
     }).compileComponents();
   }));

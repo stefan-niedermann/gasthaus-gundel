@@ -1,5 +1,6 @@
 import { AppService } from 'app/app.service';
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
 	selector: 'app-datenschutzerklaerung',
@@ -8,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatenschutzerklaerungComponent implements OnInit {
 
-	constructor(private appService: AppService) { }
+	constructor(
+		private appService: AppService,
+		private title: Title,
+		private meta: Meta
+	) { }
 
 	ngOnInit() {
 		this.appService.setTitle('Datenschutzerklärung');
+		this.title.setTitle('Gasthaus Gundel - Datenschutzerklärung');
+		this.meta.updateTag({name: 'description', content: 'Datenschutzerklärung im Sinne der Europäischen Datenschutzgrundverordnung.'});
 	}
 
 }

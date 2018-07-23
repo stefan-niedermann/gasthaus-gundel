@@ -1,35 +1,29 @@
-import { DatenschutzerklaerungComponent } from './../datenschutzerklaerung/datenschutzerklaerung.component';
-import { ImpressumComponent } from 'app/impressum/impressum.component';
-import { SpeisekarteComponent } from 'app/speisekarte/speisekarte.component';
-import { AnfahrtComponent } from 'app/anfahrt/anfahrt.component';
-import { OeffnungszeitenComponent } from 'app/oeffnungszeiten/oeffnungszeiten.component';
-import { HomeComponent } from 'app/home/home.component';
 import { Route } from '@angular/router';
 
 export const routes: Route[] = [
 	{
 		path: 'home',
-		component: HomeComponent
+		loadChildren: '../home/home.module#HomeModule'
 	},
 	{
 		path: 'oeffnungszeiten',
-		component: OeffnungszeitenComponent
+		loadChildren: '../oeffnungszeiten/oeffnungszeiten.module#OeffnungszeitenModule'
 	},
 	{
 		path: 'anfahrt',
-		component: AnfahrtComponent
+		loadChildren: '../anfahrt/anfahrt.module#AnfahrtModule'
 	},
 	{
 		path: 'speisekarte',
-		component: SpeisekarteComponent
+		loadChildren: '../speisekarte/speisekarte.module#SpeisekarteModule'
 	},
 	{
 		path: 'impressum',
-		component: ImpressumComponent
+		loadChildren: '../impressum/impressum.module#ImpressumModule'
 	},
 	{
 		path: 'datenschutzerklaerung',
-		component: DatenschutzerklaerungComponent
+		loadChildren: '../datenschutzerklaerung/datenschutzerklaerung.module#DatenschutzerklaerungModule'
 	},
 	{
 		path: '**',

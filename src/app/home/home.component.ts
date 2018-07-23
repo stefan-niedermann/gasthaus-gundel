@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.appService.setTitle('Home');
+    this.appService.setTitle('Gasthaus Gundel');
 		this.title.setTitle('Gasthaus Gundel - Barthelmesaurach');
 		this.meta.updateTag({name: 'description', content: '☎ Tel.: 09178 / 1503 - Lassen Sie sich verwöhnen mit fränkischen, griechischen und saisonalen Spezialitäten in gemütlichen Räumen'});
 

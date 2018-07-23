@@ -3,9 +3,10 @@
   "assetGroups": [{
     "name": "app",
     "installMode": "prefetch",
+    "updateMode": "prefetch",
     "resources": {
       "files": [
-        "/favicon.ico",
+        "/favicon.png",
         "/index.html",
         "/*.css",
         "/*.js"

@@ -22,6 +22,7 @@
     "@angular/material": "^6.4.1",
     "@angular/platform-browser": "6.0.9",
     "@angular/platform-browser-dynamic": "6.0.9",
+    "@angular/pwa": "^0.6.8",
     "@angular/router": "6.0.9",
     "@angular/service-worker": "6.0.9",
     "angulartics2": "^6.2.0",

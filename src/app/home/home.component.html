@@ -8,7 +8,13 @@
 	<mat-card-content>
 		<h3>
 			<mat-icon class="mdi mdi-phone"></mat-icon> 09178 / 1503</h3>
-		<p><a href="tel:+4991781503" mat-raised-button color="primary">JETZT ANRUFEN</a></p>
+		<nav>
+			<ul>
+				<li><a mat-raised-button color="primary" href="tel:+4991781503" (click)="trackPhoneCall($event)">JETZT ANRUFEN</a></li>
+				<li><a mat-raised-button [routerLink]="speisekarte">Speisekarte</a></li>
+				<li><a mat-raised-button [routerLink]="oeffnungszeiten">Öffnungszeiten</a></li>
+			</ul>
+		</nav>
 		<p>Herzlich Willkommen bei Ioannis und Anastasia Loules.</p>
 		<p>Seit 1997, gegenüber der gleichnamigen Brauerei, verwöhnen wir Sie mit fränkischen, griechischen und saisonalen Spezialitäten.
 			Unsere gemütlichen Räumlichkeiten, Gaststube mit 65 Plätzen und unser Saal im Obergeschoß bis zu 85 Personen bietet sich

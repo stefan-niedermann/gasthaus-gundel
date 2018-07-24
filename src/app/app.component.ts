@@ -19,7 +19,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private angulartics2Piwik: Angulartics2Piwik,
     public appService: AppService
   ) { }
 

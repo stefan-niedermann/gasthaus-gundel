@@ -1,5 +1,15 @@
-a[mat-raised-button] {
-    width: 100%;
+ul {
+	list-style: none;
+	padding: 0;
+	li {
+		a {
+			width: 100%;
+			margin-top: 1em;
+		}
+		&:first-child a {
+			margin-top: 0;
+		}
+	}
 }
 
 h3 {
@@ -7,7 +17,7 @@ h3 {
 }
 
 @media(min-width: 768px) {
-	a[mat-raised-button] {
+	nav {
     	display: none;
 	}
 	h3 {

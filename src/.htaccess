@@ -1,7 +1,16 @@
-Header add Content-Security-Policy-Report-Only "default-src 'self' https://www.google.com/maps/embed; script-src 'self' 'unsafe-inline' https://tracking.niedermann.it/; style-src 'self' 'unsafe-inline'; frame-src https://tracking.niedermann.it"
+Header add Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://tracking.niedermann.it/; style-src 'self' 'unsafe-inline'; frame-src https://tracking.niedermann.it https://www.google.com/maps/embed"
 Header add Strict-Transport-Security "max-age=63072000; includeSubDomains"
+Header add X-Frame-Options "DENY"
+Header add X-Content-Type-Options "nosniff"
+Header add X-XSS-Protection "1; mode=block"
+Header add Referrer-Policy "same-origin, strict-origin-when-cross-origin"
 
 RewriteEngine On
+
+# Remove www. prefix
+RewriteCond %{HTTP_HOST} ^www\.
+RewriteRule ^(.*)$ https://gasthaus-gundel.de/$1 [R=301,L]
+
 # If an existing asset or directory is requested go to it as it is
 RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
 RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d

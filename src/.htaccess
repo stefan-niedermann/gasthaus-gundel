@@ -8,10 +8,6 @@ Header unset "X-Powered-By"
 
 RewriteEngine On
 
-# Remove www. prefix
-RewriteCond %{HTTP_HOST} ^www\.
-RewriteRule ^(.*)$ https://gasthaus-gundel.de/$1 [R=301,L]
-
 # If an existing asset or directory is requested go to it as it is
 RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
 RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d

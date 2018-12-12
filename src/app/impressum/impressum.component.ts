@@ -5,7 +5,7 @@ import { AppService } from '../app.service';
 @Component({
   selector: 'app-impressum',
   templateUrl: './impressum.component.html',
-  styleUrls: ['./impressum.component.less']
+  styleUrls: ['./impressum.component.scss']
 })
 export class ImpressumComponent implements OnInit {
 

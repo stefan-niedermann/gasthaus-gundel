@@ -7,7 +7,7 @@ import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-speisekarte',
   templateUrl: './speisekarte.component.html',
-  styleUrls: ['./speisekarte.component.less']
+  styleUrls: ['./speisekarte.component.scss']
 })
 export class SpeisekarteComponent implements OnInit {
 

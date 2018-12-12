@@ -5,7 +5,7 @@ import { Meta, Title } from '@angular/platform-browser';
 @Component({
 	selector: 'app-datenschutzerklaerung',
 	templateUrl: './datenschutzerklaerung.component.html',
-	styleUrls: ['./datenschutzerklaerung.component.less']
+	styleUrls: ['./datenschutzerklaerung.component.scss']
 })
 export class DatenschutzerklaerungComponent implements OnInit {
 

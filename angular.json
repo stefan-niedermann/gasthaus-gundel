@@ -25,8 +25,8 @@
               "src/google4421ae489915d0f9.html"
             ],
             "styles": [
-              "src/styles.less",
-              "src/theme.sass"
+              "src/styles.scss",
+              "src/theme.scss"
             ],
             "scripts": []
           },
@@ -77,8 +77,8 @@
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [],
             "styles": [
-              "src/styles.less",
-              "src/theme.sass"
+              "src/styles.scss",
+              "src/theme.scss"
             ],
             "assets": [
               "src/assets",
@@ -130,7 +130,7 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
-      "styleext": "less"
+      "styleext": "scss"
     },
     "@schematics/angular:directive": {
       "prefix": "app"

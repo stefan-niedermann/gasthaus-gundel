@@ -6,7 +6,7 @@ import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-oeffnungszeiten',
   templateUrl: './oeffnungszeiten.component.html',
-  styleUrls: ['./oeffnungszeiten.component.less']
+  styleUrls: ['./oeffnungszeiten.component.scss']
 })
 export class OeffnungszeitenComponent implements OnInit {
 

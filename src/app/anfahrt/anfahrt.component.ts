@@ -5,7 +5,7 @@ import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-anfahrt',
   templateUrl: './anfahrt.component.html',
-  styleUrls: ['./anfahrt.component.less']
+  styleUrls: ['./anfahrt.component.scss']
 })
 export class AnfahrtComponent implements OnInit {
 

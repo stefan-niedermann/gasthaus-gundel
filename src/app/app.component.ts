@@ -19,8 +19,11 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(
     private router: Router,
-    public appService: AppService
-  ) { }
+    public appService: AppService,
+    angulartics2Piwik: Angulartics2Piwik
+  ) {
+    angulartics2Piwik.startTracking();
+  }
 
   ngOnInit(): void {
     this.routerSubscription = this.router.events.subscribe((event: NavigationEnd) => {

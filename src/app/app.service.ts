@@ -16,7 +16,7 @@ export class AppService {
   }
 
   getSeason() {
-    const month = new Date().getMonth();
+    const month = new Date().getMonth() + 1;
     switch (month) {
       case 12:
       case 1:

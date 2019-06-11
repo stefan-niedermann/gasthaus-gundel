@@ -9,7 +9,7 @@ module.exports = function (config) {
 			require('karma-jasmine'),
 			require('karma-jasmine-html-reporter'),
 			require('karma-coverage-istanbul-reporter'),
-			require('karma-phantomjs-launcher'),
+			require('karma-chrome-launcher'),
 			require('@angular-devkit/build-angular/plugins/karma')
 		],
 		client: {
@@ -25,7 +25,7 @@ module.exports = function (config) {
 		colors: true,
 		logLevel: config.LOG_WARN,
 		autoWatch: true,
-		browsers: ['PhantomJS'],
+		browsers: ['ChromiumHeadless'],
 		singleRun: false
 	});
 };

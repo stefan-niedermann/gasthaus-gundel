@@ -7,8 +7,6 @@ build_job:
   image: node:latest
   stage: build
   script:
-    - apt-get update
-    - apt-get --yes --force-yes install chromium-browser
     - npm install
     - ./node_modules/@angular/cli/bin/ng build --prod
   cache:
@@ -24,7 +22,7 @@ test_job:
   image: node:latest
   stage: test
   script:
-    - ./node_modules/@angular/cli/bin/ng test --watch=false
+    - ./node_modules/@angular/cli/bin/ng test --browsers PhantomJS --watch=false
   dependencies:
     - build_job
   artifacts:

@@ -14,8 +14,8 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   routerSubscription: Subscription;
 
-  @ViewChild(MatSidenav) sidenav: MatSidenav;
-  @ViewChild('main') main: ElementRef;
+  @ViewChild(MatSidenav, {static: true}) sidenav: MatSidenav;
+  @ViewChild('main', {static: true}) main: ElementRef;
 
   constructor(
     private router: Router,

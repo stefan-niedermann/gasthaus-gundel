@@ -11,7 +11,7 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class SpeisekarteComponent implements OnInit {
 
-  @ViewChild('filterInput') filterInput: ElementRef<HTMLInputElement>;
+  @ViewChild('filterInput', {static: true}) filterInput: ElementRef<HTMLInputElement>;
   filteredKategorien: Kategorie[] = Array.apply([], kategorien);
 
   constructor(

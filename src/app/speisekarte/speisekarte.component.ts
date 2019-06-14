@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Kategorie, kategorien, Gericht } from 'app/speisekarte/speisekarte';
+import { Component, OnInit, HostListener, ElementRef, ViewChild } from '@angular/core';
+import { Kategorie, kategorien } from 'app/speisekarte/speisekarte';
 import { AppService } from 'app/app.service';
 import { SpeisekarteService } from 'app/speisekarte/speisekarte.service';
 import { Meta, Title } from '@angular/platform-browser';
@@ -11,6 +11,7 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class SpeisekarteComponent implements OnInit {
 
+  @ViewChild('filterInput') filterInput: ElementRef<HTMLInputElement>;
   filteredKategorien: Kategorie[] = Array.apply([], kategorien);
 
   constructor(
@@ -28,5 +29,11 @@ export class SpeisekarteComponent implements OnInit {
 
   filter(event): void {
     this.filteredKategorien = this.speisekarteService.filter(event.target.value);
+  }
+
+  @HostListener('window:keydown.control.f', ['$event'])
+  focus($event: KeyboardEvent) {
+    $event.preventDefault();
+    this.filterInput.nativeElement.focus();
   }
 }

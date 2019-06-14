@@ -2,7 +2,7 @@
 	<mat-card-content>
 		<mat-form-field>
 			<span matPrefix class="mdi mdi-magnify"></span>
-			<input (keyup)="filter($event)" matInput placeholder="Suchen..." />
+			<input #filterInput (keyup)="filter($event)" matInput placeholder="Suchen..." />
 		</mat-form-field>
 	</mat-card-content>
 </mat-card>

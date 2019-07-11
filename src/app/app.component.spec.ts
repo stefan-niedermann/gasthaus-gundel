@@ -2,7 +2,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppService } from './app.service';
 import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2Piwik } from 'angulartics2/piwik';
-import { MaterialModule } from 'app/material/material.module';
+import { MaterialModule } from './material/material.module';
 import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';

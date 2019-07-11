@@ -1,7 +1,7 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { SpeisekarteService } from './speisekarte.service';
-import { kategorien, Kategorie } from 'app/speisekarte/speisekarte';
+import { kategorien, Kategorie } from '../speisekarte/speisekarte';
 
 describe('SpeisekarteService', () => {
 

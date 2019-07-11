@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from '..//app.service';
+import { AppService } from '../app.service';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
@@ -20,5 +20,5 @@ export class AnfahrtComponent implements OnInit {
     this.title.setTitle('Gasthaus Gundel - Anfahrt');
     this.meta.updateTag({name: 'description', content: 'Nördlinger Straße 14, 91126 Barthelmesaurach, via B466'});
   }
-  
+
 }

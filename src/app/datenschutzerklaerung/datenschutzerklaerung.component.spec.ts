@@ -1,4 +1,4 @@
-import { AppService } from '..//app.service';
+import { AppService } from '../app.service';
 import { MaterialModule } from './../material/material.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 

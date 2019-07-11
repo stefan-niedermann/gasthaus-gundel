@@ -1,15 +1,15 @@
 export interface Zeit {
-    h: number,
-    m: number
+    h: number;
+    m: number;
 }
 export interface Oeffnungszeit {
-    von: Zeit,
+    von: Zeit;
     /** Bis zum Ende des Tages, falls nicht angegeben */
-    bis?: Zeit
+    bis?: Zeit;
 }
 export interface Wochentag {
-    titel: string,
-    oeffnungszeiten: Oeffnungszeit[]
+    titel: string;
+    oeffnungszeiten: Oeffnungszeit[];
 }
 export const standardOeffnungszeiten: Oeffnungszeit[] = [
     {

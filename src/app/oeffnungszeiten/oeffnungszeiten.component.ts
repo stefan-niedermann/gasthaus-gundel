@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Wochentag, oeffnungszeiten, Oeffnungszeit } from './oeffnungszeiten';
-import { AppService } from '..//app.service';
+import { AppService } from '../app.service';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
@@ -21,7 +21,7 @@ export class OeffnungszeitenComponent implements OnInit {
   ngOnInit() {
     this.appService.setTitle('Öffnungszeiten');
     this.title.setTitle('Gasthaus Gundel - Öffnungszeiten');
-    this.meta.updateTag({name: 'description', content: '11:00 Uhr - 14:30 Uhr, 17:00 Uhr - 00:00 Uhr, Montag Ruhetag, Warme Küche bis 22:00 Uhr'});
+    this.meta.updateTag({ name: 'description', content: '11:00 Uhr - 14:30 Uhr, 17:00 Uhr - 00:00 Uhr, Montag Ruhetag, Warme Küche bis 22:00 Uhr' });
   }
 
   isOpen(): boolean {
@@ -31,9 +31,10 @@ export class OeffnungszeitenComponent implements OnInit {
   opensIn() {
     const currentDate: Date = new Date();
     const oeffnungszeitenHeute: Oeffnungszeit[] = this.oeffnungszeiten[currentDate.getDay()].oeffnungszeiten;
-    for (let i = 0; i < oeffnungszeitenHeute.length; i++) {
-      if (currentDate.getHours() < oeffnungszeitenHeute[i].von.h) {
-        return oeffnungszeitenHeute[i].von.h - currentDate.getHours();
+
+    for (const oeffnungszeiten of oeffnungszeitenHeute) {
+      if (currentDate.getHours() < oeffnungszeiten.von.h) {
+        return oeffnungszeiten.von.h - currentDate.getHours();
       }
     }
   }
@@ -41,20 +42,21 @@ export class OeffnungszeitenComponent implements OnInit {
   closesIn() {
     const currentDate: Date = new Date();
     const oeffnungszeitenHeute: Oeffnungszeit[] = this.oeffnungszeiten[currentDate.getDay()].oeffnungszeiten;
-    for (let i = 0; i < oeffnungszeitenHeute.length; i++) {
-      const bisH = oeffnungszeitenHeute[i].bis ? oeffnungszeitenHeute[i].bis.h : 24;
-      const bisM = oeffnungszeitenHeute[i].bis ? oeffnungszeitenHeute[i].bis.m : 60;
+
+    for (const oeffnungszeiten of oeffnungszeitenHeute) {
+      const bisH = oeffnungszeiten.bis ? oeffnungszeiten.bis.h : 24;
+      const bisM = oeffnungszeiten.bis ? oeffnungszeiten.bis.m : 60;
       const bisDate: Date = new Date(0);
       bisDate.setHours(bisH);
       bisDate.setMinutes(bisM);
       if (
-        currentDate.getHours() >= oeffnungszeitenHeute[i].von.h &&
-        currentDate.getMinutes() >= oeffnungszeitenHeute[i].von.m &&
+        currentDate.getHours() >= oeffnungszeiten.von.h &&
+        currentDate.getMinutes() >= oeffnungszeiten.von.m &&
         currentDate < bisDate
       ) {
         const d: Date = new Date(0);
         d.setHours(bisH - currentDate.getHours());
-        d.setMinutes(bisM - currentDate.getMinutes())
+        d.setMinutes(bisM - currentDate.getMinutes());
         return d;
       }
     }

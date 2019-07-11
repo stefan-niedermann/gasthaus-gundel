@@ -1,10 +1,10 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from 'app/material/material.module';
+import { MaterialModule } from '../material/material.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SpeisekarteComponent } from './speisekarte.component';
-import { AppService } from '..//app.service';
-import { SpeisekarteService } from 'app/speisekarte/speisekarte.service';
+import { AppService } from '../app.service';
+import { SpeisekarteService } from '../speisekarte/speisekarte.service';
 
 describe('SpeisekarteComponent', () => {
   let component: SpeisekarteComponent;

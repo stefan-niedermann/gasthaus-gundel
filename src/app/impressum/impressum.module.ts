@@ -1,8 +1,8 @@
-import { NgModule } from "@angular/core";
-import { ImpressumComponent } from "./impressum.component";
-import { MaterialModule } from "../material/material.module";
-import { CommonModule } from "@angular/common";
-import { RouterModule } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { ImpressumComponent } from './impressum.component';
+import { MaterialModule } from '../material/material.module';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,7 @@ import { RouterModule } from "@angular/router";
     MaterialModule,
     CommonModule,
     RouterModule.forChild([
-        { path: "", component: ImpressumComponent},
+        { path: '', component: ImpressumComponent},
     ])
   ]
 })

@@ -1,8 +1,8 @@
-import { MaterialModule } from 'app/material/material.module';
+import { MaterialModule } from '../material/material.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AnfahrtComponent } from './anfahrt.component';
-import { AppService } from '..//app.service';
+import { AppService } from '../app.service';
 
 describe('AnfahrtComponent', () => {
   let component: AnfahrtComponent;

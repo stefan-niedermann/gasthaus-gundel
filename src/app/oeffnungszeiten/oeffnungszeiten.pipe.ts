@@ -23,7 +23,7 @@ export class OeffnungszeitenPipe implements PipeTransform {
       } else {
         oeffnungszeitenStr += ' - 00:00 Uhr';
       }
-      oeffnungszeitenStr += ', '
+      oeffnungszeitenStr += ', ';
     });
     if (oeffnungszeitenStr.endsWith(', ')) {
       oeffnungszeitenStr = oeffnungszeitenStr.substr(0, oeffnungszeitenStr.length - 2);

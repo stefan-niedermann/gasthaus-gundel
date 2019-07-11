@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from '..//app.service';
+import { AppService } from '../app.service';
 import { Meta, Title } from '@angular/platform-browser';
 import { Angulartics2Piwik } from 'angulartics2/piwik';
 import { Router } from '@angular/router';
@@ -28,8 +28,8 @@ export class HomeComponent implements OnInit {
 
   trackPhoneCall($event: MouseEvent) {
     this.angulartics2Piwik.eventTrack('phoneCall', {
-      'url': this.router.url,
-      'number': ($event.target as HTMLAnchorElement).getAttribute('href')
+      url: this.router.url,
+      number: ($event.target as HTMLAnchorElement).getAttribute('href')
     });
   }
 

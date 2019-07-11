@@ -1,8 +1,8 @@
-import { NgModule } from "@angular/core";
-import { MaterialModule } from "../material/material.module";
-import { CommonModule } from "@angular/common";
-import { RouterModule } from "@angular/router";
-import { HomeComponent } from "./home.component";
+import { NgModule } from '@angular/core';
+import { MaterialModule } from '../material/material.module';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home.component';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,7 @@ import { HomeComponent } from "./home.component";
     MaterialModule,
     CommonModule,
     RouterModule.forChild([
-        { path: "", component: HomeComponent},
+        { path: '', component: HomeComponent},
     ])
   ]
 })

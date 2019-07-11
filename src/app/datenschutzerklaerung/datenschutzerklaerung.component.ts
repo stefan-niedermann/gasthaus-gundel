@@ -1,4 +1,4 @@
-import { AppService } from 'app/app.service';
+import { AppService } from '..//app.service';
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 

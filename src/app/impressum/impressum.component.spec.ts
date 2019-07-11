@@ -2,7 +2,7 @@ import { MaterialModule } from 'app/material/material.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ImpressumComponent } from './impressum.component';
-import { AppService } from 'app/app.service';
+import { AppService } from '..//app.service';
 
 describe('ImpressumComponent', () => {
   let component: ImpressumComponent;

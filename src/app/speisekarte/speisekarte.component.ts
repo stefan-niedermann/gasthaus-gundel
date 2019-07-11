@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener, ElementRef, ViewChild } from '@angular/core';
-import { Kategorie, kategorien } from 'app/speisekarte/speisekarte';
-import { AppService } from 'app/app.service';
-import { SpeisekarteService } from 'app/speisekarte/speisekarte.service';
+import { Kategorie, kategorien } from './speisekarte';
+import { AppService } from '../app.service';
+import { SpeisekarteService } from './speisekarte.service';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({

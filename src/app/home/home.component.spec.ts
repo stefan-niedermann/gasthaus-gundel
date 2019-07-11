@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
-import { AppService } from 'app/app.service';
+import { AppService } from '..//app.service';
 import { Angulartics2Piwik } from 'angulartics2/piwik';
 import { Angulartics2Module } from 'angulartics2';
 

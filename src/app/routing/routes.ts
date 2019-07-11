@@ -3,27 +3,27 @@ import { Route } from '@angular/router';
 export const routes: Route[] = [
 	{
 		path: 'home',
-		loadChildren: '../home/home.module#HomeModule'
+		loadChildren: () => import('../home/home.module').then(m => m.HomeModule)
 	},
 	{
 		path: 'oeffnungszeiten',
-		loadChildren: '../oeffnungszeiten/oeffnungszeiten.module#OeffnungszeitenModule'
+		loadChildren: () => import('../oeffnungszeiten/oeffnungszeiten.module').then(m => m.OeffnungszeitenModule)
 	},
 	{
 		path: 'anfahrt',
-		loadChildren: '../anfahrt/anfahrt.module#AnfahrtModule'
+		loadChildren: () => import('../anfahrt/anfahrt.module').then(m => m.AnfahrtModule)
 	},
 	{
 		path: 'speisekarte',
-		loadChildren: '../speisekarte/speisekarte.module#SpeisekarteModule'
+		loadChildren: () => import('../speisekarte/speisekarte.module').then(m => m.SpeisekarteModule)
 	},
 	{
 		path: 'impressum',
-		loadChildren: '../impressum/impressum.module#ImpressumModule'
+		loadChildren: () => import('../impressum/impressum.module').then(m => m.ImpressumModule)
 	},
 	{
 		path: 'datenschutzerklaerung',
-		loadChildren: '../datenschutzerklaerung/datenschutzerklaerung.module#DatenschutzerklaerungModule'
+		loadChildren: () => import('../datenschutzerklaerung/datenschutzerklaerung.module').then(m => m.DatenschutzerklaerungModule)
 	},
 	{
 		path: '**',

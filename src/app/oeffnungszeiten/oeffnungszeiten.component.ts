@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Wochentag, oeffnungszeiten, Oeffnungszeit } from 'app/oeffnungszeiten/oeffnungszeiten';
-import { AppService } from 'app/app.service';
+import { Wochentag, oeffnungszeiten, Oeffnungszeit } from './oeffnungszeiten';
+import { AppService } from '..//app.service';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({

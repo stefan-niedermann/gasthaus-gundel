@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Oeffnungszeit } from 'app/oeffnungszeiten/oeffnungszeiten';
+import { Oeffnungszeit } from './oeffnungszeiten';
 import { DecimalPipe } from '@angular/common';
 
 @Pipe({

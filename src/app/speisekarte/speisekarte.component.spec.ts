@@ -3,7 +3,7 @@ import { MaterialModule } from 'app/material/material.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SpeisekarteComponent } from './speisekarte.component';
-import { AppService } from 'app/app.service';
+import { AppService } from '..//app.service';
 import { SpeisekarteService } from 'app/speisekarte/speisekarte.service';
 
 describe('SpeisekarteComponent', () => {

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { kategorien, Kategorie, Gericht } from 'app/speisekarte/speisekarte';
+import { kategorien, Kategorie, Gericht } from './speisekarte';
+import { SpeisekarteModule } from './speisekarte.module';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class SpeisekarteService {
 
   kategorien: Kategorie[] = kategorien;

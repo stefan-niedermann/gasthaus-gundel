@@ -6,7 +6,7 @@ import localeDe from '@angular/common/locales/de';
 import localeDeExtra from '@angular/common/locales/extra/de';
 
 import { OeffnungszeitenComponent } from './oeffnungszeiten.component';
-import { AppService } from 'app/app.service';
+import { AppService } from '..//app.service';
 
 describe('OeffnungszeitenComponent', () => {
 

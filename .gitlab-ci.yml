@@ -19,11 +19,9 @@ build_job:
       - dist/
 
 test_job:
-  image: node:latest
+  image: markhobson/docker-node-chrome
   stage: test
   script:
-    - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    - dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
     - ./node_modules/@angular/cli/bin/ng test --browsers ChromeHeadless --watch=false
   dependencies:
     - build_job

@@ -22,7 +22,7 @@ test_job:
   image: amio/node-chrome
   stage: test
   script:
-    - ./node_modules/@angular/cli/bin/ng test --watch=false
+    - ./node_modules/@angular/cli/bin/ng test --browsers=ChromeHeadless --watch=false
   dependencies:
     - build_job
   artifacts:

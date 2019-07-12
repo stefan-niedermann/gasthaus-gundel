@@ -19,7 +19,7 @@ build_job:
       - dist/
 
 test_job:
-  image: amio/node-chrome
+  image: selenium/node-chrome:3.141.59-radium
   stage: test
   script:
     - ./node_modules/@angular/cli/bin/ng test --browsers=ChromeHeadless --watch=false

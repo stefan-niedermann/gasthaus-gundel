@@ -26,7 +26,10 @@
             "assets": [
               "src/favicon.png",
               "src/assets",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              "src/.htaccess",
+              "src/sitemap.txt",
+              "src/google4421ae489915d0f9.html"
             ],
             "styles": [
               "src/styles.scss"
@@ -89,7 +92,10 @@
             "assets": [
               "src/favicon.png",
               "src/assets",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              "src/.htaccess",
+              "src/sitemap.txt",
+              "src/google4421ae489915d0f9.html"
             ],
             "styles": [
               "src/styles.scss"

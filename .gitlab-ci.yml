@@ -19,7 +19,7 @@ build_job:
       - dist/
 
 test_job:
-  image: weltn24/up-docker-node-chrome-headless
+  image: weltn24/up-docker-node-chrome-headless:latest
   stage: test
   script:
     - ./node_modules/@angular/cli/bin/ng test --watch=false

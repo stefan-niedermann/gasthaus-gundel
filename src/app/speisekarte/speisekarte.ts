@@ -14,7 +14,7 @@ export interface Kategorie {
 
 export const kategorien: Kategorie[] = [{
   titel: 'Suppen',
-  graphik: 'bohnensuppe',
+  graphik: 'gulaschsuppe',
   gerichte: [
     {
       titel: 'Bohnensuppe',

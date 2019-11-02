@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
+
+body {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.sidenav, .navbar-fixed, nav, footer {
+    font-weight: bold;
+}
+
+img, video, canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+blockquote {
+    font-style: italic;
+    border-left: 0;
+}
+blockquote::before {
+    content: "\"";
+}
+blockquote::after {
+    content: "\"";
+}
+blockquote cite {
+    font-style: italic;
+    float: right;
+    font-size: medium;
+}
+blockquote cite::before {
+    content: "\a— ";
+    white-space: pre;
+}
+
+header {
+    margin-bottom: 1rem;
+}
+body .navbar-fixed ul {
+    display: flex;
+    justify-content: center;
+}
+body .navbar-fixed li {
+    flex: 0 0 auto;
+}
+body .navbar-fixed a {
+    width: 100%;
+}
+body .navbar-fixed .active {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+@media (max-width: 1024px) {
+    body .navbar-fixed i {
+        display: none;
+    }
+}
+
+body > footer {
+    border-top: 1px dotted #444;
+    margin-top: 8rem;
+}
+
+body > footer a.btn-flat {
+    padding: 0;
+}
+
+.container li:first-child img {
+    vertical-align: middle;
+    margin-right: .5rem;
+}
+
+::selection {
+	background: #bf360c;
+	color: #fff;
+}
+
+span.badge.new::after {
+    content: "";
+}
+
+.parallax-container {
+    height: 20vh;
+}
+
+@media (min-width: 360px) {
+    .parallax-container {
+        height: 35vh;
+    }
+}
+
+@media (min-width: 601px) {
+    .parallax-container {
+        height: 45vh;
+    }
+}
+
+@media (max-width: 390px) {
+    nav .container {
+        width: 100%;
+    }    
+}

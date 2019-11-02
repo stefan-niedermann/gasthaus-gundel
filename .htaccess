@@ -1,0 +1,8 @@
+ErrorDocument 404 /nicht-gefunden.html
+
+Redirect 301 /home /index.html
+Redirect 301 /speisekarte /speisekarte.html
+Redirect 301 /oeffnungszeiten /oeffnungszeiten.html
+Redirect 301 /anfahrt /anfahrt.html
+Redirect 301 /impressum/ /impressum.html
+Redirect 301 /datenschutzerklaerung/ /datenschutzerklaerung.html

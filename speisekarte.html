@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="de" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <title>Speisekarte - Gasthaus Gundel</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#009688" />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description"
+        content="Unser Verein besteht seit 1985 und möchte das Miteinander in unserem schönen Aurachtal fördern. Wir veranstalten das ganze Jahr über beliebte Aktivitäten" />
+
+    <base href="./" />
+
+    <link rel="icon" type="image/png" href="/img/favicon.ico" sizes="32x32" />
+    <link rel="canonical" href="https://gasthaus-gundel.de/speisekarte.html" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style type="text/css">
+        h2 {
+            margin-bottom: 2rem;
+        }
+
+        .parallax-container {
+            margin-bottom: 2rem;
+        }
+
+        span.badge.new {
+            font-size: large;
+            height: auto;
+            line-height: normal;
+            padding: .3rem .5rem;
+        }
+
+        .section ul {
+            margin: 2rem 0;
+        }
+
+        .section li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .section li span:first-child {
+            padding: .5rem 2rem .5rem 0;
+        }
+
+        .section li .description {
+            flex: 1 1 auto;
+            align-items: baseline;
+        }
+
+        .section li p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .section li .badge {
+            flex: 0 0 auto;
+        }
+
+        body>nav {
+            top: 0;
+            z-index: 997;
+            /* >= nav */
+            background: none;
+            /* Safari make [type="search" round */
+        }
+
+        input#search {
+            height: 100%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            box-sizing: border-box;
+        }
+
+        input::placeholder {
+            color: #000;
+        }
+
+        @media (min-width: 601px) {
+            input#search {
+                text-align: center;
+            }
+
+            span.badge.new {
+                font-size: x-large;
+            }
+
+            .section li {
+                margin-bottom: 0;
+            }
+
+            .section li .description {
+                display: flex;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .section li .description p {
+                margin-left: 1rem;
+                flex: 0 1 auto;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .description {
+                border-bottom: 1px dotted #444;
+            }
+        }
+
+        .search-hidden {
+            display: none;
+        }
+    </style>
+
+    <script defer type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script defer type="text/javascript" src="js/script.js"></script>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            var searchBar = document.getElementById('search-bar');
+            var searchInput = document.getElementById('search');
+            var searchClose = document.getElementById('search-close');
+
+            var sections = Array.from(document.querySelectorAll('div.section'));
+
+            var resetSearch = function () {
+                searchInput.value = '';
+                Array.from(document.getElementsByClassName('search-hidden')).forEach(function (elem) {
+                    elem.classList.remove('search-hidden');
+                });
+                window.scrollBy(0, 1);
+                window.scrollBy(0, -1);
+            }
+
+            searchInput.addEventListener('focus', function () {
+                searchClose.innerText = 'close';
+                document.querySelector('body>nav').style.position = 'sticky';
+            });
+            searchInput.addEventListener('blur', function (event) {
+                searchClose.innerText = 'search';
+                document.querySelector('body>nav').style.position = 'static';
+            });
+            searchClose.addEventListener('click', function () {
+                resetSearch();
+            });
+            searchInput.addEventListener('keyup', function () {
+                var searchStr = searchInput.value.toLowerCase();
+                if (searchStr.length > 0) {
+                    sections.forEach(function (elem) {
+                        var containsSearchResult = false;
+                        var img = elem.querySelector('.parallax-container');
+                        if (img) img.classList.add('search-hidden');
+                        Array.from(elem.querySelectorAll('li')).forEach(function (li) {
+                            if (li.textContent.toLowerCase().includes(searchStr)) {
+                                containsSearchResult = true;
+                                li.classList.remove('search-hidden');
+                            } else {
+                                li.classList.add('search-hidden');
+                            }
+                        });
+
+                        if (containsSearchResult) {
+                            elem.classList.remove('search-hidden');
+                        } else {
+                            elem.classList.add('search-hidden');
+                        }
+                    });
+                } else {
+                    resetSearch();
+                }
+            });
+        });
+    </script>
+
+    <!-- Matomo -->
+    <script type="text/javascript">
+        var _paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "https://tracking.niedermann.it/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '2']);
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+
+
+</head>
+
+<body class="black white-text">
+    <div class="navbar-fixed">
+        <nav class="extended black">
+            <div class="nav-wrapper">
+                <ul class="container center">
+                    <li><a class="waves-effect" href="index.html"><i class="material-icons left">home</i>Startseite</a>
+                    </li>
+                    <li><a class="waves-effect active" href="speisekarte.html"><i
+                                class="material-icons left">restaurant_menu</i>Speisekarte</a></li>
+                    <li><a class="waves-effect" href="oeffnungszeiten.html"><i
+                                class="material-icons left">schedule</i>Öffnungszeiten</a></li>
+                    <li><a class="waves-effect" href="anfahrt.html"><i class="material-icons left">map</i>Anfahrt</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <header class="section center">
+        <h1>Speisekarte</h1>
+    </header>
+    <nav class="container">
+        <form id="search-bar" onsubmit="return false;">
+            <div class="input-field">
+                <input id="search" type="search" class="white black-text" placeholder="Suchen…">
+                <i class="material-icons black-text" id="search-close">search</i>
+            </div>
+        </form>
+    </nav>
+    <div class="section">
+        <div class="container center">
+            <h2>Suppen</h2>
+        </div>
+        <div class="parallax-container">
+            <div class="parallax">
+                <img src="img/speisekarte/gulasch-suppe.jpg" alt="Gulasch-Suppe" srcset="
+                img/speisekarte/gulasch-suppe.jpg 360w,
+                img/speisekarte/gulasch-suppe-480.jpg 480w,
+                img/speisekarte/gulasch-suppe-640.jpg 640w,
+                img/speisekarte/gulasch-suppe-1280.jpg 1280w,
+                img/speisekarte/gulasch-suppe-1366.jpg 1366w,
+                img/speisekarte/gulasch-suppe-1600.jpg 1600w,
+                img/speisekarte/gulasch-suppe-1920.jpg 1920w,
+                img/speisekarte/gulasch-suppe.jpg">
+            </div>
+        </div>
+        <div class="container flow-text">
+            <ul>
+                <li>
+                    <span>02</span>
+                    <div class="description">
+                        <strong>Bohnensuppe</strong>
+                        <p>mit Brot</p>
+                    </div>
+                    <span class="badge white black-text new">3,00 €</span>
+                </li>
+                <li>
+                    <span>03</span>
+                    <div class="description">
+                        <strong>Gulaschsuppe</strong>
+                        <p>mit Brot</p>
+                    </div>
+                    <span class="badge white black-text new">3,00 €</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <h2 class="center">Kalte Vorspeisen</h2>
+            <ul class="flow-text">
+                <li>
+                    <span>04</span>
+                    <div class="description">
+                        <strong>Zaziki</strong>
+                        <p>Joghurt mit Gurken, Knoblauch, Brot</p>
+                    </div>
+                    <span class="badge white black-text new">3,00 €</span>
+                </li>
+                <li>
+                    <span>05</span>
+                    <div class="description">
+                        <strong>Feta</strong>
+                        <p>Griechischer Schafskäse mit Oliven, Peperoni, Tomaten und Brot</p>
+                    </div>
+                    <span class="badge white black-text new">4,50 €</span>
+                </li>
+                <li>
+                    <span>06</span>
+                    <div class="description">
+                        <strong>Gemischter Teller</strong>
+                        <p>Schafskäse, Zaziki, Gurken, Oliven, Peperoni, Zwiebeln und Brot</p>
+                    </div>
+                    <span class="badge white black-text new">6,50 €</span>
+                </li>
+                <li>
+                    <span>07</span>
+                    <div class="description">
+                        <strong>Oliven und Peperoni</strong>
+                        <p>mit Brot</p>
+                    </div>
+                    <span class="badge white black-text new">3,00 €</span>
+                </li>
+                <li>
+                    <span>08</span>
+                    <div class="description">
+                        <strong>Htapodi</strong>
+                        <p>Octopussalat mit Tomaten, Gurken, Peperoni, Zwiebeln, Oliven und Brot</p>
+                    </div>
+                    <span class="badge white black-text new">6,00 €</span>
+                </li>
+                <li>
+                    <span>77</span>
+                    <div class="description">
+                        <strong>Htipiti</strong>
+                        <p>Schafskäse, Paprika, Knoblauch und Brot</p>
+                    </div>
+                    <span class="badge white black-text new">4,50 €</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <h2 class="center">Warme Vorspeisen</h2>
+            <ul class="flow-text">
+                <li>
+                    <span>09</span>
+                    <div class="description">
+                        <strong>Saganaki</strong>
+                        <p>Gebackener Schafskäse mit Tomaten, Oliven, Peperoni und Brot</p>
+                    </div>
+                    <span class="badge white black-text new">4,80 €</span>
+                </li>
+                <li>
+                    <span>10</span>
+                    <div class="description">
+                        <strong>Gigades</strong>
+                        <p>Dicke Bohnen mit Brot</p>
+                    </div>
+                    <span class="badge white black-text new">4,50 €</span>
+                </li>
+                <li>
+                    <span>11</span>
+                    <div class="description">
+                        <strong>Melitzanes</strong>
+                        <p>Auberginen mit Schafskäse und Brot aus dem Backofen</p>
+                    </div>
+                    <span class="badge white black-text new">4,50 €</span>
+                </li>
+                <li>
+                    <span>12</span>
+                    <div class="description">
+                        <strong>Tyropitakia</strong>
+                        <p>(5 Stück) Schafskäse mit Ei in Blätterteig gewickelt</p>
+                    </div>
+                    <span class="badge white black-text new">4,50 €</span>
+                </li>
+                <li>
+                    <span>78</span>
+                    <div class="description">
+                        <strong>Knoblauchbrot</strong>
+                    </div>
+                    <span class="badge white black-text new">3,00 €</span>
+                </li>
+                <li>
+                    <span>79</span>
+                    <div class="description">
+                        <strong>Florinis</strong>
+                        <p>Rote Paprika gefüllt mit Schafskäse, Knoblauch und Brot</p>
+                    </div>
+                    <span class="badge white black-text new">4,50 €</span>
+                </li>
+                <li>
+                    <span>80</span>
+                    <div class="description">
+                        <strong>Dolmades</strong>
+                        <p>Weinblätter, gewickelt mit Reis und Brot</p>
+                    </div>
+                    <span class="badge white black-text new">4,50 €</span>
+                </li>
+                <li>
+                    <span>81</span>
+                    <div class="description">
+                        <strong>Feta vom Backofen</strong>
+                        <p>mit Tomaten, Peperoni, Knoblauch, Chili (scharf) und Brot</p>
+                    </div>
+                    <span class="badge white black-text new">5,00 €</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container center">
+            <h2>Warme Beilagen</h2>
+        </div>
+        <div class="parallax-container">
+            <div class="parallax">
+                <img src="img/speisekarte/pommes.jpg" alt="Pommes Frites" srcset="
+                img/speisekarte/pommes.jpg 360w,
+                img/speisekarte/pommes-480.jpg 480w,
+                img/speisekarte/pommes-640.jpg 640w,
+                img/speisekarte/pommes-1280.jpg 1280w,
+                img/speisekarte/pommes-1366.jpg 1366w,
+                img/speisekarte/pommes-1600.jpg 1600w,
+                img/speisekarte/pommes-1920.jpg 1920w,
+                img/speisekarte/pommes-2400.jpg 2400w">
+            </div>
+        </div>
+        <div class="container">
+            <ul class="flow-text">
+                <li>
+                    <span>13</span>
+                    <div class="description">
+                        <strong>Reis</strong>
+                        <p>mit Tomatensoße</p>
+                    </div>
+                    <span class="badge white black-text new">2,00 €</span>
+                </li>
+                <li>
+                    <span>14</span>
+                    <div class="description">
+                        <strong>Pommes Frites</strong>
+                    </div>
+                    <span class="badge white black-text new">2,00 €</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container center">
+            <h2>Salate</h2>
+        </div>
+        <div class="parallax-container">
+            <div class="parallax">
+                <img src="img/speisekarte/salat.jpg" alt="Salat" srcset="
+                img/speisekarte/salat.jpg 360w,
+                img/speisekarte/salat-480.jpg 480w,
+                img/speisekarte/salat-640.jpg 640w,
+                img/speisekarte/salat-1280.jpg 1280w,
+                img/speisekarte/salat-1366.jpg 1366w,
+                img/speisekarte/salat-1600.jpg 1600w,
+                img/speisekarte/salat-1920.jpg 1920w,
+                img/speisekarte/salat-2400.jpg 2400w">
+            </div>
+        </div>
+        <div class="container">
+            <ul class="flow-text">
+                <li>
+                    <span>15</span>
+                    <div class="description">
+                        <strong>Griechischer Salat</strong>
+                        <p>Krautsalat, Gruken, Tomaten, Oliven, Peperoni, Zwiebeln, Schafskäse</p>
+                    </div>
+                    <span class="badge white black-text new">7,50 €</span>
+                </li>
+                <li>
+                    <span>16</span>
+                    <div class="description">
+                        <strong>Griechischer Salatteller</strong>
+                        <p>Grüner Salat, Gurken, Tomaten, Oliven, Peperoni, Zwiebeln, Schafskäse</p>
+                    </div>
+                    <span class="badge white black-text new">7,50 €</span>
+                </li>
+                <li>
+                    <span>17</span>
+                    <div class="description">
+                        <strong>Gemischter Salatteller</strong>
+                        <p>Krautsalat, grüner Salat, Gurken, Tomaten, Oliven, Peperoni, Zwiebeln, Gouda</p>
+                    </div>
+                    <span class="badge white black-text new">7,50 €</span>
+                </li>
+                <li>
+                    <span>84</span>
+                    <div class="description">
+                        <strong>Chef Salat</strong>
+                        <p>Grüner Salat, Gurken, Tomaten, Mais, Eier, Thunfisch, Oliven, Peperoni, Soße und Brot</p>
+                    </div>
+                    <span class="badge white black-text new">8,00 €</span>
+                </li>
+                <li>
+                    <span>18</span>
+                    <div class="description">
+                        <strong>Griechischer Bauernsalat</strong>
+                        <p>klein</p>
+                    </div>
+                    <span class="badge white black-text new">5,00 €</span>
+                </li>
+                <li>
+                    <span>19</span>
+                    <div class="description">
+                        <strong>Krautsalat</strong>
+                    </div>
+                    <span class="badge white black-text new">2,50 €</span>
+                </li>
+                <li>
+                    <span>20</span>
+                    <div class="description">
+                        <strong>Tomatensalat</strong>
+                    </div>
+                    <span class="badge white black-text new">2,50 €</span>
+                </li>
+                <li>
+                    <span>21</span>
+                    <div class="description">
+                        <strong>Gemischter Salat</strong>
+                    </div>
+                    <span class="badge white black-text new">2,50 €</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container center">
+            <h2>Hauptgerichte vom Grill</h2>
+        </div>
+        <div class="parallax-container">
+            <div class="parallax"><img src="img/speisekarte/hauptgerichte-vom-grill.jpg" alt="Hauptgerichte vom Grill"
+                    srcset="
+                img/speisekarte/hauptgerichte-vom-grill.jpg 360w,
+                img/speisekarte/hauptgerichte-vom-grill-480.jpg 480w,
+                img/speisekarte/hauptgerichte-vom-grill-640.jpg 640w,
+                img/speisekarte/hauptgerichte-vom-grill-1280.jpg 1280w,
+                img/speisekarte/hauptgerichte-vom-grill-1366.jpg 1366w,
+                img/speisekarte/hauptgerichte-vom-grill-1600.jpg 1600w,
+                img/speisekarte/hauptgerichte-vom-grill-1920.jpg 1920w,
+                img/speisekarte/hauptgerichte-vom-grill-2400.jpg 2400w">
+            </div>
+        </div>
+        <div class="container">
+            <ul class="flow-text">
+                <li>
+                    <span>22</span>
+                    <div class="description">
+                        <strong>Gyros</strong>
+                        <p>mit Pommes Frites, Zaziki und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">11,50 €</span>
+                </li>
+                <li>
+                    <span>23</span>
+                    <div class="description">
+                        <strong>Gyros Pitta</strong>
+                        <p>mit Fladenbrot, Zaziki und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">11,50 €</span>
+                </li>
+                <li>
+                    <span>24</span>
+                    <div class="description">
+                        <strong>Zwei Suvlaki</strong>
+                        <p>mit Pommes Frites, Zaziki und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">11,50 €</span>
+                </li>
+                <li>
+                    <span>25</span>
+                    <div class="description">
+                        <strong>Zwei Suvlaki</strong>
+                        <p>mit gerösteten Zwiebeln, Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">12,50 €</span>
+                </li>
+                <li>
+                    <span>26</span>
+                    <div class="description">
+                        <strong>Drei Schweinesteaks</strong>
+                        <p>mit Kräuterbutter, Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">12,00 €</span>
+                </li>
+                <li>
+                    <span>27</span>
+                    <div class="description">
+                        <strong>Schweinelenden</strong>
+                        <p>mit Kräuterbutter, Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">12,50 €</span>
+                </li>
+                <li>
+                    <span>28</span>
+                    <div class="description">
+                        <strong>Spezial-Bifteki</strong>
+                        <p>gefüllt mit Schafskäse, Pommes Frites und gemischten Salat</p>
+                    </div>
+                    <span class="badge white black-text new">12,50 €</span>
+                </li>
+                <li>
+                    <span>29</span>
+                    <div class="description">
+                        <strong>Schweineleber</strong>
+                        <p>mit gerösteten Zwiebeln, Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">11,00 €</span>
+                </li>
+                <li>
+                    <span>30</span>
+                    <div class="description">
+                        <strong>Fünf Lammkoteletts</strong>
+                        <p>mit Reis, Zaziki und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">15,00 €</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container center">
+            <h2>Hauptgerichte vom Backofen</h2>
+        </div>
+        <div class="parallax-container">
+            <div class="parallax"><img src="img/speisekarte/hauptgerichte-vom-backofen.jpg"
+                    alt="Hauptgerichte vom Backofen" srcset="
+                    img/speisekarte/hauptgerichte-vom-backofen.jpg 360w,
+                    img/speisekarte/hauptgerichte-vom-backofen-480.jpg 480w,
+                    img/speisekarte/hauptgerichte-vom-backofen-640.jpg 640w,
+                    img/speisekarte/hauptgerichte-vom-backofen-1280.jpg 1280w,
+                    img/speisekarte/hauptgerichte-vom-backofen-1366.jpg 1366w,
+                    img/speisekarte/hauptgerichte-vom-backofen-1600.jpg 1600w,
+                    img/speisekarte/hauptgerichte-vom-backofen-1920.jpg 1920w,
+                    img/speisekarte/hauptgerichte-vom-backofen-2400.jpg 2400w"></div>
+        </div>
+        <div class="container">
+            <ul class="flow-text">
+                <li>
+                    <span>44</span>
+                    <div class="description">
+                        <strong>Giuvetsi Kritharaki</strong>
+                        <p>Lammfleisch, Langkornnudeln, mit Käse überbacken</p>
+                    </div>
+                    <span class="badge white black-text new">14,00 €</span>
+                </li>
+
+                <li>
+                    <span>45</span>
+                    <div class="description">
+                        <strong>Giuvetsi Spaghetti</strong>
+                        <p>Lammfleisch, Spaghetti, mit Käse überbacken</p>
+                    </div>
+                    <span class="badge white black-text new">14,00 €</span>
+                </li>
+
+                <li>
+                    <span>46</span>
+                    <div class="description">
+                        <strong>Giuvetsi Fasolakia</strong>
+                        <p>Lammfleisch mit grünen Bohnen und Brot</p>
+                    </div>
+                    <span class="badge white black-text new">14,00 €</span>
+                </li>
+
+                <li>
+                    <span>47</span>
+                    <div class="description">
+                        <strong>Giuvetsi Gigades</strong>
+                        <p>Lammfleisch mit dicken Bohnen und Brot</p>
+                    </div>
+                    <span class="badge white black-text new">14,00 €</span>
+                </li>
+
+                <li>
+                    <span>48</span>
+                    <div class="description">
+                        <strong>Stifado</strong>
+                        <p>Lammfleisch mit Zwiebeln und Brot</p>
+                    </div>
+                    <span class="badge white black-text new">14,00 €</span>
+                </li>
+
+                <li>
+                    <span>49</span>
+                    <div class="description">
+                        <strong>Giuvetsi Bamies</strong>
+                        <p>Lammfleisch mit Okraschoten</p>
+                    </div>
+                    <span class="badge white black-text new">14,00 €</span>
+                </li>
+
+                <li>
+                    <span>50</span>
+                    <div class="description">
+                        <strong>Giuvetsi Melitzanes</strong>
+                        <p>Lammfleisch mit Auberginen, Schafskäse und Brot</p>
+                    </div>
+                    <span class="badge white black-text new">14,00 €</span>
+                </li>
+
+                <li>
+                    <span>92</span>
+                    <div class="description">
+                        <strong>Giuvetsi Rizi</strong>
+                        <p>Lammfleisch mit Reis und Käse überbacken</p>
+                    </div>
+                    <span class="badge white black-text new">14,00 €</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container center">
+            <h2>Grillplatten</h2>
+        </div>
+        <div class="parallax-container">
+            <div class="parallax"><img src="img/speisekarte/grillplatten.jpg" alt="Grillplatten" srcset="
+                img/speisekarte/grillplatten.jpg 360w,
+                img/speisekarte/grillplatten-480.jpg 480w,
+                img/speisekarte/grillplatten-640.jpg 640w,
+                img/speisekarte/grillplatten-1280.jpg 1280w,
+                img/speisekarte/grillplatten-1366.jpg 1366w,
+                img/speisekarte/grillplatten-1600.jpg 1600w,
+                img/speisekarte/grillplatten-1920.jpg 1920w,
+                img/speisekarte/grillplatten-2400.jpg 2400w"></div>
+        </div>
+        <div class="container">
+            <ul class="flow-text">
+                <li>
+                    <span>31</span>
+                    <div class="description">
+                        <strong>Athina-Platte</strong>
+                        <p>Suvlaki, Bifteki, Gyros, Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">12,00 €</span>
+                </li>
+                <li>
+                    <span>32</span>
+                    <div class="description">
+                        <strong>Delphi-Platte</strong>
+                        <p>Suvlaki, Gyros, Zaziki, Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">12,00 €</span>
+                </li>
+                <li>
+                    <span>33</span>
+                    <div class="description">
+                        <strong>Bauernteller</strong>
+                        <p>Suvlaki, Lende, Gyros, Zaziki, Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">12,00 €</span>
+                </li>
+                <li>
+                    <span>34</span>
+                    <div class="description">
+                        <strong>Olympia-Platte</strong>
+                        <p>Gyros, Kalamaria, Zaziki, Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">13,00 €</span>
+                </li>
+                <li>
+                    <span>35</span>
+                    <div class="description">
+                        <strong>Samos-Platte</strong>
+                        <p>Suvlaki, Kalamaria, Zaziki, Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">12,00 €</span>
+                </li>
+                <li>
+                    <span>36</span>
+                    <div class="description">
+                        <strong>Spezial-Platte</strong>
+                        <p>Lende, Leber, Bifteki, Gyros, Zaziki, Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">15,00 €</span>
+                </li>
+                <li>
+                    <span>37</span>
+                    <div class="description">
+                        <strong>Flampouresi-Platte</strong>
+                        <p>Gyros, Suvlaki, Kalamaria, Zaziki, Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">14,00 €</span>
+                </li>
+                <li>
+                    <span>85</span>
+                    <div class="description">
+                        <strong>Hellas-Platte</strong>
+                        <p>Gyros, Lende, 2 Lammkoteletts, Zaziki, Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">15,00 €</span>
+                </li>
+                <li>
+                    <span>86</span>
+                    <div class="description">
+                        <strong>Meteora-Platte</strong>
+                        <p>Gyros, Suvlaki, Leber, Zaziki, Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">12,00 €</span>
+                </li>
+                <li>
+                    <span>87</span>
+                    <div class="description">
+                        <strong>Akropolis-Platte</strong>
+                        <p>Gyros, Steak, Leber, Zaziki, Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">15,00 €</span>
+                </li>
+                <li>
+                    <span>88</span>
+                    <div class="description">
+                        <strong>Trikala-Platte</strong>
+                        <p>Gyros, Suvlaki, 1 Lammkotelett, Bifteki, Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">13,00 €</span>
+                </li>
+                <li>
+                    <span>89</span>
+                    <div class="description">
+                        <strong>Gyros mit Metaxa-Soße</strong>
+                        <p>überbacken mit Käse, Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">12,00 €</span>
+                </li>
+                <li>
+                    <span>90</span>
+                    <div class="description">
+                        <strong>Drei Schweinesteaks</strong>
+                        <p>mit Pfeffersoße, Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">12,00 €</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container center">
+            <h2>Fischgerichte</h2>
+        </div>
+        <div class="parallax-container">
+            <div class="parallax"><img src="img/speisekarte/fischgerichte.jpg" alt="Fischgerichte" srcset="
+                img/speisekarte/fischgerichte.jpg 360w,
+                img/speisekarte/fischgerichte-480.jpg 480w,
+                img/speisekarte/fischgerichte-640.jpg 640w,
+                img/speisekarte/fischgerichte-1280.jpg 1280w,
+                img/speisekarte/fischgerichte-1366.jpg 1366w,
+                img/speisekarte/fischgerichte-1600.jpg 1600w,
+                img/speisekarte/fischgerichte-1920.jpg 1920w,
+                img/speisekarte/fischgerichte-2400.jpg 2400w"></div>
+        </div>
+        <div class="container">
+            <ul class="flow-text">
+                <li>
+                    <span>38</span>
+                    <div class="description">
+                        <strong>Kalamaria</strong>
+                        <p>Tintenfisch mit Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">13,00 €</span>
+                </li>
+                <li>
+                    <span>39</span>
+                    <div class="description">
+                        <strong>Glosses</strong>
+                        <p>Zungenfilet mit Reis und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">12,00 €</span>
+                </li>
+                <li>
+                    <span>40</span>
+                    <div class="description">
+                        <strong>Kalamaria - Garides</strong>
+                        <p>mit Reis und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">15,00 €</span>
+                </li>
+                <li>
+                    <span>41</span>
+                    <div class="description">
+                        <strong>Sardelles</strong>
+                        <p>gebacken, mit Reis und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">12,00 €</span>
+                </li>
+                <li>
+                    <span>42</span>
+                    <div class="description">
+                        <strong>Kalamaria - Garides - Glosses</strong>
+                        <p>mit Reis und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">18,00 €</span>
+                </li>
+                <li>
+                    <span>43</span>
+                    <div class="description">
+                        <strong>Garides (Garnelen)</strong>
+                        <p>mit Reis und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">18,00 €</span>
+                </li>
+                <li>
+                    <span>91</span>
+                    <div class="description">
+                        <strong>Gefüllte Kalamari</strong>
+                        <p>mit Reis und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">14,00 €</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <h2 class="center">Deutsche Gerichte</h2>
+            <ul class="flow-text">
+                <li>
+                    <span>51</span>
+                    <div class="description">
+                        <strong>Schnitzel "Wiener Art"</strong>
+                        <p>mit Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">9,00 €</span>
+                </li>
+                <li>
+                    <span>52</span>
+                    <div class="description">
+                        <strong>Cordon-Bleu</strong>
+                        <p>mit Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">11,00 €</span>
+                </li>
+                <li>
+                    <span>53</span>
+                    <div class="description">
+                        <strong>Jägerschnitzel</strong>
+                        <p>mit Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">11,00 €</span>
+                </li>
+                <li>
+                    <span>54</span>
+                    <div class="description">
+                        <strong>Paprika-Schnitzel</strong>
+                        <p>mit Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">11,00 €</span>
+                </li>
+                <li>
+                    <span>55</span>
+                    <div class="description">
+                        <strong>Zigeuner-Schnitzel</strong>
+                        <p>mit Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">11,00 €</span>
+                </li>
+                <li>
+                    <span>94</span>
+                    <div class="description">
+                        <strong>Paradies-Schnitzel</strong>
+                        <p>mit Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">10,00 €</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <h2 class="center">Für unsere kleinen Gäste</h2>
+        </div>
+        <div class="parallax-container">
+            <div class="parallax"><img src="img/speisekarte/fuer-unsere-kleinen-gaeste.jpg" alt="Kindergerichte" srcset="
+                img/speisekarte/kindergerichte.jpg 360w,
+                img/speisekarte/kindergerichte-480.jpg 480w,
+                img/speisekarte/kindergerichte-640.jpg 640w,
+                img/speisekarte/kindergerichte-1280.jpg 1280w,
+                img/speisekarte/kindergerichte-1366.jpg 1366w,
+                img/speisekarte/kindergerichte-1600.jpg 1600w,
+                img/speisekarte/kindergerichte-1920.jpg 1920w,
+                img/speisekarte/kindergerichte-2400.jpg 2400w"></div>
+        </div>
+        <div class="container">
+            <ul class="flow-text">
+                <li>
+                    <span>69</span>
+                    <div class="description">
+                        <strong>Gyros</strong>
+                        <p>mit Zaziki, Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">7,00 €</span>
+                </li>
+                <li>
+                    <span>70</span>
+                    <div class="description">
+                        <strong>Suvlaki</strong>
+                        <p>mit Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">6,00 €</span>
+                </li>
+                <li>
+                    <span>71</span>
+                    <div class="description">
+                        <strong>Schnitzel</strong>
+                        <p>mit Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">6,00 €</span>
+                </li>
+                <li>
+                    <span>72</span>
+                    <div class="description">
+                        <strong>Kalamaris</strong>
+                        <p>mit Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">7,00 €</span>
+                </li>
+                <li>
+                    <span>97</span>
+                    <div class="description">
+                        <strong>Glossa</strong>
+                        <p>Zungenfilet mit Pommes Frites und gemischtem Salat</p>
+                    </div>
+                    <span class="badge white black-text new">7,00 €</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container center">
+            <h2>Pizza</h2>
+        </div>
+        <div class="parallax-container">
+            <div class="parallax"><img src="img/speisekarte/pizza.jpg" alt="Pizza" srcset="
+                img/speisekarte/pizza.jpg 360w,
+                img/speisekarte/pizza-480.jpg 480w,
+                img/speisekarte/pizza-640.jpg 640w,
+                img/speisekarte/pizza-1280.jpg 1280w,
+                img/speisekarte/pizza-1366.jpg 1366w,
+                img/speisekarte/pizza-1600.jpg 1600w,
+                img/speisekarte/pizza-1920.jpg 1920w,
+                img/speisekarte/pizza-2400.jpg 2400w"></div>
+        </div>
+        <div class="container">
+            <ul class="flow-text">
+                <li>
+                    <span>56</span>
+                    <div class="description">
+                        <strong>Pizza Spezial</strong>
+                        <p>mit Vorderschinken, Salami, Champignons, Paprika, Peperoni, Käse</p>
+                    </div>
+                    <span class="badge white black-text new">5,00 €</span>
+                    <span class="badge white black-text new">7,00 €</span>
+                </li>
+                <li>
+                    <span>57</span>
+                    <div class="description">
+                        <strong>Pizza Spezial</strong>
+                        <p>mit Zwiebeln</p>
+                    </div>
+                    <span class="badge white black-text new">5,00 €</span>
+                    <span class="badge white black-text new">7,00 €</span>
+                </li>
+                <li>
+                    <span>58</span>
+                    <div class="description">
+                        <strong>Pizza</strong>
+                        <p>mit Vorderschinken, Champignons, Zwiebeln, Käse</p>
+                    </div>
+                    <span class="badge white black-text new">5,00 €</span>
+                    <span class="badge white black-text new">7,00 €</span>
+                </li>
+                <li>
+                    <span>59</span>
+                    <div class="description">
+                        <strong>Pizza Hackfleisch</strong>
+                        <p>mit Käse</p>
+                    </div>
+                    <span class="badge white black-text new">5,00 €</span>
+                    <span class="badge white black-text new">7,00 €</span>
+                </li>
+                <li>
+                    <span>60</span>
+                    <div class="description">
+                        <strong>Pizza Hackfleisch</strong>
+                        <p>mit Champignons, Zwiebeln und Käse</p>
+                    </div>
+                    <span class="badge white black-text new">5,00 €</span>
+                    <span class="badge white black-text new">7,00 €</span>
+                </li>
+                <li>
+                    <span>61</span>
+                    <div class="description">
+                        <strong>Pizza Salami</strong>
+                        <p>mit Käse</p>
+                    </div>
+                    <span class="badge white black-text new">5,00 €</span>
+                    <span class="badge white black-text new">7,00 €</span>
+                </li>
+                <li>
+                    <span>62</span>
+                    <div class="description">
+                        <strong>Pizza</strong>
+                        <p>mit Vorderschinken und Käse</p>
+                    </div>
+                    <span class="badge white black-text new">5,00 €</span>
+                    <span class="badge white black-text new">7,00 €</span>
+                </li>
+                <li>
+                    <span>63</span>
+                    <div class="description">
+                        <strong>Pizza</strong>
+                        <p>mit Vorderschinken, Champignons und Käse</p>
+                    </div>
+                    <span class="badge white black-text new">5,00 €</span>
+                    <span class="badge white black-text new">7,00 €</span>
+                </li>
+                <li>
+                    <span>64</span>
+                    <div class="description">
+                        <strong>Pizza Vier Jahreszeiten</strong>
+                        <p></p>
+                    </div>
+                    <span class="badge white black-text new">5,00 €</span>
+                    <span class="badge white black-text new">7,00 €</span>
+                </li>
+                <li>
+                    <span>65</span>
+                    <div class="description">
+                        <strong>Pizza Gyros</strong>
+                        <p></p>
+                    </div>
+                    <span class="badge white black-text new">6,00 €</span>
+                    <span class="badge white black-text new">8,00 €</span>
+                </li>
+                <li>
+                    <span>66</span>
+                    <div class="description">
+                        <strong>Pizza Hawaii</strong>
+                        <p></p>
+                    </div>
+                    <span class="badge white black-text new">5,00 €</span>
+                    <span class="badge white black-text new">7,00 €</span>
+                </li>
+                <li>
+                    <span>67</span>
+                    <div class="description">
+                        <strong>Pizza Vegetarisch</strong>
+                        <p></p>
+                    </div>
+                    <span class="badge white black-text new">5,00 €</span>
+                    <span class="badge white black-text new">7,00 €</span>
+                </li>
+                <li>
+                    <span>68</span>
+                    <div class="description">
+                        <strong>Pizza Margherita</strong>
+                        <p></p>
+                    </div>
+                    <span class="badge white black-text new">4,00 €</span>
+                    <span class="badge white black-text new">6,00 €</span>
+                </li>
+                <li>
+                    <span>95</span>
+                    <div class="description">
+                        <strong>Pizza Thunfisch</strong>
+                        <p>mit Zwiebeln</p>
+                    </div>
+                    <span class="badge white black-text new">5,00 €</span>
+                    <span class="badge white black-text new">8,00 €</span>
+                </li>
+                <li>
+                    <span>96</span>
+                    <div class="description">
+                        <strong>Pizza Spezial</strong>
+                        <p>mit Sardinen</p>
+                    </div>
+                    <span class="badge white black-text new">6,00 €</span>
+                    <span class="badge white black-text new">8,00 €</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container center">
+            <h2>Nachspeisen</h2>
+        </div>
+        <div class="parallax-container">
+            <div class="parallax"><img src="img/speisekarte/nachspeisen.jpg" alt="Nachspeisen" srcset="
+                img/speisekarte/nachspeisen.jpg 360w,
+                img/speisekarte/nachspeisen-480.jpg 480w,
+                img/speisekarte/nachspeisen-640.jpg 640w,
+                img/speisekarte/nachspeisen-1280.jpg 1280w,
+                img/speisekarte/nachspeisen-1366.jpg 1366w,
+                img/speisekarte/nachspeisen-1600.jpg 1600w,
+                img/speisekarte/nachspeisen-1920.jpg 1920w,
+                img/speisekarte/nachspeisen-2400.jpg 2400w"></div>
+        </div>
+        <div class="container">
+            <ul class="flow-text">
+                <li>
+                    <span>73</span>
+                    <div class="description">
+                        <strong>Gemischtes Eis</strong>
+                        <p>mit Früchten und Sahne</p>
+                    </div>
+                    <span class="badge white black-text new">4,00 €</span>
+                </li>
+                <li>
+                    <span>74</span>
+                    <div class="description">
+                        <strong>Gemischtes Eis</strong>
+                        <p>mit Sahne und Schokosoße</p>
+                    </div>
+                    <span class="badge white black-text new">4,00 €</span>
+                </li>
+                <li>
+                    <span>75</span>
+                    <div class="description">
+                        <strong>Gemischtes Eis</strong>
+                        <p>mit Schokosoße</p>
+                    </div>
+                    <span class="badge white black-text new">4,00 €</span>
+                </li>
+                <li>
+                    <span>76</span>
+                    <div class="description">
+                        <strong>Joghurt</strong>
+                        <p>mit Honig und Nüssen</p>
+                    </div>
+                    <span class="badge white black-text new">4,00 €</span>
+                </li>
+                <li>
+                    <span>94</span>
+                    <div class="description">
+                        <strong>Ummanteltes Vanilleeis</strong>
+                        <p>1 Kugel</p>
+                    </div>
+                    <span class="badge white black-text new">1,00 €</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer class="page-footer black darken-1 white-text">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6 l4">
+                    <h5>Inhaber</h5>
+                    <p><i class="material-icons left">home</i>Gasthaus Gundel</p>
+                    <p><i class="material-icons left">person</i>Ioannis Loules</p>
+                </div>
+                <div class="col s12 m6 l4">
+                    <h5>Kontakt</h5>
+                    <ul>
+                        <li><a href="tel:+4991781503" class="waves-effect btn-flat white-text"><i
+                                    class="material-icons left">phone</i>+49 9178 1503</a></li>
+                        <li>
+                            <a href="anreise.html" class="white-text"><i class="material-icons left">location_on</i>
+                                <address>
+                                    Nördlinger Straße 14<br />
+                                    91126 Barthelmesaurach<br />
+                                </address>
+                            </a></li>
+                    </ul>
+                </div>
+                <div class="col s12 m6 l4">
+                    <h5>Info</h5>
+                    <ul>
+                        <li><a href="impressum.html" class="waves-effect btn-flat white-text"><i
+                                    class="material-icons left">info</i>Impressum</a></li>
+                        <li><a href="datenschutzerklaerung.html" class="waves-effect btn-flat white-text truncate"><i
+                                    class="material-icons left">verified_user</i>Datenschutzerklärung</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

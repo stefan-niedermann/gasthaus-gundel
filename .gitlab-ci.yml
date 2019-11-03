@@ -9,15 +9,7 @@ deploy_job:
     - rm -rf .git
     - apt-get update
     - apt-get --yes --force-yes install imagemagick lftp
-    - find ./img -name '*.jpg' -exec mogrify -resize 1920x1920 -quality 40\> {} \;
-    - find ./img -name '*-360.jpg' -exec mogrify -resize 360x360 -quality 40\> {} \;
-    - find ./img -name '*-480.jpg' -exec mogrify -resize 480x480 -quality 40\> {} \;
-    - find ./img -name '*-640.jpg' -exec mogrify -resize 640x640 -quality 40\> {} \;
-    - find ./img -name '*-1280.jpg' -exec mogrify -resize 1280x1280 -quality 40\> {} \;
-    - find ./img -name '*-1366.jpg' -exec mogrify -resize 1366x1366 -quality 40\> {} \;
-    - find ./img -name '*-1600.jpg' -exec mogrify -resize 1600x1600 -quality 40\> {} \;
-    - find ./img -name '*-1920.jpg' -exec mogrify -resize 1920x1920 -quality 40\> {} \;
-    - find ./img -name '*-2400.jpg' -exec mogrify -resize 2400x2400 -quality 40\> {} \;
+    - find ./img -name '*.jpg' -exec mogrify -resize 1920x1920 -quality 35\> {} \;
     - lftp -u $FTP_PRODUCTION_USER,$FTP_PRODUCTION_PASSWORD -e "set ssl:verify-certificate no;mirror $FTP_PRODUCTION_PATH/.well-known ./; mirror -R ./ $FTP_PRODUCTION_PATH-$CI_COMMIT_SHA; rm -r $FTP_PRODUCTION_PATH-alt; mv $FTP_PRODUCTION_PATH $FTP_PRODUCTION_PATH-alt; mv $FTP_PRODUCTION_PATH-$CI_COMMIT_SHA $FTP_PRODUCTION_PATH; quit;" $FTP_PRODUCTION_URL
   only:
     - master

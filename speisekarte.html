@@ -37,6 +37,7 @@
             "streetAddress": "Nördlinger Straße 14"
           },
           "name": "Gasthaus Gundel",
+          "image": "https://www.gasthaus-gundel.de/img/gasthaus-gundel.jpg",
           "openingHours": [
             "Tu-Su 11:00-14:30",
             "Tu-Su 17:00-00:00"
@@ -50,6 +51,75 @@
           "url": "http://www.gasthaus-gundel.de",
           "hasMenu": "https://www.gasthaus-gundel.de/speisekarte.html"
         }
+    </script>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            var jsonLd = {
+                "@context": "http://schema.org",
+                "@type": "Menu",
+                "name": "Speisekarte",
+                "url": "https://www.gasthaus-gundel.de/speisekarte.html",
+                "mainEntityOfPage": "https://www.gasthaus-gundel.de/speisekarte.html",
+                "inLanguage": "German",
+                "hasMenuSection": []
+            };
+            var sections = document.querySelectorAll('div.section');
+            for (var sectionIndex = 0; sectionIndex < sections.length; sectionIndex++) {
+                var currentMenuSection = {
+                    "@type": "MenuSection",
+                    "name": sections[sectionIndex].querySelector('h2').innerText,
+                    "hasMenuItem": []
+                };
+                var items = sections[sectionIndex].getElementsByTagName('li');
+                for (var itemIndex = 0; itemIndex < items.length; itemIndex++) {
+                    var currentMenuItem = {
+                        "@type": "MenuItem",
+                        "name": items[itemIndex].querySelector('strong').innerText
+                    };
+                    if (items[itemIndex].querySelector('p')) {
+                        currentMenuSection.description = items[itemIndex].querySelector('p').innerText;
+                    }
+                    var prices = items[itemIndex].querySelectorAll('span.badge');
+                    if (prices.length === 2) {
+                        currentMenuItem.offers = [
+                            {
+                                "@type": "Offer",
+                                "price": prices[0].innerText.substr(0, prices[0].innerText.length - 2),
+                                "priceCurrency": "EUR",
+                                "eligibleQuantity": {
+                                    "@type": "QuantitativeValue",
+                                    "name": "Klein"
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "price": prices[1].innerText.substr(0, prices[1].innerText.length - 2),
+                                "priceCurrency": "EUR",
+                                "eligibleQuantity": {
+                                    "@type": "QuantitativeValue",
+                                    "name": "Groß"
+                                }
+                            }
+                        ]
+                    } else {
+                        currentMenuItem.offers = {
+                            "@type": "Offer",
+                            "price": prices[0].innerText.substr(0, prices[0].innerText.length - 2),
+                            "priceCurrency": "EUR"
+                        }
+                    }
+                    currentMenuSection.hasMenuItem.push(currentMenuItem);
+                }
+                jsonLd.hasMenuSection.push(currentMenuSection);
+
+            }
+
+            var scriptTag = document.createElement('script');
+            scriptTag.setAttribute('type', 'application/ld+json');
+            scriptTag.innerHTML = JSON.stringify(jsonLd);
+            document.head.appendChild(scriptTag);
+        });
     </script>
 
     <!-- Matomo -->
@@ -67,8 +137,6 @@
         })();
     </script>
     <!-- End Matomo Code -->
-
-
 </head>
 
 <body class="black white-text">

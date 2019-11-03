@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     try {
-
         searchInput.addEventListener('focus', function () {
             searchClose.innerText = 'close';
             document.querySelector('body>nav').style.position = 'sticky';

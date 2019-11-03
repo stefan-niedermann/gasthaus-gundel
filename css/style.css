@@ -1,7 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
-
 body {
     font-family: 'Open Sans Condensed', Impact, "Franklin Gothic Bold", sans-serif;
+}
+
+h1 {
+    animation: letterSpacingAnimation .3s ease;
+}
+
+@keyframes letterSpacingAnimation {
+    0% {
+        letter-spacing: .2rem;
+    }
+    100% {
+        letter-spacing: 0;
+    }
 }
 
 .sidenav, .navbar-fixed, nav, footer {
@@ -17,17 +29,21 @@ blockquote {
     font-style: italic;
     border-left: 0;
 }
+
 blockquote::before {
     content: "\"";
 }
+
 blockquote::after {
     content: "\"";
 }
+
 blockquote cite {
     font-style: italic;
     float: right;
     font-size: medium;
 }
+
 blockquote cite::before {
     content: "\a— ";
     white-space: pre;
@@ -36,16 +52,20 @@ blockquote cite::before {
 header {
     margin-bottom: 1rem;
 }
+
 body .navbar-fixed ul {
     display: flex;
     justify-content: center;
 }
+
 body .navbar-fixed li {
     flex: 0 0 auto;
 }
+
 body .navbar-fixed a {
     width: 100%;
 }
+
 body .navbar-fixed .active {
     text-decoration: underline;
     text-decoration-style: dotted;
@@ -57,12 +77,12 @@ body .navbar-fixed .active {
     }
 }
 
-body > footer {
+body>footer {
     border-top: 1px dotted #444;
     margin-top: 8rem;
 }
 
-body > footer a.btn-flat {
+body>footer a.btn-flat {
     padding: 0;
 }
 
@@ -72,8 +92,8 @@ body > footer a.btn-flat {
 }
 
 ::selection {
-	background: #bf360c;
-	color: #fff;
+    background: #bf360c;
+    color: #fff;
 }
 
 span.badge.new::after {
@@ -99,5 +119,5 @@ span.badge.new::after {
 @media (max-width: 390px) {
     nav .container {
         width: 100%;
-    }    
+    }
 }

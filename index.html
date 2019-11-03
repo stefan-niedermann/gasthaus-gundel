@@ -59,6 +59,33 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script defer type="text/javascript" src="js/script.js"></script>
 
+    <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "Restaurant",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "DE",
+            "addressLocality": "Barthelmesaurach",
+            "postalCode": "91126",
+            "streetAddress": "Nördlinger Straße 14"
+          },
+          "name": "Gasthaus Gundel",
+          "openingHours": [
+            "Tu-Su 11:00-14:30",
+            "Tu-Su 17:00-00:00"
+          ],
+          "priceRange": "$$",
+          "servesCuisine": [
+            "Greek",
+            "German"
+          ],
+          "telephone": "+49 9178 1503",
+          "url": "http://www.gasthaus-gundel.de",
+          "hasMenu": "https://www.gasthaus-gundel.de/speisekarte.html"
+        }
+    </script>
+
     <!-- Matomo -->
     <script type="text/javascript">
         var _paq = window._paq || [];
@@ -83,10 +110,14 @@
         <nav class="black">
             <div class="nav-wrapper">
                 <ul class="container center">
-                    <li><a class="waves-effect active" href="index.html"><i class="material-icons left">home</i>Startseite</a></li>
-                    <li><a class="waves-effect" href="speisekarte.html"><i class="material-icons left">restaurant_menu</i>Speisekarte</a></li>
-                    <li><a class="waves-effect" href="oeffnungszeiten.html"><i class="material-icons left">schedule</i>Öffnungszeiten</a></li>
-                    <li><a class="waves-effect" href="anfahrt.html"><i class="material-icons left">map</i>Anfahrt</a></li>
+                    <li><a class="waves-effect active" href="index.html"><i
+                                class="material-icons left">home</i>Startseite</a></li>
+                    <li><a class="waves-effect" href="speisekarte.html"><i
+                                class="material-icons left">restaurant_menu</i>Speisekarte</a></li>
+                    <li><a class="waves-effect" href="oeffnungszeiten.html"><i
+                                class="material-icons left">schedule</i>Öffnungszeiten</a></li>
+                    <li><a class="waves-effect" href="anfahrt.html"><i class="material-icons left">map</i>Anfahrt</a>
+                    </li>
                 </ul>
             </div>
         </nav>

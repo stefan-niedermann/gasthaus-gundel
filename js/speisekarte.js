@@ -27,59 +27,64 @@ document.addEventListener('DOMContentLoaded', function () {
         window.scrollBy(0, -1);
     }
 
-    searchInput.addEventListener('focus', function () {
-        searchClose.innerText = 'close';
-        document.querySelector('body>nav').style.position = 'sticky';
-    });
-    searchInput.addEventListener('blur', function (event) {
-        searchClose.innerText = 'search';
-        document.querySelector('body>nav').style.position = 'static';
-    });
-    searchClose.addEventListener('click', function () {
-        resetSearch();
-    });
-    searchInput.addEventListener('keyup', function () {
-        var searchStr = searchInput.value.toLowerCase();
-        if (searchStr.length > 0) {
-            sections.forEach(function (container) {
-                var containerContainsSearchResult = false;
-                var img = container.querySelector('.parallax-container');
-                if (img) img.classList.add('search-hidden');
-                Array.from(container.querySelectorAll('li')).forEach(function (li) {
-                    if (li.textContent.toLowerCase().includes(searchStr)) {
-                        containerContainsSearchResult = true;
-                        li.classList.remove('search-hidden');
-                        // Highlight
-                        var title = li.querySelector('strong');
-                        resetHighlight(title);
-                        highlight(title, searchStr);
-                        var description = li.querySelector('p');
-                        resetHighlight(description);
-                        highlight(description, searchStr);
+    try {
+
+        searchInput.addEventListener('focus', function () {
+            searchClose.innerText = 'close';
+            document.querySelector('body>nav').style.position = 'sticky';
+        });
+        searchInput.addEventListener('blur', function (event) {
+            searchClose.innerText = 'search';
+            document.querySelector('body>nav').style.position = 'static';
+        });
+        searchClose.addEventListener('click', function () {
+            resetSearch();
+        });
+        searchInput.addEventListener('keyup', function () {
+            var searchStr = searchInput.value.toLowerCase();
+            if (searchStr.length > 0) {
+                sections.forEach(function (container) {
+                    var containerContainsSearchResult = false;
+                    var img = container.querySelector('.parallax-container');
+                    if (img) img.classList.add('search-hidden');
+                    Array.from(container.querySelectorAll('li')).forEach(function (li) {
+                        if (li.textContent.toLowerCase().includes(searchStr)) {
+                            containerContainsSearchResult = true;
+                            li.classList.remove('search-hidden');
+                            // Highlight
+                            var title = li.querySelector('strong');
+                            resetHighlight(title);
+                            highlight(title, searchStr);
+                            var description = li.querySelector('p');
+                            resetHighlight(description);
+                            highlight(description, searchStr);
+                        } else {
+                            li.classList.add('search-hidden');
+                        }
+                    });
+
+                    if (containerContainsSearchResult) {
+                        container.classList.remove('search-hidden');
                     } else {
-                        li.classList.add('search-hidden');
+                        container.classList.add('search-hidden');
                     }
                 });
+            } else {
+                resetSearch();
+            }
+        });
 
-                if (containerContainsSearchResult) {
-                    container.classList.remove('search-hidden');
-                } else {
-                    container.classList.add('search-hidden');
-                }
-            });
-        } else {
-            resetSearch();
-        }
-    });
-
-    document.addEventListener('keydown', function (event) {
-        if (event.ctrlKey && event.keyCode === 70) { // CTRL + F
-            event.preventDefault();
-            searchInput.focus();
-        } else if (event.keyCode === 27) { // ESC
-            event.preventDefault();
-            searchInput.blur();
-            searchClose.click();
-        }
-    });
+        document.addEventListener('keydown', function (event) {
+            if (event.ctrlKey && event.keyCode === 70) { // CTRL + F
+                event.preventDefault();
+                searchInput.focus();
+            } else if (event.keyCode === 27) { // ESC
+                event.preventDefault();
+                searchInput.blur();
+                searchClose.click();
+            }
+        });
+    } catch (e) {
+        document.querySelector('body > nav').style.display = 'none';
+    }
 });

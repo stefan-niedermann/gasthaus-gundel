@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (elem !== null) {
             var replace = elem.textContent.substr(elem.textContent.toLowerCase().indexOf(searchStr), searchStr.length);
             if (replace.length === searchStr.length) {
-                elem.innerHTML = elem.textContent.replace(replace, `<span class="deep-orange">${replace}</span>`);
+                elem.innerHTML = elem.textContent.replace(replace, `<span class="deep-orange darken-4">${replace}</span>`);
             }
         }
     }

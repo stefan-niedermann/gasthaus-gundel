@@ -71,4 +71,15 @@ document.addEventListener('DOMContentLoaded', function () {
             resetSearch();
         }
     });
+
+    document.addEventListener('keydown', function (event) {
+        if (event.ctrlKey && event.keyCode === 70) { // CTRL + F
+            event.preventDefault();
+            searchInput.focus();
+        } else if (event.keyCode === 27) { // ESC
+            event.preventDefault();
+            searchInput.blur();
+            searchClose.click();
+        }
+    });
 });

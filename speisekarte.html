@@ -18,166 +18,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="css/style.css" />
-    <style type="text/css">
-        h2 {
-            margin-bottom: 2rem;
-        }
-
-        .parallax-container {
-            margin-bottom: 2rem;
-        }
-
-        span.badge.new {
-            font-size: large;
-            height: auto;
-            line-height: normal;
-            padding: .3rem .5rem;
-        }
-
-        .section ul {
-            margin: 2rem 0;
-        }
-
-        .section li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .section li span:first-child {
-            padding: .5rem 2rem .5rem 0;
-        }
-
-        .section li .description {
-            flex: 1 1 auto;
-            align-items: baseline;
-        }
-
-        .section li p {
-            margin: 0;
-            font-size: 1rem;
-        }
-
-        .section li .badge {
-            flex: 0 0 auto;
-        }
-
-        body>nav {
-            top: 0;
-            z-index: 997;
-            /* >= nav */
-            background: none;
-            /* Safari make [type="search" round */
-        }
-
-        input#search {
-            height: 100%;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            box-sizing: border-box;
-        }
-
-        input::placeholder {
-            color: #000;
-        }
-
-        @media (min-width: 601px) {
-            input#search {
-                text-align: center;
-            }
-
-            span.badge.new {
-                font-size: x-large;
-            }
-
-            .section li {
-                margin-bottom: 0;
-            }
-
-            .section li .description {
-                display: flex;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-
-            .section li .description p {
-                margin-left: 1rem;
-                flex: 0 1 auto;
-                font-size: 1.1rem;
-            }
-        }
-
-        @media (min-width: 1280px) {
-            .description {
-                border-bottom: 1px dotted #444;
-            }
-        }
-
-        .search-hidden {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/speisekarte.css" />
 
     <script defer type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script defer type="text/javascript" src="js/script.js"></script>
-
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function () {
-            var searchBar = document.getElementById('search-bar');
-            var searchInput = document.getElementById('search');
-            var searchClose = document.getElementById('search-close');
-
-            var sections = Array.from(document.querySelectorAll('div.section'));
-
-            var resetSearch = function () {
-                searchInput.value = '';
-                Array.from(document.getElementsByClassName('search-hidden')).forEach(function (elem) {
-                    elem.classList.remove('search-hidden');
-                });
-                window.scrollBy(0, 1);
-                window.scrollBy(0, -1);
-            }
-
-            searchInput.addEventListener('focus', function () {
-                searchClose.innerText = 'close';
-                document.querySelector('body>nav').style.position = 'sticky';
-            });
-            searchInput.addEventListener('blur', function (event) {
-                searchClose.innerText = 'search';
-                document.querySelector('body>nav').style.position = 'static';
-            });
-            searchClose.addEventListener('click', function () {
-                resetSearch();
-            });
-            searchInput.addEventListener('keyup', function () {
-                var searchStr = searchInput.value.toLowerCase();
-                if (searchStr.length > 0) {
-                    sections.forEach(function (elem) {
-                        var containsSearchResult = false;
-                        var img = elem.querySelector('.parallax-container');
-                        if (img) img.classList.add('search-hidden');
-                        Array.from(elem.querySelectorAll('li')).forEach(function (li) {
-                            if (li.textContent.toLowerCase().includes(searchStr)) {
-                                containsSearchResult = true;
-                                li.classList.remove('search-hidden');
-                            } else {
-                                li.classList.add('search-hidden');
-                            }
-                        });
-
-                        if (containsSearchResult) {
-                            elem.classList.remove('search-hidden');
-                        } else {
-                            elem.classList.add('search-hidden');
-                        }
-                    });
-                } else {
-                    resetSearch();
-                }
-            });
-        });
-    </script>
+    <script defer type="text/javascript" src="js/speisekarte.js"></script>
 
     <!-- Matomo -->
     <script type="text/javascript">
@@ -232,7 +78,7 @@
         </div>
         <div class="parallax-container">
             <div class="parallax">
-                    <!-- srcset="
+                <!-- srcset="
                     img/speisekarte/gulasch-suppe.jpg 360w,
                     img/speisekarte/gulasch-suppe-480.jpg 480w,
                     img/speisekarte/gulasch-suppe-640.jpg 640w,
@@ -396,7 +242,7 @@
         </div>
         <div class="parallax-container">
             <div class="parallax">
-                    <!-- srcset="
+                <!-- srcset="
                     img/speisekarte/pommes.jpg 360w,
                     img/speisekarte/pommes-480.jpg 480w,
                     img/speisekarte/pommes-640.jpg 640w,
@@ -434,7 +280,7 @@
         </div>
         <div class="parallax-container">
             <div class="parallax">
-                    <!-- srcset="
+                <!-- srcset="
                     img/speisekarte/salat.jpg 360w,
                     img/speisekarte/salat-480.jpg 480w,
                     img/speisekarte/salat-640.jpg 640w,
@@ -517,7 +363,7 @@
             <h2>Hauptgerichte vom Grill</h2>
         </div>
         <div class="parallax-container">
-                <!-- srcset="
+            <!-- srcset="
                 img/speisekarte/hauptgerichte-vom-grill.jpg 360w,
                 img/speisekarte/hauptgerichte-vom-grill-480.jpg 480w,
                 img/speisekarte/hauptgerichte-vom-grill-640.jpg 640w,
@@ -611,7 +457,7 @@
             <h2>Hauptgerichte vom Backofen</h2>
         </div>
         <div class="parallax-container">
-             <!-- srcset="
+            <!-- srcset="
                 img/speisekarte/hauptgerichte-vom-backofen.jpg 360w,
                 img/speisekarte/hauptgerichte-vom-backofen-480.jpg 480w,
                 img/speisekarte/hauptgerichte-vom-backofen-640.jpg 640w,
@@ -704,7 +550,7 @@
             <h2>Grillplatten</h2>
         </div>
         <div class="parallax-container">
-                <!-- srcset="
+            <!-- srcset="
                 img/speisekarte/grillplatten.jpg 360w,
                 img/speisekarte/grillplatten-480.jpg 480w,
                 img/speisekarte/grillplatten-640.jpg 640w,
@@ -829,7 +675,7 @@
             <h2>Fischgerichte</h2>
         </div>
         <div class="parallax-container">
-                <!-- srcset="
+            <!-- srcset="
                 img/speisekarte/fischgerichte.jpg 360w,
                 img/speisekarte/fischgerichte-480.jpg 480w,
                 img/speisekarte/fischgerichte-640.jpg 640w,
@@ -961,7 +807,7 @@
             <h2 class="center">Für unsere kleinen Gäste</h2>
         </div>
         <div class="parallax-container">
-                <!-- srcset="
+            <!-- srcset="
                 img/speisekarte/kindergerichte.jpg 360w,
                 img/speisekarte/kindergerichte-480.jpg 480w,
                 img/speisekarte/kindergerichte-640.jpg 640w,
@@ -1022,7 +868,7 @@
             <h2>Pizza</h2>
         </div>
         <div class="parallax-container">
-                <!-- srcset="
+            <!-- srcset="
                 img/speisekarte/pizza.jpg 360w,
                 img/speisekarte/pizza-480.jpg 480w,
                 img/speisekarte/pizza-640.jpg 640w,
@@ -1178,7 +1024,7 @@
             <h2>Nachspeisen</h2>
         </div>
         <div class="parallax-container">
-                <!-- srcset="
+            <!-- srcset="
                 img/speisekarte/nachspeisen.jpg 360w,
                 img/speisekarte/nachspeisen-480.jpg 480w,
                 img/speisekarte/nachspeisen-640.jpg 640w,

@@ -26,33 +26,9 @@ h1 {
     font-weight: bold;
 }
 
-img, video, canvas {
+img {
     max-width: 100%;
     height: auto;
-}
-
-blockquote {
-    font-style: italic;
-    border-left: 0;
-}
-
-blockquote::before {
-    content: "\"";
-}
-
-blockquote::after {
-    content: "\"";
-}
-
-blockquote cite {
-    font-style: italic;
-    float: right;
-    font-size: medium;
-}
-
-blockquote cite::before {
-    content: "\a— ";
-    white-space: pre;
 }
 
 header {

@@ -7,6 +7,12 @@ h1 {
     animation: letterSpacingAnimation .3s ease;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    h1 {
+        animation: none;
+    }
+}
+
 @keyframes letterSpacingAnimation {
     0% {
         letter-spacing: .2rem;

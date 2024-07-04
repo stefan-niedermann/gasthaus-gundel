@@ -47,7 +47,11 @@ summary :is(h1, h2, h3, h4, h5, h6) {
 
 @media (min-width: 980px) {
     body {
-        background-image: url('../img/deko.png');
+        background-image: url('../img/deko.webp');
+
+        @media (prefers-color-scheme: dark) {
+            background-image: url('../img/deko-dark.webp');
+        }
         background-position: top right;
         background-repeat: no-repeat;
         background-size: 15rem;

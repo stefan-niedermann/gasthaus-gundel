@@ -40,10 +40,14 @@ details {
     overflow: auto;
 }
 
-summary :is(h1, h2, h3, h4, h5, h6) {
-    font-size: 100%;
-    display: inline;
-    font-family: unset;
+summary {
+    cursor: pointer;
+
+    :is(h1, h2, h3, h4, h5, h6) {
+        font-size: 100%;
+        display: inline;
+        font-family: unset;
+    }
 }
 
 @media (min-width: 980px) {
@@ -67,8 +71,9 @@ summary :is(h1, h2, h3, h4, h5, h6) {
     }
 }
 
-summary {
-    cursor: pointer;
+iframe {
+    width: 100%;
+    border: none;
 }
 
 main {
@@ -499,4 +504,10 @@ nav {
 
 #anfahrt {
     text-align: center;
+}
+
+#impressum {
+    img {
+        background: none;
+    }
 }

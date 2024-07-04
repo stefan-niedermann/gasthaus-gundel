@@ -1,5 +1,7 @@
 export class SpeisekarteController {
 
+    #observers = [];
+
     constructor() {
     }
 
@@ -8,23 +10,33 @@ export class SpeisekarteController {
         const categoryHeadline = scope.querySelector('h1');
         const categoryForm = document.createElement('form');
         const categoryList = document.createElement('ul');
+        categoryList.tabIndex = -1;
+
         const applyFilter = value => {
             if (value === '') {
-                scope.querySelectorAll(`section`)
-                    .forEach(section => section.style.display = 'unset');
-                categoryList.scrollTo(0, 0);
+                Array.from(scope.querySelectorAll(`section`))
+                    .filter(section => section.hasAttribute('hidden'))
+                    .forEach(section => section.removeAttribute('hidden'));
+
+                categoryList.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+
             } else {
-                const targetItem = scope.querySelector(`section[data-title="${value}"]`);
-                targetItem.style.display = 'unset';
-                scope.querySelectorAll(`section:not([data-title="${value}"])`)
-                    .forEach(section => section.style.display = 'none');
-                /* FIXME Scroll to active filter
-            const listWidth = categoryList.scrollWidth;
-            const itemWidth = targetItem.parentElement.scrollWidth;
-            // const itemWidth = targetItem.parentElement.offsetLeft;
-            categoryList.scrollLeft = (targetItem.parentElement.offsetLeft - itemWidth);*/
+                scope
+                    .querySelector(`section[data-title="${value}"]`)
+                    .removeAttribute('hidden');
+
+                Array.from(scope.querySelectorAll(`section:not([data-title="${value}"])`))
+                    .forEach(section => section.setAttribute('hidden', 'until-found'));
+
+                const targetLabel = scope.querySelector(`form label:has(input[value="${value}"])`);
+                const viewportWidth = parseFloat(getComputedStyle(categoryList).width);
+                const labelWidth = targetLabel.clientWidth;
+                const labelOffset = targetLabel.offsetLeft;
+                const offsetLeft = labelOffset + (labelWidth / 2) - (viewportWidth / 2);
+
+                categoryList.scrollTo({ top: 0, left: offsetLeft, behavior: 'smooth' });
+                window.scrollTo({top: scope.offsetTop});
             }
-            categoryHeadline.scrollTo(); // FIXME does not work
         };
 
         categoryForm.appendChild(categoryList);
@@ -38,7 +50,17 @@ export class SpeisekarteController {
             categoryInput.type = 'radio';
             categoryInput.name = 'speisekarte';
             categoryInput.value = value;
+            categoryLabel.tabIndex = 0;
             categoryLabel.textContent = title;
+            categoryLabel.addEventListener('keydown', event => {
+                switch (event.key) {
+                    case ' ':
+                    case 'Enter': {
+                        categoryInput.click();
+                        event.preventDefault();
+                    }
+                }
+            })
             categoryLabel.appendChild(categoryInput);
             categoryItem.appendChild(categoryLabel);
 
@@ -47,7 +69,7 @@ export class SpeisekarteController {
 
         const filterAll = createFilter('Alle', '');
         categoryList.appendChild(filterAll);
-        [...scope.querySelectorAll('section')]
+        Array.from(scope.querySelectorAll('section'))
             .toSorted((a, b) => b.dataset.weight || 0 - a.dataset.weight || 0)
             .forEach(section => {
                 const categoryTitle = section.querySelector('h2').textContent.trim();
@@ -59,5 +81,43 @@ export class SpeisekarteController {
 
         categoryHeadline.after(categoryForm);
         filterAll.querySelector('input').click();
+
+        this.#observers.push(this.#initHorizontalFilterObserver(categoryList));
+        this.#observers.push(this.#initVerticalFilterObserver(scope, categoryForm));
+    }
+
+    cleanup() {
+        this.#observers
+            .splice(0, this.#observers.length)
+            .forEach(observer => observer.disconnect());
+    }
+
+    #initHorizontalFilterObserver(element) {
+        const CLASS_ENTERED_VIEWPORT = 'entered-viewport';
+        const verticalFilterObserver = new IntersectionObserver(entries => {
+            if (element.classList.contains(CLASS_ENTERED_VIEWPORT)) {
+                verticalFilterObserver.unobserve(element);
+                element.classList.remove(CLASS_ENTERED_VIEWPORT);
+            } else if (entries[0].isIntersecting) {
+                element.classList.add(CLASS_ENTERED_VIEWPORT);
+            }
+        });
+
+        verticalFilterObserver.observe(element);
+        return verticalFilterObserver;
+    }
+
+    #initVerticalFilterObserver(watchedElement, targetElement) {
+        const CLASS_STICKY = 'sticky';
+        const horizontalFilterObserver = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting || window.scrollY <= targetElement.offsetTop) {
+                targetElement.classList.add(CLASS_STICKY);
+            } else {
+                targetElement.classList.remove(CLASS_STICKY);
+            }
+        });
+
+        horizontalFilterObserver.observe(watchedElement);
+        return horizontalFilterObserver;
     }
 }

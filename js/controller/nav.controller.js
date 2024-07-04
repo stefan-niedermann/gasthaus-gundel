@@ -17,17 +17,17 @@ export class NavController {
         updateCurrentItemOnScroll: true,
         updateCurrentItemOnNavigate: true,
     }) {
-        if (options.syncInitialItem) {
+        if (options?.syncInitialItem) {
             const initialMenuItem = this.#nav.querySelector(`[href$="${location.hash}"]`);
 
             if (initialMenuItem instanceof HTMLElement) {
                 initialMenuItem.setAttribute('aria-current', true);
             } else {
-                fallbackInitialItem?.click();
+                options?.fallbackInitialItem?.click();
             }
         }
 
-        if (options.updateCurrentItemOnScroll) {
+        if (options?.updateCurrentItemOnScroll) {
             // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollend_event
             if ('onscrollend' in window) {
                 const observer = new IntersectionObserver(this.#onIntersectionChanged.bind(this));
@@ -47,7 +47,7 @@ export class NavController {
             }
         }
 
-        if (options.updateCurrentItemOnNavigate) {
+        if (options?.updateCurrentItemOnNavigate) {
             const listener = event => this.#hashChangeListener(new URL(event.newURL).hash);
 
             addEventListener('hashchange', listener.bind(this));

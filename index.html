@@ -19,7 +19,9 @@
     <link rel="stylesheet" href="css/main.css?v=3" />
 
     <script defer type="module" src="js/main.js"></script>
-    <script defer type="module" src="js/pfe.component.js"></script>
+    <script defer type="module" src="js/util/index.js"></script>
+    <script defer type="module" src="js/controller/index.js"></script>
+    <script defer type="module" src="js/components/index.js"></script>
     <script type="application/ld+json">
         {
           "@context": "http://schema.org",
@@ -75,19 +77,22 @@
 <body>
     <nav>
         <ul>
-            <li><a href="index.html#startseite"><i aria-hidden="true">home</i> Startseite</a></li>
-            <li><a href="index.html#speisekarte"><i aria-hidden="true">restaurant_menu</i> Speisekarte</a></li>
-            <li><a href="index.html#oeffnungszeiten"><i aria-hidden="true">schedule</i> Öffnungszeiten</a></li>
-            <li><a href="index.html#anfahrt"><i aria-hidden="true">location_on</i> Anfahrt</a></li>
-            <li data-optional><a href="index.html#ueber"><i aria-hidden="true">group</i> Über uns</a></li>
-            <li data-optional><a href="index.html#impressum"><i aria-hidden="true">info_outline</i> Impressum</a></li>
+            <li><a href="index.html#startseite"><i aria-hidden="true"><span>home</span></i> Startseite</a></li>
+            <li><a href="index.html#speisekarte"><i aria-hidden="true"><span>restaurant_menu</span></i> Speisekarte</a>
+            </li>
+            <li><a href="index.html#oeffnungszeiten"><i aria-hidden="true"><span>schedule</span></i> Öffnungszeiten</a>
+            </li>
+            <li><a href="index.html#anfahrt"><i aria-hidden="true"><span>location_on</span></i> Anfahrt</a></li>
+            <li data-optional><a href="index.html#ueber"><i aria-hidden="true"><span>group</span></i> Über uns</a></li>
+            <li data-optional><a href="index.html#impressum"><i aria-hidden="true"><span>info_outline</span></i>
+                    Impressum</a></li>
         </ul>
     </nav>
-    <main id="startseite">
-        <header>
+    <main>
+        <header id="startseite">
             <h1>Gasthaus Gundel</h1>
-            <!-- <a href="tel:+4991781503" class="btn fab"><i aria-hidden="true">phone</i> Anrufen</a> -->
-            <a href="tel:+4991781503"><i aria-hidden="true">phone</i> <strong>09178 1503</strong></a>
+            <a href="tel:+4991781503" aria-label="Anrufen"><i aria-hidden="true">phone</i> <strong>09178 1503</strong></a>
+            <a href="tel:+4991781503" aria-hidden="true" class="fab"><i aria-hidden="true">phone</i></a>
             <img src="img/startseite/startseite.jpg" alt="Griechische Küche">
         </header>
         <article id="speisekarte">
@@ -854,10 +859,8 @@
             </p>
             <privacy-friendly-embed data-icon="map"
                 data-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2603.084502228245!2d10.928442999999998!3d49.274795999999995!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f4c1869b0ce51%3A0x8afa14179d40bfa7!2sGasthaus+Gundel!5e0!3m2!1sde!2sde!4v1425821392833">
-                <slot name="caption">Foo</slot>
-            </privacy-friendly-embed>
-            <privacy-friendly-embed data-url="https://aurachtaler.de">
-                <slot name="caption">Bar</slot>
+                <a
+                    href="https://www.google.com/maps?ll=49.274763,10.92827&z=17&t=m&hl=de&gl=DE&mapclient=embed&daddr=Gasthaus+Gundel+N%C3%B6rdlinger+Str.+14+91126+Kammerstein@49.2747629,10.9282704">Routenplaner</a>
             </privacy-friendly-embed>
         </article>
         <article id="ueber">

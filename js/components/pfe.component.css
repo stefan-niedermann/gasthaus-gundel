@@ -14,8 +14,8 @@ button {
     line-height: inherit;
     font-size: inherit;
     border: 0;
-    background-color: var(--primary);
-    color: var(--on-primary);
+    background-color: var(--md-sys-color-secondary, Canvas);
+    color: var(--md-sys-color-on-secondary, CanvasText);
     text-decoration: none;
     padding: var(--spacer, 1rem) calc(var(--spacer, 1rem) * 2);
     border-radius: calc(var(--spacer, 1rem) / 2);
@@ -54,7 +54,11 @@ p {
     height: 100%;
     margin: 0;
 
-    background-color: var(--pfe-border, ButtonBorder);
+    background-image: repeating-linear-gradient(-55deg,
+            var(--md-sys-color-surface-container-low, Canvas),
+            var(--md-sys-color-surface-container-low, Canvas) 10px,
+            var(--md-sys-color-surface-container, ButtonBorder) 10px,
+            var(--md-sys-color-surface-container, ButtonBorder) 20px);
 }
 
 iframe {

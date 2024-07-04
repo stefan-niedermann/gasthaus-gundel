@@ -1,3 +1,5 @@
+import { deepEqual } from '../util/index.js';
+
 export class PrivacyFriendlyEmbedComponent extends HTMLElement {
 
     static get observedAttributes() {
@@ -7,20 +9,19 @@ export class PrivacyFriendlyEmbedComponent extends HTMLElement {
         ];
     }
 
-    #shadowRoot = undefined;
+    static #style;
 
+    #shadowRoot = undefined;
     #state = {
         url: undefined,
         icon: undefined
     };
 
-    static #style;
-
     constructor() {
         super();
         this.#shadowRoot = this.attachShadow({ mode: 'open' });
         if (PrivacyFriendlyEmbedComponent.#style === undefined) {
-            PrivacyFriendlyEmbedComponent.#style = fetch('js/pfe.component.css').then(css => css.text());
+            PrivacyFriendlyEmbedComponent.#style = fetch('js/components/pfe.component.css').then(css => css.text());
         }
     }
 
@@ -51,12 +52,8 @@ export class PrivacyFriendlyEmbedComponent extends HTMLElement {
             ...input
         }
 
-        // TODO Deep Compare
-        if (this.#state !== newState) {
-            this.#state = {
-                ...this.#state,
-                ...newState
-            }
+        if (!deepEqual(this.#state, newState)) {
+            this.#state = newState;
             this.#render();
         }
     }

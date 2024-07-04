@@ -150,8 +150,8 @@ header {
     }
 
     a {
-        background-color: var(--md-sys-color-secondary-container);
-        color: var(--md-sys-color-on-secondary-container);
+        background-color: var(--md-sys-color-primary-container);
+        color: var(--md-sys-color-on-primary-container);
         text-decoration: none;
         display: inline-block;
         transition: all .2s ease;
@@ -160,8 +160,8 @@ header {
 
         &:active,
         &:focus {
-            background-color: var(--md-sys-color-secondary-container);
-            color: var(--md-sys-color-on-secondary-container);
+            background-color: var(--md-sys-color-primary-container);
+            color: var(--md-sys-color-on-primary-container);
         }
 
         i {

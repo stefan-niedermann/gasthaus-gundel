@@ -12,23 +12,22 @@ export class SpeisekarteController {
         const categoryList = document.createElement('ul');
         categoryList.tabIndex = -1;
         categoryForm.appendChild(categoryList);
-        categoryForm.addEventListener('change', e => this.#applyFilter(scope, categoryList, e.target.value));
 
-        const filterAll = this.#createFilter('Alle', '');
+        const filterAll = this.#createFilter('Alle', '', true);
         categoryList.appendChild(filterAll);
 
         Array.from(scope.querySelectorAll('section'))
             .toSorted((a, b) => b.dataset.weight || 0 - a.dataset.weight || 0)
-            .forEach(section => {
+            .map(section => {
                 const categoryTitle = section.querySelector('h2').textContent.trim();
                 section.dataset.title = categoryTitle;
+                return this.#createFilter(categoryTitle, categoryTitle);;
+            })
+            .forEach(filter => categoryList.appendChild(filter));
 
-                const filter = this.#createFilter(categoryTitle, categoryTitle);
-                categoryList.appendChild(filter);
-            });
 
         categoryHeadline.after(categoryForm);
-        filterAll.querySelector('input').click();
+        categoryForm.addEventListener('change', e => this.#applyFilter(scope, categoryList, e.target.value));
 
         this.#observers.push(this.#initHorizontalFilterObserver(categoryList));
         this.#observers.push(this.#initVerticalFilterObserver(scope, categoryForm));
@@ -40,13 +39,14 @@ export class SpeisekarteController {
             .forEach(observer => observer.disconnect());
     }
 
-    #createFilter = (title, value) => {
+    #createFilter = (title, value, checked = false) => {
         const categoryItem = document.createElement('li');
         const categoryInput = document.createElement('input');
         const categoryLabel = document.createElement('label');
 
         categoryInput.type = 'radio';
         categoryInput.name = 'speisekarte';
+        categoryInput.checked = checked;
         categoryInput.value = value;
         categoryLabel.tabIndex = 0;
         categoryLabel.textContent = title;
@@ -89,8 +89,8 @@ export class SpeisekarteController {
 
             categoryList.scrollTo({ top: 0, left: offsetLeft, behavior: 'smooth' });
         }
-        
-        window.scrollTo({ top: scope.offsetTop, behavior: 'smooth' });
+
+        scope.scrollIntoView(true);
     };
 
     #initHorizontalFilterObserver(element) {

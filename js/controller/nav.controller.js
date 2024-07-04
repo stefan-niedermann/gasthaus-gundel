@@ -1,14 +1,14 @@
 export class NavController {
 
-    #eventListeners = [];
+    #listeners = [];
     #nav;
 
     get #closeToBottom() {
         return window.scrollMaxY - window.scrollY < 10;
     }
 
-    constructor(nav) {
-        this.#nav = nav;
+    constructor(navSelector) {
+        this.#nav = document.querySelector(navSelector);
     }
 
     init(options = {
@@ -43,7 +43,7 @@ export class NavController {
                 addEventListener('scroll', scrollListener);
                 addEventListener('scrollend', scrollEndListener);
 
-                this.#eventListeners.push(scrollListener, scrollEndListener);
+                this.#listeners.push(scrollListener, scrollEndListener);
             }
         }
 
@@ -52,13 +52,13 @@ export class NavController {
 
             addEventListener('hashchange', listener.bind(this));
 
-            this.#eventListeners.push(listener);
+            this.#listeners.push(listener);
         }
     }
 
     cleanup() {
-        this.#eventListeners
-            .splice(0, this.#eventListeners.length)
+        this.#listeners
+            .splice(0, this.#listeners.length)
             .forEach(listener => removeEventListener(listener));
     }
 

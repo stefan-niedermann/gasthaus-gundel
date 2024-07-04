@@ -23,14 +23,17 @@ p {
     hyphens: auto;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
+h1, h2, h3, h4, h5, h6 {
+    font-style: normal;
+    font-weight: normal;
+}
+
+h1, h2 {
+    font-family: 'Xtra', system-ui, sans-serif;
+}
+
 nav {
-    font-family: 'Open Sans Condensed', Impact, "Franklin Gothic Bold", sans-serif;
+    font-family: 'Open Sans Condensed', Impact, "Franklin Gothic Bold", system-ui, sans-serif;
 }
 
 details {
@@ -38,9 +41,7 @@ details {
 }
 
 summary :is(h1, h2, h3, h4, h5, h6) {
-    font-style: normal;
     font-size: 100%;
-    font-weight: normal;
     display: inline;
     font-family: unset;
 }
@@ -130,6 +131,10 @@ a {
 }
 
 img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--md-sys-color-surface-container);
     max-width: 100%;
     height: auto;
 }
@@ -145,13 +150,19 @@ header {
     }
 
     a {
-        background-color: var(--md-sys-color-primary-container);
-        color: var(--md-sys-color-on-primary-container);
+        background-color: var(--md-sys-color-secondary-container);
+        color: var(--md-sys-color-on-secondary-container);
         text-decoration: none;
         display: inline-block;
-        transition: transform .2s ease;
+        transition: all .2s ease;
         padding: calc(var(--spacer) / 2) calc(var(--spacer) * 2);
         border-radius: var(--spacer);
+
+        &:active,
+        &:focus {
+            background-color: var(--md-sys-color-secondary-container);
+            color: var(--md-sys-color-on-secondary-container);
+        }
 
         i {
             font-size: inherit;

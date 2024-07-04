@@ -1,3 +1,13 @@
+/* https://www.1001freefonts.com/xtra.font */
+
+@font-face {
+    font-family: 'Xtra';
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    src: local('Xtra'), url(../fonts/xtra.ttf) format('truetype');
+}
+
 /* Main font */
 
 @font-face {

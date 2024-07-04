@@ -4,7 +4,7 @@ import { FabController, NavController, SpeisekarteController } from './controlle
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const navCtrl = new NavController(document.querySelector('body>nav'));
+    const navCtrl = new NavController('body>nav');
     navCtrl.init();
 
     const fabCtrl = new FabController();

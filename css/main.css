@@ -144,6 +144,7 @@ img {
     background-color: var(--md-sys-color-surface-container);
     max-width: 100%;
     height: auto;
+    border-radius: var(--border-radius);
 }
 
 header {
@@ -165,6 +166,7 @@ header {
         display: inline-block;
         transition: all .2s ease;
         padding: calc(var(--spacer) / 2) calc(var(--spacer) * 2);
+        padding: var(--spacer) calc(var(--spacer) * 2);
         border-radius: var(--spacer);
 
 

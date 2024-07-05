@@ -394,11 +394,13 @@ nav {
         user-select: none;
         overflow-x: hidden;
 
-        &.sticky {
-            background-color: var(--md-sys-color-background);
-            position: sticky;
-            inset-block-start: 0;
-            inset-inline-start: 0;
+        @media (min-height: 25rem) {
+            &.sticky {
+                background-color: var(--md-sys-color-background);
+                position: sticky;
+                inset-block-start: 0;
+                inset-inline-start: 0;
+            }
         }
 
         ul {

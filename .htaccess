@@ -2,9 +2,25 @@ Redirect 301 /home /
 Redirect 301 /speisekarte /#speisekarte
 Redirect 301 /oeffnungszeiten /#oeffnungszeiten
 Redirect 301 /anfahrt /#anfahrt
+Redirect 301 /impressum /#impressum
+Redirect 301 /datenschutzerklaerung /#impressum
+Redirect 301 /nicht-gefunden /
+
+Redirect 301 /home/ /
+Redirect 301 /speisekarte/ /#speisekarte
+Redirect 301 /oeffnungszeiten/ /#oeffnungszeiten
+Redirect 301 /anfahrt/ /#anfahrt
 Redirect 301 /impressum/ /#impressum
 Redirect 301 /datenschutzerklaerung/ /#impressum
-Redirect 301 /nicht-gefunden /#impressum
+Redirect 301 /nicht-gefunden /
+
+Redirect 301 /home.html /
+Redirect 301 /speisekarte.html /#speisekarte
+Redirect 301 /oeffnungszeiten.html /#oeffnungszeiten
+Redirect 301 /anfahrt.html /#anfahrt
+Redirect 301 /impressum.html /#impressum
+Redirect 301 /datenschutzerklaerung.html /#impressum
+Redirect 301 /nicht-gefunden.html /
 
 <FilesMatch "\.html$">
     Header set Cache-Control "public, max-age=7200, must-revalidate"

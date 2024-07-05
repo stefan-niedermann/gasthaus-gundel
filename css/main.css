@@ -474,7 +474,7 @@ header {
 
             li {
                 display: flex;
-                align-items: center;
+                align-items: flex-start;
                 margin-block-end: var(--spacer);
                 gap: var(--spacer);
 
@@ -499,6 +499,7 @@ header {
                     flex: 0 0 auto;
                     padding: calc(var(--spacer) * .25) calc(var(--spacer) * .5);
                     border-radius: var(--border-radius);
+                    align-self: center;
                 }
             }
         }

@@ -78,3 +78,13 @@ input[type="checkbox"] {
     cursor: pointer;
     user-select: none;
 }
+
+@media print {
+    :has(input[type="checkbox"]:not(:checked)) {
+        display: none;
+    }
+
+    figcaption {
+        display: none;
+    }
+}

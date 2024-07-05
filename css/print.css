@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+}
+
+main>:is(header, article, footer),
+section,
+img {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+nav {
+    display: none;
+}
+
+form {
+    display: none;
+}

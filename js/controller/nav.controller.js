@@ -77,6 +77,7 @@ export class NavController {
         const newIntersectingElementId = newIntersectingElementIds[this.#closeToBottom ? newIntersectingElementIds.length - 1 : 0];
 
         if (newIntersectingElementId !== undefined &&
+            newIntersectingElementId !== location.hash.substring(1) &&
             newIntersectingElementId !== this.#nav.querySelector('[aria-current="true"]')?.id) {
             history.pushState({}, '', `${location.pathname}#${newIntersectingElementId}`);
             this.#hashChangeListener(newIntersectingElementId);

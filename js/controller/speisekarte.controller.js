@@ -28,6 +28,7 @@ export class SpeisekarteController {
 
         categoryHeadline.after(categoryForm);
         categoryForm.addEventListener('change', e => this.#applyFilter(scope, categoryList, e.target.value));
+        categoryList.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 
         this.#observers.push(this.#initHorizontalFilterObserver(categoryList));
         this.#observers.push(this.#initVerticalFilterObserver(scope, categoryForm));

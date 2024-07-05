@@ -76,4 +76,5 @@ button,
 label:has(input[type="checkbox"]),
 input[type="checkbox"] {
     cursor: pointer;
+    user-select: none;
 }

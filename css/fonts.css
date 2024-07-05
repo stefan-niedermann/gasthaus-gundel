@@ -30,11 +30,11 @@
  *
  * @license https://developers.google.com/fonts/docs/material_icons?hl=de
  */
-
 @font-face {
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
+    font-display: block;
     src: url(../fonts/material-icons-v48.woff2) format('woff2');
 }
 

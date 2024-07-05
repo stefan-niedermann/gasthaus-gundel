@@ -16,9 +16,11 @@ jobs:
       - name: Install dependencies
         run: sudo apt-get install imagemagick lftp
       - name: Compress images
-        run: find ./img -name '*.jpg' -exec mogrify -resize 1920x1920 -quality 35\> {} \;
+        run: |
+          find ./img -name '*.jpg'  -exec mogrify -resize 1280x1280 -quality 35\> {} \;
+          find ./img -name '*.webp' -exec mogrify -resize 160x160   -quality 20\> {} \;
       - name: Remove unnecessary files
-        run: rm -r .github .git
+        run: rm -r .github .git README.md LICENSE
       - name: Pull .well-known
         continue-on-error: true
         run: lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate no; mirror .well-known ./; quit;" ${{ secrets.FTP_URL }}

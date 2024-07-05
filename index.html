@@ -6,8 +6,8 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="view-transition" content="same-origin">
-    <meta name="theme-color" content="#000000" />
+    <meta name="view-transition" content="same-origin">
+    <meta name="theme-color" content="#d4e0cb" />
     <meta name="robots" content="index, follow" />
     <meta name="description"
         content="☎ Tel.: 09178 / 1503 - Lassen Sie sich verwöhnen mit fränkischen, griechischen und saisonalen Spezialitäten in gemütlichen Räumen" />
@@ -15,48 +15,13 @@
     <base href="./" />
 
     <link rel="icon" type="image/png" href="/img/favicon.png" sizes="64x64" />
-    <link rel="canonical" href="https://gasthaus-gundel.de/index.html" />
-    <link rel="stylesheet" href="css/main.css?v=1" />
-    <style type="text/css">
-        header h1 {
-            text-shadow: 1px 1px 1px black;
-        }
+    <link rel="canonical" href="https://gasthaus-gundel.de/" />
+    <link rel="stylesheet" href="css/main.css?v=3.0.0" />
 
-        header a {
-            padding-bottom: 2rem;
-            position: absolute;
-            margin: 0;
-        }
-
-        .phone {
-            margin-bottom: 5rem;
-        }
-
-        .phone strong,
-        .phone strong i {
-            font-size: 3rem;
-        }
-
-        .phone strong {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .phone i {
-            margin-right: 1.5rem;
-        }
-
-        @media (min-width: 1680px) {
-            .parallax-container {
-                height: 60vh;
-            }
-        }
-    </style>
-
-    <script defer type="text/javascript" src="js/materialize-1.0.0.min.js"></script>
-    <script defer type="text/javascript" src="js/main.js"></script>
-
+    <script defer type="module" src="js/main.js?v=3.0.0"></script>
+    <script defer type="module" src="js/util/index.js?v=3.0.0"></script>
+    <script defer type="module" src="js/controller/index.js?v=3.0.0"></script>
+    <script defer type="module" src="js/components/index.js?v=3.0.0"></script>
     <script type="application/ld+json">
         {
           "@context": "http://schema.org",
@@ -72,7 +37,7 @@
           "image": "https://www.gasthaus-gundel.de/img/gasthaus-gundel.jpg",
           "openingHours": [
             "Tu-Su 11:00-14:30",
-            "Tu-Su 17:00-00:00"
+            "Tu-Su 17:00-23:00"
           ],
           "priceRange": "$$",
           "servesCuisine": [
@@ -105,87 +70,990 @@
         })();
     </script>
     <!-- End Matomo Code -->
-
-
 </head>
 
-<body class="black white-text">
-    <div class="navbar-fixed">
-        <nav class="black">
-            <div class="nav-wrapper">
-                <ul class="container center">
-                    <li><a class="waves-effect active" href="index.html"><i
-                                class="material-icons left">home</i>Startseite</a></li>
-                    <li><a class="waves-effect" href="speisekarte.html"><i
-                                class="material-icons left">restaurant_menu</i>Speisekarte</a></li>
-                    <li><a class="waves-effect" href="oeffnungszeiten.html"><i
-                                class="material-icons left">schedule</i>Öffnungszeiten</a></li>
-                    <li><a class="waves-effect" href="anfahrt.html"><i class="material-icons left">map</i>Anfahrt</a>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#startseite"><i aria-hidden="true"><span>home</span></i> Startseite</a></li>
+            <li><a href="#speisekarte"><i aria-hidden="true"><span>restaurant_menu</span></i> Speisekarte</a>
+            </li>
+            <li><a href="#oeffnungszeiten"><i aria-hidden="true"><span>schedule</span></i> Öffnungszeiten</a>
+            </li>
+            <li><a href="#anfahrt"><i aria-hidden="true"><span>location_on</span></i> Anfahrt</a></li>
+            <li data-optional><a href="#ueber"><i aria-hidden="true"><span>group</span></i> Über uns</a></li>
+            <li data-optional><a href="#impressum"><i aria-hidden="true"><span>info_outline</span></i>
+                    Impressum</a></li>
+        </ul>
+    </nav>
+    <main>
+        <header id="startseite">
+            <h1>Gasthaus Gundel</h1>
+            <a href="tel:+4991781503" aria-label="Anrufen"><i aria-hidden="true">phone</i> <strong>09178
+                    1503</strong></a>
+            <a href="tel:+4991781503" aria-hidden="true" class="fab" tabindex="-1"><i aria-hidden="true">phone</i></a>
+            <img src="img/gasthaus-gundel.jpg" alt="Griechische Küche" width="4000" height="3000" fetchpriority="high">
+        </header>
+        <article id="speisekarte">
+            <h1>Speisekarte</h1>
+            <section>
+                <h2>Kalte Vorspeisen</h2>
+                <ul>
+                    <li>
+                        04
+                        <div class="description">
+                            <strong>Tzaztiki</strong>
+                            <p>Joghurt mit Gurke, Knoblauch und Brot</p>
+                        </div>
+                        <span class="price">5,50 €</span>
+                    </li>
+                    <li>
+                        05
+                        <div class="description">
+                            <strong>Feta</strong>
+                            <p>Griechischer Schafskäse mit Oliven, Peperoni, Tomaten und Brot</p>
+                        </div>
+                        <span class="price">7,50 €</span>
+                    </li>
+                    <li>
+                        06
+                        <div class="description">
+                            <strong>Gemischter Teller</strong>
+                            <p>Schafskäse, Tzaztiki, Gurken, Oliven, Peperoni</p>
+                        </div>
+                        <span class="price">9,50 €</span>
+                    </li>
+                    <li>
+                        07
+                        <div class="description">
+                            <strong>Oliven</strong>
+                            <p>Oliven, Peperoni</p>
+                        </div>
+                        <span class="price">5,00 €</span>
+                    </li>
+                    <li>
+                        08
+                        <div class="description">
+                            <strong>Htapodi</strong>
+                            <p>Octopussalat mit Zwiebeln, Oliven und Brot</p>
+                        </div>
+                        <span class="price">9,50 €</span>
+                    </li>
+                    <li>
+                        77
+                        <div class="description">
+                            <strong>Htipiti</strong>
+                            <p>Schafskäsecreme, Paprika, Knoblauch und Brot</p>
+                        </div>
+                        <span class="price">7,50 €</span>
                     </li>
                 </ul>
-            </div>
-        </nav>
-    </div>
-    <header class="section center">
-        <h1>Gasthaus Gundel</h1>
-    </header>
-    <div class="section phone center">
-        <a href="tel:+4991781503" class="hide-on-med-and-up btn-large waves-effect waves-light deep-orange darken-4">
-            Anrufen<i class="material-icons left">phone</i></a>
-        <strong class="hide-on-small-only"><i class="material-icons">phone</i>09178 1503</strong>
-    </div>
-    <div class="parallax-container">
-        <div class="parallax">
-            <img src="img/startseite/startseite.jpg" alt="Griechische Küche">
-        </div>
-    </div>
-    <div class="section">
-        <div class="container">
-            <div class="row flow-text">
-                <p>Herzlich Willkommen bei Ioannis und Anastasia Loules.</p>
-                <p>Seit 1997, gegenüber der gleichnamigen Brauerei, verwöhnen wir Sie mit
-                    fränkischen, griechischen und saisonalen Spezialitäten. Unsere gemütlichen Räumlichkeiten, Gaststube
-                    mit 65 Plätzen und unser Saal im Obergeschoß bis zu 85 Personen bietet sich ideal für
-                    Veranstaltungen, Betriebs- und Familienfeiern und vielen mehr an.</p>
-                <p>Unser ruhiger Biergarten lädt in den Sommermonaten zum Verweilen ein.</p>
-                <p>Wir wünschen Ihnen einen angenehmen Aufenthalt und einen Guten Appetit!</p>
-            </div>
-        </div>
-    </div>
-    <footer class="page-footer black darken-1 white-text">
-        <div class="container">
-            <div class="row">
-                <div class="col s12 m6 l4">
-                    <h5>Inhaber</h5>
-                    <p><i class="material-icons left">home</i>Gasthaus Gundel</p>
-                    <p><i class="material-icons left">person</i>Ioannis Loules</p>
-                </div>
-                <div class="col s12 m6 l4">
-                    <h5>Kontakt</h5>
-                    <ul>
-                        <li><a href="tel:+4991781503" class="waves-effect btn-flat white-text"><i
-                                    class="material-icons left">phone</i>+49 9178 1503</a></li>
-                        <li>
-                            <a href="anreise.html" class="white-text"><i class="material-icons left">location_on</i>
-                                <address>
-                                    Nördlinger Straße 14<br />
-                                    91126 Barthelmesaurach<br />
-                                </address>
-                            </a></li>
-                    </ul>
-                </div>
-                <div class="col s12 m6 l4">
-                    <h5>Info</h5>
-                    <ul>
-                        <li><a href="impressum.html" class="waves-effect btn-flat white-text"><i
-                                    class="material-icons left">info</i>Impressum</a></li>
-                        <li><a href="datenschutzerklaerung.html" class="waves-effect btn-flat white-text truncate"><i
-                                    class="material-icons left">verified_user</i>Datenschutzerklärung</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+            </section>
+            <section>
+                <h2>Warme Vorspeisen</h2>
+                <ul class="flow-text">
+                    <li>
+                        09
+                        <div class="description">
+                            <strong>Saganaki</strong>
+                            <p>Gebackener Schafskäse mit Tomaten, Oliven, Peperoni und Brot</p>
+                        </div>
+                        <span class="price">8,00 €</span>
+                    </li>
+                    <li>
+                        10
+                        <div class="description">
+                            <strong>Gigades</strong>
+                            <p>Dicke Bohnen mit Brot</p>
+                        </div>
+                        <span class="price">7,00 €</span>
+                    </li>
+                    <li>
+                        11
+                        <div class="description">
+                            <strong>Melitzanes</strong>
+                            <p>Auberginen mit Schafskäse und Brot aus dem Ofen</p>
+                        </div>
+                        <span class="price">7,00 €</span>
+                    </li>
+                    <li>
+                        12
+                        <div class="description">
+                            <strong>Tyropitakia</strong>
+                            <p>5 Stück Schafskäse mit Ei in Blätterteig gewickelt</p>
+                        </div>
+                        <span class="price">7,50 €</span>
+                    </li>
+                    <li>
+                        <span>78</span>
+                        <div class="description">
+                            <strong>Knoblauchbrot</strong>
+                        </div>
+                        <span class="price">4,50 €</span>
+                    </li>
+                    <li>
+                        79
+                        <div class="description">
+                            <strong>Florinis</strong>
+                            <p>Rote Paprika, gefüllt mit Schafskäse, Knoblauch und Brot</p>
+                        </div>
+                        <span class="price">7,50 €</span>
+                    </li>
+                    <li>
+                        80
+                        <div class="description">
+                            <strong>Dolmades</strong>
+                            <p>Weinblätter, gewickelt mit Reis und Brot</p>
+                        </div>
+                        <span class="price">7,50 €</span>
+                    </li>
+                    <li>
+                        81
+                        <div class="description">
+                            <strong>Feta vom Backofen</strong>
+                            <p>Mit Tomaten, Peperoni, Knoblauch, Chili (pikant) und Brot</p>
+                        </div>
+                        <span class="price">8,50 €</span>
+                    </li>
+                    <li>
+                        98
+                        <div class="description">
+                            <strong>Pizzabrot</strong>
+                            <p>Mit Oregano und Olivenöl</p>
+                        </div>
+                        <span class="price">4,00 €</span>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Warme Beilagen</h2>
+                <img src="img/speisekarte/pommes.jpg" alt="Pommes Frites" loading="lazy" width="6000" height="4000">
+                <ul>
+                    <li>
+                        13
+                        <div class="description">
+                            <strong>Reis</strong>
+                            <p>Mit Tomatensoße</p>
+                        </div>
+                        <span class="price">3,50 €</span>
+                    </li>
+                    <li>
+                        14
+                        <div class="description">
+                            <strong>Pommes Frites</strong>
+                        </div>
+                        <span class="price">3,50 €</span>
+                    </li>
+                    <li>
+                        99
+                        <div class="description">
+                            <strong>Pitabrot</strong>
+                            <p>1 Stück</p>
+                        </div>
+                        <span class="price">2,00 €</span>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Salate</h2>
+                <img src="img/speisekarte/salat.jpg" alt="Salat" loading="lazy" width="6179" height="4119">
+                <ul>
+                    <li>
+                        15
+                        <div class="description">
+                            <strong>Griechischer Salat</strong>
+                            <p>Krautsalat, Gruken, Tomaten, Oliven, Peperoni, Zwiebeln, Schafskäse</p>
+                        </div>
+                        <span class="price">9,00 €</span>
+                    </li>
+                    <li>
+                        16
+                        <div class="description">
+                            <strong>Griechischer Salatteller</strong>
+                            <p>Grüner Salat, Gurken, Tomaten, Oliven, Peperoni, Zwiebeln, Schafskäse</p>
+                        </div>
+                        <span class="price">9,00 €</span>
+                    </li>
+                    <li>
+                        84
+                        <div class="description">
+                            <strong>Chef Salat</strong>
+                            <p>Grüner Salat, Gurken, Tomaten, Mais, Eier, Thunfisch, Oliven, Peperoni, Soße und Brot</p>
+                        </div>
+                        <span class="price">10,50 €</span>
+                    </li>
+                    <li>
+                        18
+                        <div class="description">
+                            <strong>Griechischer Bauernsalat</strong>
+                            <p>klein</p>
+                        </div>
+                        <span class="price">6,50 €</span>
+                    </li>
+                    <li>
+                        19
+                        <div class="description">
+                            <strong>Krautsalat</strong>
+                        </div>
+                        <span class="price">3,50 €</span>
+                    </li>
+                    <li>
+                        20
+                        <div class="description">
+                            <strong>Tomatensalat</strong>
+                        </div>
+                        <span class="price">3,50 €</span>
+                    </li>
+                    <li>
+                        21
+                        <div class="description">
+                            <strong>Gemischter Salat</strong>
+                            <p>klein</p>
+                        </div>
+                        <span class="price">3,50 €</span>
+                    </li>
+                </ul>
+            </section>
+            <section data-weight="30">
+                <h2>Hauptgerichte vom Backofen</h2>
+                <img src="img/speisekarte/hauptgerichte-vom-backofen.jpg" alt="Hauptgerichte vom Backofen"
+                    loading="lazy" width="3000" height="2279">
+                <ul>
+                    <li>
+                        44
+                        <div class="description">
+                            <strong>Giuvetsi Kritharaki</strong>
+                            <p>Lammfleisch, Langkornnudeln, mit Käse überbacken</p>
+                        </div>
+                        <span class="price">18,50 €</span>
+                    </li>
+
+                    <li>
+                        45
+                        <div class="description">
+                            <strong>Giuvetsi Spaghetti</strong>
+                            <p>Lammfleisch, Spaghetti, mit Käse überbacken</p>
+                        </div>
+                        <span class="price">18,50 €</span>
+                    </li>
+
+                    <li>
+                        46
+                        <div class="description">
+                            <strong>Giuvetsi Fasolakia</strong>
+                            <p>Lammfleisch mit grünen Bohnen</p>
+                        </div>
+                        <span class="price">18,50 €</span>
+                    </li>
+
+                    <li>
+                        47
+                        <div class="description">
+                            <strong>Giuvetsi Gigades</strong>
+                            <p>Lammfleisch mit dicken Bohnen</p>
+                        </div>
+                        <span class="price">18,50 €</span>
+                    </li>
+
+                    <li>
+                        48
+                        <div class="description">
+                            <strong>Stifado</strong>
+                            <p>Lammfleisch mit Zwiebeln</p>
+                        </div>
+                        <span class="price">18,50 €</span>
+                    </li>
+
+                    <li>
+                        49
+                        <div class="description">
+                            <strong>Giuvetsi Bamies</strong>
+                            <p>Lammfleisch mit Okraschoten</p>
+                        </div>
+                        <span class="price">18,50 €</span>
+                    </li>
+
+                    <li>
+                        50
+                        <div class="description">
+                            <strong>Giuvetsi Melitzanes</strong>
+                            <p>Lammfleisch mit Auberginen, Schafskäse</p>
+                        </div>
+                        <span class="price">18,50 €</span>
+                    </li>
+
+                    <li>
+                        92
+                        <div class="description">
+                            <strong>Giuvetsi Rizi</strong>
+                            <p>Lammfleisch mit Reis, mit Käse überbacken</p>
+                        </div>
+                        <span class="price">18,50 €</span>
+                    </li>
+                </ul>
+            </section>
+            <section data-weight="20">
+                <h2>Hauptgerichte vom Grill</h2>
+                <img src="img/speisekarte/hauptgerichte-vom-grill.jpg" alt="Hauptgerichte vom Grill" loading="lazy"
+                    width="4891" height="2887">
+                <ul>
+                    <li>
+                        22
+                        <div class="description">
+                            <strong>Gyros</strong>
+                            <p>mit Pommes Frites, Tzatziki und gemischtem Salat</p>
+                        </div>
+                        <span class="price">15,50 €</span>
+                    </li>
+                    <li>
+                        23
+                        <div class="description">
+                            <strong>Gyros Pita</strong>
+                            <p>mit Fladenbrot, Tzatziki und gemischtem Salat</p>
+                        </div>
+                        <span class="price">15,50 €</span>
+                    </li>
+                    <li>
+                        24
+                        <div class="description">
+                            <strong>2 Suvlaki</strong>
+                            <p>mit Pommes Frites, Tzatziki und gemischtem Salat</p>
+                        </div>
+                        <span class="price">15,50 €</span>
+                    </li>
+                    <li>
+                        26
+                        <div class="description">
+                            <strong>3 Schweinesteaks</strong>
+                            <p>mit Kräuterbutter, Pommes Frites und gemischtem Salat</p>
+                        </div>
+                        <span class="price">15,50 €</span>
+                    </li>
+                    <li>
+                        27
+                        <div class="description">
+                            <strong>Schweinelende</strong>
+                            <p>mit Kräuterbutter, Pommes Frites und gemischtem Salat</p>
+                        </div>
+                        <span class="price">16,50 €</span>
+                    </li>
+                    <li>
+                        28
+                        <div class="description">
+                            <strong>Spezial-Bifteki</strong>
+                            <p>gefüllt mit Schafskäse, Pommes Frites und gemischten Salat</p>
+                        </div>
+                        <span class="price">17,00 €</span>
+                    </li>
+                    <li>
+                        30
+                        <div class="description">
+                            <strong>5 Lammkoteletts</strong>
+                            <p>mit Reis, Tzatziki und gemischtem Salat</p>
+                        </div>
+                        <span class="price">21,00 €</span>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Fischgerichte</h2>
+                <img src="img/speisekarte/fischgerichte.jpg" alt="Fischgerichte" loading="lazy" width="3200"
+                    height="2400">
+                <ul>
+                    <li>
+                        38
+                        <div class="description">
+                            <strong>Kalamaria</strong>
+                            <p>Tintenfisch mit Pommes Frites, gemischtem Salat und Tzatziki</p>
+                        </div>
+                        <span class="price">18,50 €</span>
+                    </li>
+                    <li>
+                        39
+                        <div class="description">
+                            <strong>Glosses</strong>
+                            <p>Zungenfilet mit Reis, gemischtem Salat und Tzatziki</p>
+                        </div>
+                        <span class="price">16,50 €</span>
+                    </li>
+                    <li>
+                        40
+                        <div class="description">
+                            <strong>Kalamaria - Garides</strong>
+                            <p>Tintenfisch und Garnelen mit Reis, gemischtem Salat und Tzatziki</p>
+                        </div>
+                        <span class="price">21,00 €</span>
+                    </li>
+                    <li>
+                        41
+                        <div class="description">
+                            <strong>Sardelles</strong>
+                            <p>Sardinen gebacken, mit Reis, gemischtem Salat und Tzatziki</p>
+                        </div>
+                        <span class="price">16,00 €</span>
+                    </li>
+                    <li>
+                        42
+                        <div class="description">
+                            <strong>Kalamaria - Garides - Glosses</strong>
+                            <p>Tintenfisch, Garnelen und Zungenfilet mit Reis, gemischtem Salat und Tzatziki</p>
+                        </div>
+                        <span class="price">25,00 €</span>
+                    </li>
+                    <li>
+                        43
+                        <div class="description">
+                            <strong>Garides</strong>
+                            <p>Garnelen mit Reis, gemischtem Salat und Tzatziki</p>
+                        </div>
+                        <span class="price">25,00 €</span>
+                    </li>
+                    <li>
+                        91
+                        <div class="description">
+                            <strong>Gefüllte Kalamari</strong>
+                            <p>Tintenfisch mit Reis, gemischtem Salat und Tzatziki</p>
+                        </div>
+                        <span class="price">19,00 €</span>
+                    </li>
+                </ul>
+            </section>
+            <section data-weight="40">
+                <h2>Grillplatten</h2>
+                <img src="img/speisekarte/grillplatten.jpg" alt="Grillplatten" loading="lazy" width="5115"
+                    height="3264">
+                <ul>
+                    <li>
+                        31
+                        <div class="description">
+                            <strong>Athina-Platte</strong>
+                            <p>Suvlaki, Bifteki, Gyros, Pommes Frites und gemischtem Salat</p>
+                        </div>
+                        <span class="price">17,00 €</span>
+                    </li>
+                    <li>
+                        32
+                        <div class="description">
+                            <strong>Delphi-Platte</strong>
+                            <p>Suvlaki, Gyros, Tzatziki, Pommes Frites und gemischtem Salat</p>
+                        </div>
+                        <span class="price">15,50 €</span>
+                    </li>
+                    <li>
+                        33
+                        <div class="description">
+                            <strong>Bauernteller</strong>
+                            <p>Suvlaki, Lende, Gyros, Tzatziki, Pommes Frites und gemischtem Salat</p>
+                        </div>
+                        <span class="price">17,50 €</span>
+                    </li>
+                    <li>
+                        34
+                        <div class="description">
+                            <strong>Olympia-Platte</strong>
+                            <p>Gyros, Kalamaria, Tzatziki, Pommes Frites und gemischtem Salat</p>
+                        </div>
+                        <span class="price">17,50 €</span>
+                    </li>
+                    <li>
+                        35
+                        <div class="description">
+                            <strong>Samos-Platte</strong>
+                            <p>Suvlaki, Kalamaria, Tzatziki, Pommes Frites und gemischtem Salat</p>
+                        </div>
+                        <span class="price">15,50 €</span>
+                    </li>
+                    <li>
+                        37
+                        <div class="description">
+                            <strong>Flampouresi-Platte</strong>
+                            <p>Gyros, Suvlaki, Kalamaria, Tzatziki, Pommes Frites und gemischtem Salat</p>
+                        </div>
+                        <span class="price">18,50 €</span>
+                    </li>
+                    <li>
+                        88
+                        <div class="description">
+                            <strong>Trikala-Platte</strong>
+                            <p>Gyros, Suvlaki, 1 Lammkotelett, Bifteki, Pommes Frites und gemischtem Salat</p>
+                        </div>
+                        <span class="price">19,50 €</span>
+                    </li>
+                    <li>
+                        89
+                        <div class="description">
+                            <strong>Gyros mit Metaxa-Soße</strong>
+                            <p>überbacken mit Käse, Pommes Frites und gemischtem Salat</p>
+                        </div>
+                        <span class="price">17,00 €</span>
+                    </li>
+                </ul>
+            </section>
+            <section data-weight="10">
+                <h2>Pizza</h2>
+                <img src="img/speisekarte/pizza.jpg" alt="Pizza" loading="lazy" width="2700" height="1809">
+                <ul>
+                    <li>
+                        56
+                        <div class="description">
+                            <strong>Pizza Spezial</strong>
+                            <p>mit Vorderschinken, Salami, Champignons, Paprika, Peperoni, Käse</p>
+                        </div>
+                        <span class="price">8,00 €</span>
+                        <span class="price">11,00 €</span>
+                    </li>
+                    <li>
+                        57
+                        <div class="description">
+                            <strong>Pizza Spezial</strong>
+                            <p>mit Zwiebeln</p>
+                        </div>
+                        <span class="price">8,00 €</span>
+                        <span class="price">11,00 €</span>
+                    </li>
+                    <li>
+                        58
+                        <div class="description">
+                            <strong>Pizza</strong>
+                            <p>mit Vorderschinken, Champignons, Zwiebeln, Käse</p>
+                        </div>
+                        <span class="price">7,50 €</span>
+                        <span class="price">10,50 €</span>
+                    </li>
+                    <li>
+                        59
+                        <div class="description">
+                            <strong>Pizza Hackfleisch</strong>
+                            <p>mit Käse</p>
+                        </div>
+                        <span class="price">7,50 €</span>
+                        <span class="price">10,50 €</span>
+                    </li>
+                    <li>
+                        61
+                        <div class="description">
+                            <strong>Pizza Salami</strong>
+                            <p>mit Käse</p>
+                        </div>
+                        <span class="price">7,50 €</span>
+                        <span class="price">10,50 €</span>
+                    </li>
+                    <li>
+                        62
+                        <div class="description">
+                            <strong>Pizza</strong>
+                            <p>mit Vorderschinken und Käse</p>
+                        </div>
+                        <span class="price">7,50 €</span>
+                        <span class="price">10,50 €</span>
+                    </li>
+                    <li>
+                        63
+                        <div class="description">
+                            <strong>Pizza</strong>
+                            <p>mit Vorderschinken, Champignons und Käse</p>
+                        </div>
+                        <span class="price">7,50 €</span>
+                        <span class="price">10,50 €</span>
+                    </li>
+                    <li>
+                        64
+                        <div class="description">
+                            <strong>Pizza 4 Jahreszeiten</strong>
+                            <p></p>
+                        </div>
+                        <span class="price">9,00 €</span>
+                        <span class="price">12,00 €</span>
+                    </li>
+                    <li>
+                        65
+                        <div class="description">
+                            <strong>Pizza Gyros</strong>
+                            <p></p>
+                        </div>
+                        <span class="price">9,00 €</span>
+                        <span class="price">12,00 €</span>
+                    </li>
+                    <li>
+                        66
+                        <div class="description">
+                            <strong>Pizza Hawaii</strong>
+                            <p></p>
+                        </div>
+                        <span class="price">9,00 €</span>
+                        <span class="price">12,00 €</span>
+                    </li>
+                    <li>
+                        67
+                        <div class="description">
+                            <strong>Pizza Vegetarisch</strong>
+                            <p></p>
+                        </div>
+                        <span class="price">7,50 €</span>
+                        <span class="price">10,50 €</span>
+                    </li>
+                    <li>
+                        68
+                        <div class="description">
+                            <strong>Pizza Margherita</strong>
+                            <p></p>
+                        </div>
+                        <span class="price">7,00 €</span>
+                        <span class="price">9,00 €</span>
+                    </li>
+                    <li>
+                        95
+                        <div class="description">
+                            <strong>Pizza Thunfisch</strong>
+                            <p>mit Zwiebeln</p>
+                        </div>
+                        <span class="price">9,00 €</span>
+                        <span class="price">12,00 €</span>
+                    </li>
+                    <li>
+                        96
+                        <div class="description">
+                            <strong>Pizza Spezial</strong>
+                            <p>mit Sardinen</p>
+                        </div>
+                        <span class="price">9,00 €</span>
+                        <span class="price">12,00 €</span>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Deutsche Gerichte</h2>
+                <ul>
+                    <li>
+                        51
+                        <div class="description">
+                            <strong>Schnitzel "Wiener Art"</strong>
+                            <p>mit Pommes Frites und gemischtem Salat</p>
+                        </div>
+                        <span class="price">14,00 €</span>
+                    </li>
+                    <li>
+                        52
+                        <div class="description">
+                            <strong>Cordon Bleu</strong>
+                            <p>mit Pommes Frites und gemischtem Salat</p>
+                        </div>
+                        <span class="price">16,00 €</span>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Für unsere kleinen Gäste</h2>
+                <img src="img/speisekarte/fuer-unsere-kleinen-gaeste.jpg" alt="Kindergerichte" loading="lazy"
+                    width="7952" height="5304">
+                <ul>
+                    <li>
+                        69
+                        <div class="description">
+                            <strong>Gyros</strong>
+                            <p>mit Pommes Frites, Tzatziki</p>
+                        </div>
+                        <span class="price">9,00 €</span>
+                    </li>
+                    <li>
+                        70
+                        <div class="description">
+                            <strong>Suvlaki</strong>
+                            <p>mit Pommes Frites</p>
+                        </div>
+                        <span class="price">8,00 €</span>
+                    </li>
+                    <li>
+                        71
+                        <div class="description">
+                            <strong>Schnitzel</strong>
+                            <p>mit Pommes Frites</p>
+                        </div>
+                        <span class="price">7,00 €</span>
+                    </li>
+                    <li>
+                        72
+                        <div class="description">
+                            <strong>Kalamaris</strong>
+                            <p>mit Pommes Frites</p>
+                        </div>
+                        <span class="price">9,00 €</span>
+                    </li>
+                    <li>
+                        97
+                        <div class="description">
+                            <strong>Glossa</strong>
+                            <p>Zungenfilet mit Pommes Frites</p>
+                        </div>
+                        <span class="price">9,00 €</span>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Nachspeisen</h2>
+                <img src="img/speisekarte/nachspeisen.jpg" alt="Nachspeisen" loading="lazy" width="4928" height="3264">
+                <ul>
+                    <li>
+                        73
+                        <div class="description">
+                            <strong>Gemischtes Eis</strong>
+                            <p>mit Früchten und Sahne</p>
+                        </div>
+                        <span class="price">8,00 €</span>
+                    </li>
+                    <li>
+                        74
+                        <div class="description">
+                            <strong>Gemischtes Eis</strong>
+                            <p>mit Sahne und Schokosoße</p>
+                        </div>
+                        <span class="price">8,00 €</span>
+                    </li>
+                    <li>
+                        75
+                        <div class="description">
+                            <strong>Gemischtes Eis</strong>
+                            <p>mit Schokosoße</p>
+                        </div>
+                        <span class="price">8,00 €</span>
+                    </li>
+                    <li>
+                        76
+                        <div class="description">
+                            <strong>Joghurt</strong>
+                            <p>mit Honig und Nüssen</p>
+                        </div>
+                        <span class="price">7,00 €</span>
+                    </li>
+                    <li>
+                        94
+                        <div class="description">
+                            <strong>Ummanteltes Vanilleeis</strong>
+                            <p>1 Kugel</p>
+                        </div>
+                        <span class="price">3,00 €</span>
+                    </li>
+                </ul>
+            </section>
+        </article>
+        <article id="oeffnungszeiten">
+            <h1>Öffnungszeiten</h1>
+            <h2>Dienstag - Sonntag</h2>
+            <ul>
+                <li>11:00 Uhr - 14:00 Uhr</li>
+                <li>17:00 Uhr - 23:00 Uhr</li>
+            </ul>
+            <em>Warme Küche bis 21:00 Uhr</em>
+            <h2>Montag</h2>
+            <ul>
+                <li>Ruhetag</li>
+            </ul>
+        </article>
+        <article id="anfahrt">
+            <h1>Anfahrt</h1>
+            <address>
+                Nördlinger Straße 14<br />
+                91126 Barthelmesaurach<br />
+            </address>
+            </p>
+            <privacy-friendly-embed data-icon="location_on"
+                data-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2603.084502228245!2d10.928442999999998!3d49.274795999999995!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f4c1869b0ce51%3A0x8afa14179d40bfa7!2sGasthaus+Gundel!5e0!3m2!1sde!2sde!4v1425821392833">
+                <a
+                    href="https://www.google.com/maps?ll=49.274763,10.92827&z=17&t=m&hl=de&gl=DE&mapclient=embed&daddr=Gasthaus+Gundel+N%C3%B6rdlinger+Str.+14+91126+Kammerstein@49.2747629,10.9282704">Routenplaner</a>
+            </privacy-friendly-embed>
+        </article>
+        <article id="ueber">
+            <h1>Über uns</h1>
+            <p>In der Gemeinde Kammerstein, bei Ioannis und Anastasia Loules.
+                Gegenüber der <a href="https://brauerei-gundel.de" target="_blank" rel="noopener">gleichnamigen
+                    Brauerei</a> verwöhnen wir Sie seit 1997
+                mit fränkischen, griechischen und saisonalen Spezialitäten.</p>
+            <p>Unsere gemütlichen Räumlichkeiten, die Gaststube mit 65 Plätzen
+                und unser Saal im Obergeschoß für bis zu 85 Personen, bieten sich ideal
+                für Veranstaltungen, Betriebs- und Familienfeier und vieles mehr an.
+                Unser ruhiger Biergarten lädt in den Sommermonaten zum Verweilen ein.</p>
+        </article>
+        <footer id="impressum">
+            <h1>Impressum</h1>
+            <p>Verantwortlich für den Inhalt der Seite ist Ioannis Loules.</p>
+            <p>
+            <address>
+                Nördlinger Straße 14<br />
+                91126 Barthelmesaurach<br />
+                +49 9178 1503
+            </address>
+            </p>
+
+            <details>
+                <summary>
+                    <h2>Hinweise zu Inhaltsstoffen</h2>
+                </summary>
+                <p>Bitte beachten Sie in jedem Fall vor dem Bestellen einer Speise oder eines Getränkes die
+                    Verträglichkeit
+                    der Inhaltsstoffe. Sämtliche Zusätze können vor Ort erfragt werden.</p>
+            </details>
+            <details>
+                <summary>
+                    <h2>Lizenz-Informationen</h2>
+                </summary>
+                <p>Alle verwendeten Grafiken wurden entsprechend ihrer jeweiligen Lizenz eingebunden.
+                    Bei einer Weiterverwendung ist die Einhaltung der jeweiligen Lizenzen zu beachten.</p>
+                <h3>Pexels</h3>
+                <p>Lizenz: <a href="https://www.pexels.com/photo-license/">
+                        https://www.pexels.com/photo-license/</a></p>
+                <ul>
+                    <li><a
+                            href="https://www.pexels.com/photo/fried-potatoes-1583884/">https://www.pexels.com/photo/fried-potatoes-1583884/</a>
+                    </li>
+                    <li><a
+                            href="https://www.pexels.com/photo/vegetable-salad-with-wheat-bread-on-the-side-1213710/">https://www.pexels.com/photo/vegetable-salad-with-wheat-bread-on-the-side-1213710/</a>
+                    </li>
+                    <li><a
+                            href="https://www.pexels.com/de-de/foto/aufgespieayt-bbq-brennen-essen-2233729/">https://www.pexels.com/de-de/foto/aufgespieayt-bbq-brennen-essen-2233729/</a>
+                    </li>
+                    <li><a
+                            href="https://www.pexels.com/photo/barbecue-bbq-beef-charcoal-533325/">https://www.pexels.com/photo/barbecue-bbq-beef-charcoal-533325/</a>
+                    </li>
+                    <li><a
+                            href="https://www.pexels.com/photo/brown-fish-fillet-on-white-ceramic-plate-46239/">https://www.pexels.com/photo/brown-fish-fillet-on-white-ceramic-plate-46239/</a>
+                    </li>
+                    <li><a
+                            href="https://www.pexels.com/photo/photo-of-toddler-smiling-1912868/">https://www.pexels.com/photo/photo-of-toddler-smiling-1912868/</a>
+                    </li>
+                    <li><a
+                            href="https://www.pexels.com/photo/vegetables-italian-pizza-restaurant-2232/">https://www.pexels.com/photo/vegetables-italian-pizza-restaurant-2232/</a>
+                    </li>
+                    <li><a
+                            href="https://www.pexels.com/photo/food-restaurant-fruits-orange-2425/">https://www.pexels.com/photo/food-restaurant-fruits-orange-2425/</a>
+                    </li>
+                    <li><a
+                            href="https://www.pexels.com/photo/sliced-vegetable-and-cooked-food-on-white-ceramic-plate-1234535/">https://www.pexels.com/photo/sliced-vegetable-and-cooked-food-on-white-ceramic-plate-1234535/</a>
+                    </li>
+                </ul>
+                <h3>Unsplash</h3>
+                <p>Lizenz: <a href="https://unsplash.com/license">https://unsplash.com/license</a></p>
+                <ul>
+                    <li><a href="https://unsplash.com/photos/PrYEJghQZoo">https://unsplash.com/photos/PrYEJghQZoo</a>
+                    </li>
+                </ul>
+                <h3>Pixabay</h3>
+                <p>Lizenz: <a href="https://pixabay.com/service/license/">https://pixabay.com/service/license/</a>
+                </p>
+                <ul>
+                    <li><a
+                            href="https://pixabay.com/photos/goulash-beef-beef-goulash-specialty-3502510/">https://pixabay.com/photos/goulash-beef-beef-goulash-specialty-3502510/</a>
+                    </li>
+                </ul>
+                <h3>Wikimedia Commons</h3>
+                <p>Lizenz: <a
+                        href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">https://creativecommons.org/licenses/by-sa/3.0/deed.de</a>
+                </p>
+                <ul>
+                    <li><a
+                            href="https://commons.wikimedia.org/wiki/File:Gasthof_Gundel_N%C3%B6rdlinger_Stra%C3%9Fe_14_03.JPG">https://commons.wikimedia.org/wiki/File:Gasthof_Gundel_N%C3%B6rdlinger_Stra%C3%9Fe_14_03.JPG</a>
+                    </li>
+                </ul>
+            </details>
+            <details>
+                <summary>
+                    <h2>Datenschutz&shy;erklärung</h2>
+                </summary>
+                <h3><strong>Geltungs&shy;bereich</strong></h3>
+                <p>Nutzer erhalten mit dieser Datenschutzerklärung Information über die Art, den Umfang und Zweck
+                    der Erhebung und Verwendung ihrer Daten durch den verantwortlichen Anbieter erhoben und
+                    verwendet werden.</p>
+                <p>Den rechtlichen Rahmen für den Datenschutz bilden das Bundesdatenschutzgesetz (BDSG) und das
+                    Telemediengesetz (TMG).</p>
+                <h3><strong>Erfassung allgemeiner Informationen</strong></h3>
+                <p>Mit jedem Zugriff auf dieses Angebot werden durch uns bzw. den Webspace-Provider automatisch
+                    Informationen erfasst. Diese Informationen, auch als Server-Logfiles bezeichnet, sind
+                    allgemeiner Natur und erlauben keine Rückschlüsse auf Ihre Person.</p>
+                <p>Erfasst werden unter anderem: Name der Webseite, Datei, Datum, Datenmenge, Webbrowser und
+                    Webbrowser-Version, Betriebssystem, der Domainname Ihres Internet-Providers, die sogenannte
+                    Referrer-URL (jene Seite, von der aus Sie auf unser Angebot zugegriffen haben) und die
+                    IP-Adresse.</p>
+                <p>Ohne diese Daten wäre es technisch teils nicht möglich, die Inhalte der Webseite auszuliefern und
+                    darzustellen. Insofern ist die Erfassung der Daten zwingend notwendig. Darüber hinaus verwenden
+                    wir die anonymen Informationen für statistische Zwecke. Sie helfen uns bei der Optimierung des
+                    Angebots und der Technik. Wir behalten uns zudem das Recht vor, die Log-Files bei Verdacht auf
+                    eine rechtswidrige Nutzung unseres Angebotes nachträglich zu kontrollieren.</p>
+                <h3>Einbindung von Diensten und Inhalten Dritter</h3>
+                <p>Unser Angebot umfasst mitunter Inhalte, Dienste und Leistungen anderer Anbieter. Das sind zum
+                    Beispiel Karten, die von Google-Maps zur Verfügung gestellt werden, Videos von YouTube sowie
+                    Grafiken und Bilder anderer Webseiten. Damit diese Daten im Browser des Nutzers aufgerufen und
+                    dargestellt werden können, ist die Übermittlung der IP-Adresse zwingend notwendig. Die Anbieter
+                    (im Folgenden als „Dritt-Anbieter“ bezeichnet) nehmen also die IP-Adresse des jeweiligen Nutzers
+                    wahr.</p>
+                <p>Auch wenn wir bemüht sind, ausschließlich Dritt-Anbieter zu nutzen, welche die IP-Adresse nur
+                    benötigen, um Inhalte ausliefern zu können, haben wir keinen Einfluss darauf, ob die IP-Adresse
+                    möglicherweise gespeichert wird. Dieser Vorgang dient in dem Fall unter anderem statistischen
+                    Zwecken. Sofern wir Kenntnis davon haben, dass die IP-Adresse gespeichert wird, weisen wir
+                    unsere Nutzer darauf hin.</p>
+                <h3><strong>Cookies</strong></h3>
+                <p>Diese Webseite verwendet sogenannte Cookies. Das sind Textdateien, die vom Server aus auf Ihrem
+                    Rechner gespeichert werden. Sie enthalten Informationen zum Browser, zur IP-Adresse, dem
+                    Betriebssystem und zur Internetverbindung. Diese Daten werden von uns nicht an Dritte
+                    weitergegeben oder ohne ihre Zustimmung mit personenbezogenen Daten verknüpft.</p>
+                <p>Cookies erfüllen vor allem zwei Aufgaben. Sie helfen uns, Ihnen die Navigation durch unser
+                    Angebot zu erleichtern, und ermöglichen die korrekte Darstellung der Webseite. Sie werden nicht
+                    dazu genutzt, Viren einzuschleusen oder Programme zu starten.</p>
+                <p>Nutzer haben die Möglichkeit, unser Angebot auch ohne Cookies aufzurufen. Dazu müssen im Browser
+                    die entsprechenden Einstellungen geändert werden. Informieren Sie sich bitte über die
+                    Hilfsfunktion Ihres Browsers, wie Cookies deaktiviert werden. Wir weisen allerdings darauf hin,
+                    dass dadurch einige Funktionen dieser Webseite möglicherweise beeinträchtigt werden und der
+                    Nutzungskomfort eingeschränkt wird. Die Seiten <a href="http://www.aboutads.info/choices/"
+                        target="_blank" class="extern">http://www.aboutads.info/choices/</a> (USA) und <a
+                        href="http://www.youronlinechoices.com/uk/your-ad-choices/" target="_blank"
+                        class="extern">http://www.youronlinechoices.com/uk/your-ad-choices/</a> (Europa) erlauben es
+                    Ihnen, Online-Anzeigen-Cookies zu verwalten.</p>
+                <h3>Verwendung von Matomo</h3>
+                <p>Diese Webseite nutzt Matomo, eine Open-Source-Software, die Daten sammelt und speichert. Diese
+                    Informationen dienen Marketing- und Optimierungszwecken. Matomo erstellt dazu aus den Daten
+                    Nutzungsprofile mit einem Pseudonym. Für diese Zwecke speichert die Software auf Ihrem Computer
+                    Cookies (Textdateien), anhand derer die Nutzung der Webseite durch Sie analysiert werden kann.
+                    Ihre IP-Adresse wird dabei sofort nach der Verarbeitung und vor der Speicherung anonymisiert.
+                    Die Daten werden auf den Servern des Anbieters in Deutschland hinterlegt.</p>
+                <p>Wenn Sie nicht möchten, dass Matomo Cookies speichert, haben Sie die Möglichkeit, über die
+                    Einstellungen Ihres Browser die Installation von Cookies zu unterbinden (Informationen dazu
+                    finden Sie in der Hilfefunktion des Browsers). In diesem Fall können Sie möglicherweise nicht
+                    alle Funktionen des Angebots nutzen.</p>
+                <iframe
+                    src="https://tracking.niedermann.it/index.php?module=CoreAdminHome&action=optOut&language=de&backgroundColor=&fontColor=000&fontSize=1rem&fontFamily='Open%20Sans%20Condensed'%2C%20Impact%2C%20%22Franklin%20Gothic%20Bold%22%2C%20sans-serif"></iframe>
+                <h3><strong>Datenspar&shy;samkeit</strong></h3>
+                <p>Personenbezogene Daten speichern wir gemäß den Grundsätzen der Datenvermeidung und
+                    Datensparsamkeit nur so lange, wie es erforderlich ist oder vom Gesetzgeber her vorgeschrieben
+                    wird (gesetzliche Speicherfrist). Entfällt der Zweck der erhobenen Informationen oder endet die
+                    Speicherfrist, sperren oder löschen wir die Daten.</p>
+                <h3>Ihre Rechte auf Auskunft, Berichtigung, Sperre, Löschung und Widerspruch</h3>
+                <p>Sie haben das Recht, auf Antrag unentgeltlich eine Auskunft, über die bei uns gespeicherten
+                    personenbezogenen Daten, anzufordern und/oder eine Berichtigung, Sperrung oder Löschung zu
+                    verlangen. Ausnahmen: Es handelt sich um die vorgeschriebene Datenspeicherung zur
+                    Geschäftsabwicklung oder die Daten unterliegen der gesetzlichen Aufbewahrungspflicht.</p>
+                <p>Für diese Zwecke kontaktieren Sie bitte unseren Datenschutzbeauftragen (Kontaktdaten: am Ende der
+                    Datenschutzerklärung).</p>
+                <p>Um eine Datensperre jederzeit berücksichtigen zu können, ist es erforderlich, die Daten für
+                    Kontrollzwecke in einer Sperrdatei vorzuhalten. Besteht keine gesetzliche Archivierungspflicht,
+                    können Sie auch die Löschung der Daten verlangen. Anderenfalls sperren wir die Daten, sofern Sie
+                    dies wünschen.</p>
+                <h3>Änderung unserer Datenschutz&shy;erklärung</h3>
+                <p>Um zu gewährleisten, dass unsere Datenschutzerklärung stets den aktuellen gesetzlichen Vorgaben
+                    entspricht, behalten wir uns jederzeit Änderungen vor. Das gilt auch für den Fall, dass die
+                    Datenschutzerklärung aufgrund neuer oder überarbeiteter Leistungen, zum Beispiel neuer
+                    Serviceleistungen, angepasst werden muss. Die neue Datenschutzerklärung greift dann bei Ihrem
+                    nächsten Besuch auf unserem Angebot.</p>
+                <p><small>Quelle: Datenschutz-Konfigurator von <a href="http://www.mein-datenschutzbeauftragter.de"
+                            target="_blank" rel="nofollow" class="extern">mein-datenschutzbeauftragter.de</a></small>
+                </p>
+            </details>
+            <details>
+                <summary>
+                    <h2>Technik</h2>
+                </summary>
+                <a href="https://www.niedermann.it/" target="_blank"><img src="img/impressum/niedermann-it.svg"
+                        alt="Niedermann IT-Dienstleistungen"></a>
+            </details>
+        </footer>
+    </main>
 </body>
 
 </html>

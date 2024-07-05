@@ -1,11 +1,11 @@
 ErrorDocument 404 /nicht-gefunden.html
 
-Redirect 301 /home /index.html
-Redirect 301 /speisekarte /index.html#speisekarte
-Redirect 301 /oeffnungszeiten /index.html#oeffnungszeiten
-Redirect 301 /anfahrt /index.html#anfahrt
-Redirect 301 /impressum/ /index.html#impressum
-Redirect 301 /datenschutzerklaerung/ /index.html#impressum
+Redirect 301 /home /
+Redirect 301 /speisekarte /#speisekarte
+Redirect 301 /oeffnungszeiten /#oeffnungszeiten
+Redirect 301 /anfahrt /#anfahrt
+Redirect 301 /impressum/ /#impressum
+Redirect 301 /datenschutzerklaerung/ /#impressum
 
 <FilesMatch "\.html$">
     Header set Cache-Control "public, max-age=7200, must-revalidate"

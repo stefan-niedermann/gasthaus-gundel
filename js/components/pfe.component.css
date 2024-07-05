@@ -19,7 +19,7 @@ button {
     text-decoration: none;
     padding: var(--spacer, 1rem) calc(var(--spacer, 1rem) * 2);
     border-radius: calc(var(--spacer, 1rem) / 2);
-    box-shadow: 2px 2px 3px light-dark(#999, transparent);
+    border-radius: calc(var(--spacer) * 2);
 }
 
 i {
@@ -37,7 +37,7 @@ i {
     -moz-font-feature-settings: 'liga';
     -moz-osx-font-smoothing: grayscale;
 
-    vertical-align: top;
+    vertical-align: middle;
     margin-inline-end: calc(var(--spacer, 1rem) / 2);
 }
 

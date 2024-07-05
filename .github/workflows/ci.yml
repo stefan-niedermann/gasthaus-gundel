@@ -17,8 +17,8 @@ jobs:
         run: sudo apt-get install imagemagick lftp
       - name: Compress images
         run: |
-          find ./img -name '*.jpg' -exec mogrify -resize 1920x1920 -quality 35\> {} \;
-          find ./img -name '*.webp' -exec mogrify -quality 75\> {} \;
+          find ./img -name '*.jpg'  -exec mogrify -resize 1280x1280 -quality 35\> {} \;
+          find ./img -name '*.webp' -exec mogrify -resize 160x160   -quality 20\> {} \;
       - name: Remove unnecessary files
         run: rm -r .github .git
       - name: Pull .well-known

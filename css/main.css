@@ -1,6 +1,17 @@
 @import url(fonts.css);
 @import url(color-scheme.css);
 
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+    }
+}
+
+::selection {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+}
+
 :root {
     --spacer: 1rem;
     --border-radius: calc(var(--spacer) / 5);
@@ -17,19 +28,63 @@ body {
     line-height: 1.75;
     background-color: var(--md-sys-color-background);
     color: var(--md-sys-color-on-background);
+
+    @media (min-width: 980px) {
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: 15rem;
+        background-image: url('../img/deko.webp');
+
+        @media (prefers-color-scheme: dark) {
+            background-image: url('../img/deko-dark.webp');
+        }
+    }
+
+    @media (min-width: 1680px) {
+        margin-inline-end: var(--nav-width);
+        background-size: 10rem;
+        background-attachment: fixed;
+    }
 }
 
-p {
-    hyphens: auto;
-}
-
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-style: normal;
     font-weight: normal;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: 'Xtra', system-ui, sans-serif;
+}
+
+@keyframes letterSpacingAnimation {
+    0% {
+        letter-spacing: .2rem;
+    }
+
+    100% {
+        letter-spacing: 0;
+    }
+}
+
+h1 {
+    animation: letterSpacingAnimation .3s ease;
+    font-size: calc(1.8rem + 3vw);
+    text-align: center;
+}
+
+h2 {
+    font-size: calc(1.2rem + 2vw);
+    text-align: center;
+}
+
+p {
+    hyphens: auto;
 }
 
 nav {
@@ -50,27 +105,6 @@ summary {
     }
 }
 
-@media (min-width: 980px) {
-    body {
-        background-image: url('../img/deko.webp');
-
-        @media (prefers-color-scheme: dark) {
-            background-image: url('../img/deko-dark.webp');
-        }
-        background-position: top right;
-        background-repeat: no-repeat;
-        background-size: 15rem;
-    }
-}
-
-@media (min-width: 1680px) {
-    body {
-        margin-inline-end: var(--nav-width);
-        background-size: 10rem;
-        background-attachment: fixed;
-    }
-}
-
 iframe {
     width: 100%;
     border: none;
@@ -82,38 +116,6 @@ main {
 
 article {
     margin-block: calc(var(--spacer) * 3) calc(var(--spacer) * 3 + 10vh);
-}
-
-h1 {
-    animation: letterSpacingAnimation .3s ease;
-    font-size: calc(1.8rem + 3vw);
-    text-align: center;
-}
-
-h2 {
-    font-size: calc(1.2rem + 2vw);
-    text-align: center;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation: none !important;
-    }
-}
-
-@keyframes letterSpacingAnimation {
-    0% {
-        letter-spacing: .2rem;
-    }
-
-    100% {
-        letter-spacing: 0;
-    }
-}
-
-::selection {
-    background: var(--md-sys-color-primary-container);
-    color: var(--md-sys-color-on-primary-container);
 }
 
 button {
@@ -151,6 +153,8 @@ header {
     img {
         max-height: 40vh;
         object-fit: cover;
+        aspect-ratio: 2/1;
+        object-position: bottom;
         width: 100%;
     }
 
@@ -162,6 +166,7 @@ header {
         transition: all .2s ease;
         padding: calc(var(--spacer) / 2) calc(var(--spacer) * 2);
         border-radius: var(--spacer);
+
 
         &:active,
         &:focus {
@@ -175,7 +180,6 @@ header {
         }
 
         &:not(.fab) {
-            font-size: 120%;
             margin: 0 0 calc(var(--spacer) * 4) 0;
             border-radius: calc(var(--spacer) * 2);
 
@@ -188,6 +192,7 @@ header {
             }
 
             i {
+                font-size: large;
                 margin-inline-end: calc(var(--spacer) / 2);
             }
         }
@@ -230,6 +235,10 @@ header {
                 display: inline-flex;
                 align-items: center;
                 font-weight: normal;
+            }
+
+            i {
+                font-size: inherit;
             }
 
             &::after {
@@ -380,6 +389,7 @@ nav {
 
 #speisekarte {
     form {
+        user-select: none;
         overflow-x: hidden;
 
         &.sticky {

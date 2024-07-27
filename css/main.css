@@ -200,6 +200,19 @@ nav {
             display: none;
         }
 
+        /* Hint to .info-box */
+        li:has(a[href="#startseite"]) i::after {
+            content: '';
+            display: inline-block;
+            width: var(--spacer);
+            height: var(--spacer);
+            background-color: var(--md-sys-color-primary);
+            inset-block-start: -.5rem;
+            inset-inline-end: -1.3rem;
+            position: absolute;
+            border-radius: 50%;
+        }
+
         a {
             text-decoration: none;
             text-align: center;
@@ -285,6 +298,19 @@ nav {
 header {
     margin-block-end: 1rem;
     text-align: center;
+
+    .info-box {
+        background-color: var(--md-sys-color-primary-container);
+        color: var(--md-sys-color-on-primary-container);
+        font-size: x-large;
+        padding: var(--spacer);
+        border-radius: var(--border-radius-sm);
+        margin-block-end: calc(var(--spacer) * 4);
+
+        h2 {
+            margin-block: var(--spacer);
+        }
+    }
 
     img {
         object-position: bottom;

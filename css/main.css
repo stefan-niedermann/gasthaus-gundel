@@ -303,7 +303,7 @@ header {
         background-color: var(--md-sys-color-primary-container);
         color: var(--md-sys-color-on-primary-container);
         font-size: x-large;
-        padding: var(--spacer);
+        padding: var(--spacer) calc(var(--spacer) * 2);
         border-radius: var(--border-radius-sm);
         margin-block-end: calc(var(--spacer) * 4);
 

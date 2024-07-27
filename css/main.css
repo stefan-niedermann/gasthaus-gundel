@@ -208,7 +208,7 @@ nav {
             height: var(--spacer);
             background-color: var(--md-sys-color-primary);
             inset-block-start: -.5rem;
-            inset-inline-end: -1.3rem;
+            inset-inline-end: -1.2rem;
             position: absolute;
             border-radius: 50%;
         }

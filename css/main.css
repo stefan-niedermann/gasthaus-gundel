@@ -200,8 +200,7 @@ nav {
             display: none;
         }
 
-        /* Hint to .info-box */
-        li:has(a[href="#startseite"]) i::after {
+        li.info-box-position i::after {
             content: '';
             display: inline-block;
             width: var(--spacer);

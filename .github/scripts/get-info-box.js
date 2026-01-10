@@ -50,7 +50,11 @@ if (vacationFrom || vacationTo) {
     }
 }
 
+const finalMsgVacation = msgVacation
+    ? `<h2>Betriebsurlaub</h2>${msgVacation}`
+    : '';
+
 console.log(`<div class="info-box">
     ${msgAnnouncment}
-    ${msgVacation}
+    ${finalMsgVacation}
     </div>`)

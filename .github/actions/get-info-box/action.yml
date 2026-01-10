@@ -28,4 +28,6 @@ runs:
         ANNOUNCMENT: ${{ inputs.announcment }}
         VACATION_FROM: ${{ inputs.vacation-from }}
         VACATION_TO: ${{ inputs.vacation-to }}
-      run: echo "info-box-markup=$(node ./.github/actions/get-info-box/index.js)" >> "$GITHUB_OUTPUT"
+      run: |
+        INFO_BOX_MARKUP=node ./.github/actions/get-info-box/index.js
+        echo "info-box-markup=$INFO_BOX_MARKUP" >> "$GITHUB_OUTPUT"

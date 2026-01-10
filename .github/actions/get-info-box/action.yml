@@ -12,6 +12,7 @@ inputs:
 outputs:
   info-box-markup:
     description: The markup of the info box if present
+    value: ${{ steps.get-info-box.outputs.info-box-markup }}
 
 runs:
   using: "composite"
@@ -21,6 +22,7 @@ runs:
       uses: actions/setup-node@v6
 
     - name: Run script
+      id: get-info-box
       shell: bash
       env:
         ANNOUNCMENT: ${{ inputs.announcment }}

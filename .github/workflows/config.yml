@@ -1,0 +1,46 @@
+name: Config
+
+on:
+  workflow_dispatch:
+    inputs:
+      ANNOUNCMENT:
+        required: false
+        description: Any prosa announcment
+        type: string
+
+      VACATION_FROM:
+        required: false
+        description: First day closed in ISO 8601 (yyyy-mm-dd)
+        type: string
+
+      VACATION_TO:
+        required: false
+        description: Last day closed in ISO 8601 (yyyy-mm-dd)
+        type: string
+
+jobs:
+  set-vacation:
+    name: Set vacation
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate inputs
+        run: exit 0;
+
+      - run: |
+          gh variable list
+          gh variable set ANNOUNCMENT --body "${{ inputs.ANNOUNCMENT }}"
+          gh variable set VACATION_FROM --body "${{ inputs.VACATION_FROM }}"
+          gh variable set VACATION_TO --body "${{ inputs.VACATION_TO }}"
+          gh variable list
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Dispatch deployment
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run ci.yml

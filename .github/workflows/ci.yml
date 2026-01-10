@@ -30,17 +30,17 @@ jobs:
       - name: Remove unnecessary files
         run: rm -r .github .git README.md LICENSE
 
-      - name: Insert vacation
-        run: |
-          echo "${{ vars.ANNOUNCMENT }}"
-          echo "${{ vars.VACATION_FROM }}"
-          echo "${{ vars.VACATION_TO }}"
+      - name: Apply info box
+        uses: ./
+        id: get-info-box
+        with:
+          announcment: ${{ vars.ANNOUNCMENT}}
+          vacation-from: ${{ vars.VACATION_FROM}}
+          vacation-to: ${{ vars.VACATION_TO}}
 
-            # <div class="info-box">
-            #     <h2>Betriebsurlaub</h2>
-            #     <p><strong>Vom 12. Januar bis zum 22. Januar sind wir im Urlaub!</strong><br>Wir freuen uns darauf, Sie ab dem 23. Januar
-            #         wieder mit unseren griechischen Spezialitäten verwöhnen zu dürfen.</p>
-            # </div>
+      - name: Apply info box vacation
+        if: ${{ steps.get-info-box.outputs.info-box-markup != '' }}
+        run: sed s/[INFO_BOX]/${{ steps.get-info-box.outputs.info-box-markup }}/g index.html
 
       - name: Pull .well-known
         continue-on-error: true

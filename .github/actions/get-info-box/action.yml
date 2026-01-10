@@ -1,0 +1,18 @@
+name: Get Info Box
+description: Get announcments and vacations in an info box if necessary
+
+inputs:
+  announcment:
+    required: true
+  vacation-from:
+    required: true
+  vacation-to:
+    required: true
+
+outputs:
+  info-box-markup:
+    description: The markup of the info box if present
+
+runs:
+  using: node24
+  main: ./index.js

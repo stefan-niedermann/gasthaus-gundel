@@ -47,19 +47,19 @@ jobs:
           if [ -n "${{ inputs.ANNOUNCMENT}}" ]; then
             gh variable set ANNOUNCMENT --body "${{ inputs.ANNOUNCMENT }}"
           else
-            gh variable delete ANNOUNCMENT
+            gh variable delete ANNOUNCMENT || true
           fi
           
           if [ -n "${{ inputs.VACATION_FROM}}" ]; then
             gh variable set VACATION_FROM --body "${{ inputs.VACATION_FROM }}"
           else
-            gh variable delete VACATION_FROM
+            gh variable delete VACATION_FROM || true
           fi
 
           if [ -n "${{ inputs.VACATION_TO}}" ]; then
             gh variable set VACATION_TO --body "${{ inputs.VACATION_TO }}"
           else
-            gh variable delete VACATION_TO
+            gh variable delete VACATION_TO || true
           fi
 
       - name: New variables

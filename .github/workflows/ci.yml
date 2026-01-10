@@ -45,7 +45,7 @@ jobs:
         working-directory: src
         env:
           INFO_BOX_MARKUP: ${{ steps.get-info-box.outputs.info-box-markup }}
-        run: sed -i "s|\[INFO_BOX\]|$INFO_BOX_MARKUP|g" index.html
+        run: sed -i "s|<!--\ \[INFO_BOX\]\ -->|$INFO_BOX_MARKUP|g" index.html
 
       - name: Upload bundle
         uses: actions/upload-artifact@v6

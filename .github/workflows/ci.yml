@@ -22,6 +22,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Install dependencies
+        run: sudo apt-get install imagemagick
+
       - name: Compress images
         working-directory: src
         run: |
@@ -59,7 +62,7 @@ jobs:
     steps:
 
       - name: Install dependencies
-        run: sudo apt-get install imagemagick lftp
+        run: sudo apt-get install lftp
 
       - name: Download bundle
         uses: actions/download-artifact@v7

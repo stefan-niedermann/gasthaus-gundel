@@ -27,9 +27,6 @@ jobs:
           find ./img             -name 'gasthaus-gundel.webp' -exec mogrify -resize 1280x1280 -quality 35\> {} \;
           find ./img/speisekarte -name '*.webp'               -exec mogrify -resize 1280x1280 -quality 35\> {} \;
 
-      - name: Remove unnecessary files
-        run: rm -r .github .git README.md LICENSE
-
       - name: Generate info box
         uses: ./.github/actions/get-info-box
         id: get-info-box
@@ -41,6 +38,9 @@ jobs:
       - name: Apply info box
         if: ${{ steps.get-info-box.outputs.info-box-markup != '' }}
         run: sed s/[INFO_BOX]/${{ steps.get-info-box.outputs.info-box-markup }}/g index.html
+
+      - name: Remove unnecessary files
+        run: rm -r .github .git README.md LICENSE
 
       - name: Pull .well-known
         continue-on-error: true

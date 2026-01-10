@@ -22,9 +22,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Install dependencies
-        run: sudo apt-get install imagemagick lftp
-
       - name: Compress images
         working-directory: src
         run: |
@@ -61,7 +58,10 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
 
-      - name: Upload bundle
+      - name: Install dependencies
+        run: sudo apt-get install imagemagick lftp
+
+      - name: Download bundle
         uses: actions/download-artifact@v4
         with:
           name: bundle

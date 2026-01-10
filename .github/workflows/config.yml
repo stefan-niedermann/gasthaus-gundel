@@ -18,27 +18,32 @@ on:
         description: Last day closed in ISO 8601 (yyyy-mm-dd)
         type: string
 
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+
 jobs:
   set-vacation:
     name: Set vacation
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     if: github.ref == 'refs/heads/master'
     steps:
-
-      - name: Checkout
-        uses: actions/checkout@v4
 
       - name: Validate inputs
         run: exit 0;
 
-      - run: |
-          gh variable list
+      - name: Old variables
+        run: gh variable list
+
+      - name: Update variables
+        run: |
           gh variable set ANNOUNCMENT --body "${{ inputs.ANNOUNCMENT }}"
           gh variable set VACATION_FROM --body "${{ inputs.VACATION_FROM }}"
           gh variable set VACATION_TO --body "${{ inputs.VACATION_TO }}"
-          gh variable list
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: New variables
+        run: gh variable list
 
       - name: Dispatch deployment
         env:

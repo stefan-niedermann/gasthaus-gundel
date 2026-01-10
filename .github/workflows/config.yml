@@ -32,17 +32,21 @@ jobs:
         run: exit 0;
 
       - name: Old variables
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: gh variable list
 
       - name: Update variables
-        run: |
-          gh variable set ANNOUNCMENT --body "${{ inputs.ANNOUNCMENT }}"
-          gh variable set VACATION_FROM --body "${{ inputs.VACATION_FROM }}"
-          gh variable set VACATION_TO --body "${{ inputs.VACATION_TO }}"
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          gh variable set ANNOUNCMENT   --body "${{ inputs.ANNOUNCMENT }}"
+          gh variable set VACATION_FROM --body "${{ inputs.VACATION_FROM }}"
+          gh variable set VACATION_TO   --body "${{ inputs.VACATION_TO }}"
 
       - name: New variables
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: gh variable list
 
       - name: Dispatch deployment

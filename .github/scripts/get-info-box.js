@@ -16,19 +16,19 @@ if (vacationFrom || vacationTo) {
     let vacationFromStr = '';
     if(vacationFrom) {
         const vacationFromDate = new Date(vacationFrom);
-        const month = vacationFromDate.toLocaleString('default', { month: 'long' });
+        const month = vacationFromDate.toLocaleString('de-DE', { month: 'long' });
         vacationFromStr = `${vacationFromDate.getDate()}. ${month}`;
     }
     let vacationToStr = '';
     let vacationAfterToStr = '';
     if(vacationTo) {
         const vacationToDate = new Date(vacationTo);
-        let month = vacationToDate.toLocaleString('default', { month: 'long' });
+        let month = vacationToDate.toLocaleString('de-DE', { month: 'long' });
         vacationToStr = `${vacationToDate.getDate()}. ${month}`;
         
         const vacationAfterToDate = new Date(vacationToDate.getTime());
         vacationAfterToDate.setDate(vacationAfterToDate.getDate() + 1);
-        month = vacationAfterToDate.toLocaleString('default', { month: 'long' });
+        month = vacationAfterToDate.toLocaleString('de-DE', { month: 'long' });
         vacationAfterToStr = `${vacationAfterToDate.getDate()}. ${month}`;
     }
 

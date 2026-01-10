@@ -25,7 +25,7 @@ jobs:
   configure:
     name: Apply config
     runs-on: ubuntu-slim
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     steps:
 
       - name: Checkout

@@ -36,7 +36,6 @@ jobs:
           vacation-to: ${{ vars.VACATION_TO}}
 
       - name: Echo info box
-        if: ${{ steps.get-info-box.outputs.info-box-markup != '' }}
         env:
           INFO_BOX_MARKUP: ${{ steps.get-info-box.outputs.info-box-markup }}
         run: |

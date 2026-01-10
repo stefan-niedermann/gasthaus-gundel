@@ -30,15 +30,15 @@ jobs:
       - name: Remove unnecessary files
         run: rm -r .github .git README.md LICENSE
 
-      - name: Apply info box
-        uses: ./
+      - name: Generate info box
+        uses: ./.github/actions/get-info-box
         id: get-info-box
         with:
           announcment: ${{ vars.ANNOUNCMENT}}
           vacation-from: ${{ vars.VACATION_FROM}}
           vacation-to: ${{ vars.VACATION_TO}}
 
-      - name: Apply info box vacation
+      - name: Apply info box
         if: ${{ steps.get-info-box.outputs.info-box-markup != '' }}
         run: sed s/[INFO_BOX]/${{ steps.get-info-box.outputs.info-box-markup }}/g index.html
 

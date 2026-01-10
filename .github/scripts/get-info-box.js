@@ -6,7 +6,7 @@ if (!announcment && !vacationFrom && !vacationTo) {
     return;
 }
 
-return;
+return 'GEN_TST';
 
 
 console.log('Real undefined:', process.env.ANNOUNCMENT === undefined, 'ANNOUNCMENT:', process.env.ANNOUNCMENT, 'VACATION_FROM:', process.env.VACATION_FROM, 'VACATION_TO:', process.env.VACATION_TO);

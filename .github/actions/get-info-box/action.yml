@@ -29,5 +29,5 @@ runs:
         VACATION_FROM: ${{ inputs.vacation-from }}
         VACATION_TO: ${{ inputs.vacation-to }}
       run: |
-        INFO_BOX_MARKUP=node ./.github/scripts/get-info-box.js
+        INFO_BOX_MARKUP=$(node ./.github/scripts/get-info-box.js)
         echo "info-box-markup=$INFO_BOX_MARKUP" >> "$GITHUB_OUTPUT"

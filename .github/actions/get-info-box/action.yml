@@ -14,5 +14,16 @@ outputs:
     description: The markup of the info box if present
 
 runs:
-  using: node24
-  main: ./index.js
+  using: "composite"
+  steps:
+
+    - name: Setup node
+      uses: actions/setup-node@v6
+
+    - name: Run script
+      shell: bash
+      env:
+        ANNOUNCMENT: ${{ inputs.announcment }}
+        VACATION_FROM: ${{ inputs.vacation-from }}
+        VACATION_TO: ${{ inputs.vacation-to }}
+      run: echo "info-box-markup=$(node ./.github/actions/get-info-box/index.js)" >> "$GITHUB_OUTPUT"

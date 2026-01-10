@@ -48,7 +48,7 @@ jobs:
         run: sed -i "s|\[INFO_BOX\]|$INFO_BOX_MARKUP|g" index.html
 
       - name: Upload bundle
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: bundle
           path: src

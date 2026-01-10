@@ -45,7 +45,7 @@ jobs:
         if: ${{ steps.get-info-box.outputs.info-box-markup != '' }}
         env:
           INFO_BOX_MARKUP: ${{ steps.get-info-box.outputs.info-box-markup }}
-        run: sed "s|\[INFO_BOX\]|$INFO_BOX_MARKUP|g" index.html
+        run: sed -i "s|\[INFO_BOX\]|$INFO_BOX_MARKUP|g" index.html
 
       - name: Remove unnecessary files
         run: rm -r .github .git README.md LICENSE

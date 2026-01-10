@@ -34,19 +34,18 @@ if (vacationFrom || vacationTo) {
 
     if (vacationFrom && vacationTo) {
         msgVacation = `<p>
-        <strong>Vom ${vacationFrom} bis zum ${vacationBis} sind wir im Urlaub!</strong><br>
-        Wir freuen uns darauf, Sie bald wieder mit unseren griechischen Spezialitäten verwöhnen zu dürfen.
+        <strong>Vom ${vacationFromStr} bis zum ${vacationToStr} sind wir im Urlaub!</strong><br>
+        Wir freuen uns darauf, Sie ab dem ${vacationAfterToStr} wieder mit unseren griechischen Spezialitäten verwöhnen zu dürfen.
         </p>`;
-        // Wir freuen uns darauf, Sie ab dem 23. Januar wieder mit unseren griechischen Spezialitäten verwöhnen zu dürfen.
     } else if (vacationFrom) {
         msgVacation = `<p>
-        <strong>Ab dem ${vacationFrom} sind wir im Urlaub!</strong><br>
+        <strong>Ab dem ${vacationFromStr} sind wir im Urlaub!</strong><br>
         Wir freuen uns darauf, Sie bald wieder mit unseren griechischen Spezialitäten verwöhnen zu dürfen.
         </p>`;
     } else {
         msgVacation = `<p>
-        <strong>Bis zum ${vacationBis} sind wir im Urlaub!</strong><br>
-        Wir freuen uns darauf, Sie bald wieder mit unseren griechischen Spezialitäten verwöhnen zu dürfen.
+        <strong>Bis zum ${vacationToStr} sind wir im Urlaub!</strong><br>
+        Wir freuen uns darauf, Sie ab dem ${vacationAfterToStr} wieder mit unseren griechischen Spezialitäten verwöhnen zu dürfen.
         </p>`;
     }
 }

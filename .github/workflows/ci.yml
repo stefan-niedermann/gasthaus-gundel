@@ -22,16 +22,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Install dependencies
-        run: sudo apt-get install imagemagick
-
-      - name: Compress images
-        working-directory: src
-        run: |
-          find ./img             -name 'deko*.webp'           -exec mogrify -resize 160x160   -quality 20\> {} \;
-          find ./img             -name 'gasthaus-gundel.webp' -exec mogrify -resize 1280x1280 -quality 35\> {} \;
-          find ./img/speisekarte -name '*.webp'               -exec mogrify -resize 1280x1280 -quality 35\> {} \;
-
       - name: Generate info box
         uses: ./.github/actions/get-info-box
         id: get-info-box
@@ -46,6 +36,16 @@ jobs:
         env:
           INFO_BOX_MARKUP: ${{ steps.get-info-box.outputs.info-box-markup }}
         run: sed -i "s|<!--\ \[INFO_BOX\]\ -->|$INFO_BOX_MARKUP|g" index.html
+
+      - name: Install dependencies
+        run: sudo apt-get install imagemagick
+
+      - name: Compress images
+        working-directory: src
+        run: |
+          find ./img             -name 'deko*.webp'           -exec mogrify -resize 160x160   -quality 20\> {} \;
+          find ./img             -name 'gasthaus-gundel.webp' -exec mogrify -resize 1280x1280 -quality 35\> {} \;
+          find ./img/speisekarte -name '*.webp'               -exec mogrify -resize 1280x1280 -quality 35\> {} \;
 
       - name: Upload bundle
         uses: actions/upload-artifact@v6

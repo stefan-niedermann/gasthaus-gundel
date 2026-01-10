@@ -33,20 +33,11 @@ if (vacationFrom || vacationTo) {
     }
 
     if (vacationFrom && vacationTo) {
-        msgVacation = `<p>
-        <strong>Vom ${vacationFromStr} bis zum ${vacationToStr} sind wir im Urlaub!</strong><br>
-        Wir freuen uns darauf, Sie ab dem ${vacationAfterToStr} wieder mit unseren griechischen Spezialitäten verwöhnen zu dürfen.
-        </p>`;
+        msgVacation = `<p><strong>Vom ${vacationFromStr} bis zum ${vacationToStr} sind wir im Urlaub!</strong><br>Wir freuen uns darauf, Sie ab dem ${vacationAfterToStr} wieder mit unseren griechischen Spezialitäten verwöhnen zu dürfen.</p>`;
     } else if (vacationFrom) {
-        msgVacation = `<p>
-        <strong>Ab dem ${vacationFromStr} sind wir im Urlaub!</strong><br>
-        Wir freuen uns darauf, Sie bald wieder mit unseren griechischen Spezialitäten verwöhnen zu dürfen.
-        </p>`;
+        msgVacation = `<p><strong>Ab dem ${vacationFromStr} sind wir im Urlaub!</strong><br>Wir freuen uns darauf, Sie bald wieder mit unseren griechischen Spezialitäten verwöhnen zu dürfen.</p>`;
     } else {
-        msgVacation = `<p>
-        <strong>Bis zum ${vacationToStr} sind wir im Urlaub!</strong><br>
-        Wir freuen uns darauf, Sie ab dem ${vacationAfterToStr} wieder mit unseren griechischen Spezialitäten verwöhnen zu dürfen.
-        </p>`;
+        msgVacation = `<p><strong>Bis zum ${vacationToStr} sind wir im Urlaub!</strong><br>Wir freuen uns darauf, Sie ab dem ${vacationAfterToStr} wieder mit unseren griechischen Spezialitäten verwöhnen zu dürfen.</p>`;
     }
 }
 
@@ -54,7 +45,4 @@ const finalMsgVacation = msgVacation
     ? `<h2>Betriebsurlaub</h2>${msgVacation}`
     : '';
 
-console.log(`<div class="info-box">
-    ${msgAnnouncment}
-    ${finalMsgVacation}
-    </div>`)
+console.log(`<div class="info-box">${msgAnnouncment}${finalMsgVacation}</div>`)

@@ -6,10 +6,52 @@ if (!announcment && !vacationFrom && !vacationTo) {
     return;
 }
 
-console.log('Real undefined:', process.env.ANNOUNCMENT === undefined, 'ANNOUNCMENT:', process.env.ANNOUNCMENT, 'VACATION_FROM:', process.env.VACATION_FROM, 'VACATION_TO:', process.env.VACATION_TO);
+const msgAnnouncment = announcment
+    ? `<h2>Information</h2>${announcment}`
+    : '';
 
-// # <div class="info-box">
-// #     <h2>Betriebsurlaub</h2>
-// #     <p><strong>Vom 12. Januar bis zum 22. Januar sind wir im Urlaub!</strong><br>Wir freuen uns darauf, Sie ab dem 23. Januar
-// #         wieder mit unseren griechischen Spezialitäten verwöhnen zu dürfen.</p>
-// # </div>
+let msgVacation = '';
+
+if (vacationFrom || vacationTo) {
+    let vacationFromStr = '';
+    if(vacationFrom) {
+        const vacationFromDate = new Date(vacationFrom);
+        const month = vacationFromDate.toLocaleString('default', { month: 'long' });
+        vacationFromStr = `${vacationFromDate.getDate()}. ${month}`;
+    }
+    let vacationToStr = '';
+    let vacationAfterToStr = '';
+    if(vacationTo) {
+        const vacationToDate = new Date(vacationTo);
+        let month = vacationToDate.toLocaleString('default', { month: 'long' });
+        vacationToStr = `${vacationToDate.getDate()}. ${month}`;
+        
+        const vacationAfterToDate = new Date(vacationToDate.getTime());
+        vacationAfterToDate.setDate(vacationAfterToDate.getDate() + 1);
+        month = vacationAfterToDate.toLocaleString('default', { month: 'long' });
+        vacationAfterToStr = `${vacationAfterToDate.getDate()}. ${month}`;
+    }
+
+    if (vacationFrom && vacationTo) {
+        msgVacation = `<p>
+        <strong>Vom ${vacationFrom} bis zum ${vacationBis} sind wir im Urlaub!</strong><br>
+        Wir freuen uns darauf, Sie bald wieder mit unseren griechischen Spezialitäten verwöhnen zu dürfen.
+        </p>`;
+        // Wir freuen uns darauf, Sie ab dem 23. Januar wieder mit unseren griechischen Spezialitäten verwöhnen zu dürfen.
+    } else if (vacationFrom) {
+        msgVacation = `<p>
+        <strong>Ab dem ${vacationFrom} sind wir im Urlaub!</strong><br>
+        Wir freuen uns darauf, Sie bald wieder mit unseren griechischen Spezialitäten verwöhnen zu dürfen.
+        </p>`;
+    } else {
+        msgVacation = `<p>
+        <strong>Bis zum ${vacationBis} sind wir im Urlaub!</strong><br>
+        Wir freuen uns darauf, Sie bald wieder mit unseren griechischen Spezialitäten verwöhnen zu dürfen.
+        </p>`;
+    }
+}
+
+console.log(`<div class="info-box">
+    ${msgAnnouncment}
+    ${msgVacation}
+    </div>`)

@@ -48,7 +48,7 @@ jobs:
           find ./img/speisekarte -name '*.webp'               -exec mogrify -resize 1280x1280 -quality 35\> {} \;
 
       - name: Upload bundle
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: bundle
           path: src
